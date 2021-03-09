@@ -94,6 +94,11 @@
 
 #root .LoginPage .LeftPanel .Introtext h2 span {
   font-size: 28px;
+  color: #5f5f5f;
+}
+
+#root .LoginPage .LeftPanel .Introtext p {
+  font-size: 16px;
   color: #353535;
 }
 

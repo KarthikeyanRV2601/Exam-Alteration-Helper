@@ -9,7 +9,7 @@ import {
 export const loadUser = () => async dispatch => {
     
     try {
-        const res = await axios.get('/api/auth');
+        const res = await axios.get('/auth');
         dispatch({
             type: USER_LOADED,
             payload: res.data
@@ -23,10 +23,9 @@ export const loadUser = () => async dispatch => {
 
 // Login User
 export const login = (email, password) => async dispatch => {
-    console.log("peeee")
     const body = { email, password };
     try {
-      const res = await axios.post('/api/auth/login', body);
+      const res = await axios.post('/auth/login', body);
       console.log(res)
       dispatch({
         type: LOGIN_SUCCESS,

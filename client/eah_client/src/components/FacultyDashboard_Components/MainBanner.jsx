@@ -13,21 +13,21 @@ export const MainBanner=({dutyLinks,requestLinks})=>{
                 <div className="ButtonSection">
                 <div className="ButtonElement">
                     <img src={RequestIcon} />
-                    <button>
+                    <a>
                             Request exchange
-                    </button>
+                    </a>
                 </div>
                 <div className="ButtonElement">
                     <img src={CalendarIcon} />
-                    <button>
-                            Personal timetable
-                    </button>
+                    <a href="/schedule">
+                            Exam schedule
+                    </a>
                 </div>
                 <div className="ButtonElement">
                     <img src={ExchangeIcon} />
-                    <button>
+                    <a>
                             Available requests
-                    </button>
+                    </a>
                 </div>
                 </div>  
             </div>

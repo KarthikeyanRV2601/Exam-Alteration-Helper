@@ -136,6 +136,7 @@
           align-items: flex-start;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  position: relative;
 }
 
 #root .FacultyDashboard .LeftContainer .UserDetail .Details h2 {
@@ -153,6 +154,102 @@
 #root .FacultyDashboard .LeftContainer .UserDetail .Details p {
   font-size: 12px;
   color: #8B8B8B;
+}
+
+#root .FacultyDashboard .LeftContainer .UserDetail #SettingsIcon {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 2%;
+  top: 2%;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#root .FacultyDashboard .LeftContainer .UserDetail #SettingsIcon:hover {
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+}
+
+#root .FacultyDashboard .LeftContainer .UserDetail .Menu {
+  width: 200px;
+  height: 150px;
+  position: absolute;
+  background: #2F89FC;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  right: 2%;
+  top: 6%;
+  border-radius: 20px;
+  display: none;
+}
+
+#root .FacultyDashboard .LeftContainer .UserDetail .Menu .Option {
+  width: 90%;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: white;
+  border-bottom: 1px solid #e6e6e6b2;
+  cursor: pointer;
+}
+
+#root .FacultyDashboard .LeftContainer .UserDetail .Menu .Option:hover {
+  background: white;
+  color: #2F89FC;
+}
+
+#root .FacultyDashboard .LeftContainer .UserDetail .AnimateMenu {
+  -webkit-animation: 0.4s animate ease-in-out forwards;
+          animation: 0.4s animate ease-in-out forwards;
+  display: inherit;
+}
+
+@-webkit-keyframes animate {
+  0% {
+    right: -5%;
+    opacity: 0;
+  }
+  100% {
+    right: 2%;
+    opacity: 1;
+  }
+}
+
+@keyframes animate {
+  0% {
+    right: -5%;
+    opacity: 0;
+  }
+  100% {
+    right: 2%;
+    opacity: 1;
+  }
 }
 
 #root .FacultyDashboard .LeftContainer .NotificationContainer {
@@ -221,7 +318,6 @@
       -ms-flex-align: start;
           align-items: flex-start;
   color: #808080;
-  border-bottom: 2px solid #808080;
 }
 
 #root .FacultyDashboard .LeftContainer .NotificationContainer .Title #NotificationCount {
@@ -409,7 +505,6 @@
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  border-bottom: 2px solid #808080;
 }
 
 #root .FacultyDashboard .RightContainer .TopBanner .Details {
@@ -547,7 +642,6 @@
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  border-bottom: 2px solid #808080;
 }
 
 #root .FacultyDashboard .RightContainer .MainBanner .Details .ButtonSection {
@@ -595,7 +689,7 @@
      object-fit: contain;
 }
 
-#root .FacultyDashboard .RightContainer .MainBanner .Details .ButtonSection .ButtonElement button {
+#root .FacultyDashboard .RightContainer .MainBanner .Details .ButtonSection .ButtonElement a {
   width: 200px;
   height: 60px;
   background: #2F89FC;
@@ -620,7 +714,7 @@
   outline: none;
 }
 
-#root .FacultyDashboard .RightContainer .MainBanner .Details .ButtonSection .ButtonElement button:hover {
+#root .FacultyDashboard .RightContainer .MainBanner .Details .ButtonSection .ButtonElement a:hover {
   background: white;
   border: 1px solid #2F89FC;
   color: #2F89FC;
@@ -666,7 +760,6 @@
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  border-bottom: 2px solid #808080;
 }
 
 #root .FacultyDashboard .RightContainer .MainBanner .QuickLinks .Sections {

@@ -2,9 +2,11 @@ import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import {LoginPage} from './Routes/LoginPage';
-import {ExamSchedule} from './Routes/ExamSchedule';
-
-import {FacultyDashboard} from './Routes/FacultyDashboard';
+// import {ExamSchedule} from './Routes/ExamSchedule';
+import Temp from './Routes/temp';
+import FacultyDashboard from './Routes/FacultyDashboard';
+import PrivateRoute from './components/routing/PrivateRoute'
+import { LOGOUT } from './actions/types';
 
 import { Provider } from 'react-redux';
 import store from './store';
@@ -22,9 +24,9 @@ const App=()=>{
     store.dispatch(loadUser());
 
     // log user out from all tabs if they log out in one tab
-    // window.addEventListener('storage', () => {
-    //   if (!localStorage.token) store.dispatch({ type: LOGOUT });
-    // });
+    window.addEventListener('storage', () => {
+      if (!localStorage.token) store.dispatch({ type: LOGOUT });
+    });
   }, []);
 
   return(
@@ -33,8 +35,8 @@ const App=()=>{
         <Router>
           <Switch>
             <Route exact path='/login' component={LoginPage} />
-            <Route exact path='/' component={FacultyDashboard} />
-            <Route exact path='/schedule' component={ExamSchedule} />
+            <PrivateRoute exact path='/' component={FacultyDashboard}  />
+            <PrivateRoute exact path='/schedule' component={Temp} />
           </Switch>
         </Router>
       </Provider>

@@ -6,7 +6,7 @@ import { login } from '../../actions/auth'
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
-const Form=({ login, user, isAuthenticated })=>{
+const Form=({ login, user, isAuth })=>{
 
 
     const [ formData , setFormData ] = useState({
@@ -16,17 +16,16 @@ const Form=({ login, user, isAuthenticated })=>{
 
     const { email, password } = formData;
 
-    if (isAuthenticated && user !== null) 
-    {
-        return <Redirect to='/' />
-        
-    }
-
     const onChange = e => {
         setFormData({
             ...formData,
             [e.target.name]: e.target.value
         })
+    }
+    if (isAuth) 
+    {
+        return <Redirect to='/' />
+        
     }
 
     const onSubmit = async e => {
