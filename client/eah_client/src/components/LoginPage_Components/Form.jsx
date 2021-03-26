@@ -33,7 +33,7 @@ const Form=({ login, user, isAuth })=>{
         console.log(formData);
         console.log(email);
         // login("mighil@gmail.com","mighil")
-        login(email, password);
+        return login(email, password);
         
     }
 

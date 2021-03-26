@@ -4,12 +4,28 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import './styles/calendar.css';
 
-const CalendarComponent=()=>{
-
-    var calendarChange=()=>{
+const CalendarComponent=({setCurrentdate})=>{
+    var returnDate=(e)=>{
+        var dd=e.getDate();
+        var mm=e.getMonth()+1;
+        var yyyy=e.getFullYear();
+        if(dd<10) 
+        {   
+            dd='0'+dd;
+        } 
+        if(mm<10) 
+        {
+            mm='0'+mm;
+        } 
+        var date = dd+ "-" + mm + "-" + yyyy;
+        return date
+    }
+    var calendarChange=(e)=>{
+        setCurrentdate(returnDate(e))
         return
     }
     
+    setCurrentdate(returnDate(new Date()))
 
     return(
         <div className="ActualCalendarcontainer">

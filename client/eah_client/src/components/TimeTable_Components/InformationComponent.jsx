@@ -30,12 +30,35 @@ const InformationComponent=()=>{
         Name:"exam5",
         Description:"this is a exam5"
     },
+    {
+        Name:"exam5",
+        Description:"this is a exam5"
+    },
+    {
+        Name:"exam5",
+        Description:"this is a exam5"
+    },
+    {
+        Name:"exam5",
+        Description:"this is a exam5"
+    },
+
+    {
+        Name:"exam5",
+        Description:"this is a exam5"
+    },
+    {
+        Name:"exam5",
+        Description:"this is a exam5"
+    },
+    
     ]
 
     const [ExamNumber,setExamNumber]=useState(0);
 
     return(
         <div className="InformationContainer" >
+            <h2>List of exams on 26-01-2021</h2>
             <div className="Wrapper">
                   <div className="SwitchLeft">
                       {/* <img src={back} onClick={e=>setExamNumber(ExamNumber-1)}/> */}
@@ -45,16 +68,18 @@ const InformationComponent=()=>{
                       {/* <img src={back} onClick={e=>setExamNumber(ExamNumber+1)}/> */}
                   </div>
             </div>
-            
+            <div className='ExamList'>
             {ExamDetails.map(ExamDetail=>{
                 return(
                     <div className="Exam">
                         <h2>{ExamDetail.Name}</h2>
                         <div className='Description'>{ExamDetail.Description}</div>
                     </div>
-
+                    
                 )
             })}
+            </div>
+            
         </div>
     )
 }
