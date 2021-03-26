@@ -14,12 +14,13 @@ import { connect } from 'react-redux';
 
 const FacultyDashboard=({ isAuth, user })=>{
 
-    useEffect(() => {
-        AOS.init({
-          duration : 300,
-          easing: 'ease-in-out',
-        });
-      }, []);
+    // useEffect(() => {
+    //     AOS.init({
+    //       duration : 300,
+    //       easing: 'ease-',
+          
+    //     });
+    //   }, []);
     
     var NotifcationList=["A new request for faculty exchange has arrived","Thumbi kannan accepted your exchange request","Secretary has scheduled a new exam for you","Secretary has scheduled a new exam for you","Secretary has scheduled a new exam for you","Secretary has scheduled a new exam for you","Secretary has scheduled a new exam for you"]
     var dutyLinks=["Invigilation at 2pm for ECE maths exam","Invigilation at 4pm for ECE science exam"]
@@ -30,13 +31,13 @@ const FacultyDashboard=({ isAuth, user })=>{
                 
             </div>
             <div 
-            data-aos={"fade-right"}
+  
             className="LeftContainer">
                 <UserDetail userName="inbaraj" userType="faculty" userDepartment="Department of computer science" />
                 <NotificationComponent NotifcationList={NotifcationList}/>
             </div>
             <div
-            data-aos={"fade-left"}
+
             className="RightContainer">
                 <TopBanner invigilationsScheduled="9" Dutyhours="7/10" exchanges="10" />
                 <MainBanner dutyLinks={dutyLinks} requestLinks={requestsLinks} />

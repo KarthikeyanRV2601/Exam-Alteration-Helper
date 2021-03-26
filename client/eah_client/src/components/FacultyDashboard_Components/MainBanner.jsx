@@ -5,6 +5,7 @@ import CalendarIcon from './media/calendar.svg';
 import ExchangeIcon from './media/question.svg';
 
 export const MainBanner=({dutyLinks,requestLinks})=>{
+
     return(
         <div className="MainBanner">
 
@@ -13,7 +14,7 @@ export const MainBanner=({dutyLinks,requestLinks})=>{
                 <div className="ButtonSection">
                 <div className="ButtonElement">
                     <img src={RequestIcon} />
-                    <a>
+                    <a href="/exchangeForm">
                             Request exchange
                     </a>
                 </div>

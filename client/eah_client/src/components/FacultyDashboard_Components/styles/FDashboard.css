@@ -31,7 +31,7 @@
 
 #root .FacultyDashboard {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -105,6 +105,12 @@
       justify-content: space-around;
   -webkit-box-shadow: 0px 2px 5px 2px rgba(148, 148, 148, 0.16);
           box-shadow: 0px 2px 5px 2px rgba(148, 148, 148, 0.16);
+  -webkit-transition: -webkit-transform 0.6s easeOutBack;
+  transition: -webkit-transform 0.6s easeOutBack;
+  transition: transform 0.6s easeOutBack;
+  transition: transform 0.6s easeOutBack, -webkit-transform 0.6s easeOutBack;
+  -webkit-animation: animateUser 0.6s forwards;
+          animation: animateUser 0.6s forwards;
 }
 
 #root .FacultyDashboard .LeftContainer .UserDetail .ProfileDp {
@@ -225,8 +231,8 @@
 }
 
 #root .FacultyDashboard .LeftContainer .UserDetail .AnimateMenu {
-  -webkit-animation: 0.4s animate ease-in-out forwards;
-          animation: 0.4s animate ease-in-out forwards;
+  -webkit-animation: 0.6s animate ease-in-out forwards;
+          animation: 0.6s animate ease-in-out forwards;
   display: inherit;
 }
 
@@ -249,6 +255,28 @@
   100% {
     right: 2%;
     opacity: 1;
+  }
+}
+
+@-webkit-keyframes animateUser {
+  0% {
+    -webkit-transform: translateX(-10%);
+            transform: translateX(-10%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes animateUser {
+  0% {
+    -webkit-transform: translateX(-10%);
+            transform: translateX(-10%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
 }
 
@@ -275,6 +303,17 @@
   -webkit-box-shadow: 0px 2px 5px 2px rgba(148, 148, 148, 0.16);
           box-shadow: 0px 2px 5px 2px rgba(148, 148, 148, 0.16);
   background: white;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  opacity: 0;
+  -webkit-transition: -webkit-transform 0.6s easeOutBack;
+  transition: -webkit-transform 0.6s easeOutBack;
+  transition: transform 0.6s easeOutBack;
+  transition: transform 0.6s easeOutBack, -webkit-transform 0.6s easeOutBack;
+  -webkit-animation: animateNotification 0.6s forwards;
+          animation: animateNotification 0.6s forwards;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
 }
 
 #root .FacultyDashboard .LeftContainer .NotificationContainer .Title {
@@ -438,6 +477,30 @@
   border-top: 1px solid rgba(165, 165, 165, 0.57);
 }
 
+@-webkit-keyframes animateNotification {
+  0% {
+    -webkit-transform: translateX(-10%);
+            transform: translateX(-10%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes animateNotification {
+  0% {
+    -webkit-transform: translateX(-10%);
+            transform: translateX(-10%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
 #root .FacultyDashboard .RightContainer {
   z-index: 10;
   width: 60%;
@@ -484,6 +547,13 @@
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  opacity: 0;
+  -webkit-transition: -webkit-transform 0.6s easeOutBack;
+  transition: -webkit-transform 0.6s easeOutBack;
+  transition: transform 0.6s easeOutBack;
+  transition: transform 0.6s easeOutBack, -webkit-transform 0.6s easeOutBack;
+  -webkit-animation: animateTop 0.6s forwards;
+          animation: animateTop 0.6s forwards;
 }
 
 #root .FacultyDashboard .RightContainer .TopBanner h1 {
@@ -580,6 +650,30 @@
   border-radius: 10px;
 }
 
+@-webkit-keyframes animateTop {
+  0% {
+    -webkit-transform: translateX(10%);
+            transform: translateX(10%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes animateTop {
+  0% {
+    -webkit-transform: translateX(10%);
+            transform: translateX(10%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
 #root .FacultyDashboard .RightContainer .MainBanner {
   width: 100%;
   height: 55%;
@@ -599,6 +693,39 @@
   text-align: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -webkit-transition: -webkit-transform 0.6s easeOutBack;
+  transition: -webkit-transform 0.6s easeOutBack;
+  transition: transform 0.6s easeOutBack;
+  transition: transform 0.6s easeOutBack, -webkit-transform 0.6s easeOutBack;
+  -webkit-animation: animateMain 0.6s forwards;
+          animation: animateMain 0.6s forwards;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+  opacity: 0;
+}
+
+@-webkit-keyframes animateMain {
+  0% {
+    -webkit-transform: translateX(10%);
+            transform: translateX(10%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes animateMain {
+  0% {
+    -webkit-transform: translateX(10%);
+            transform: translateX(10%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
 }
 
 #root .FacultyDashboard .RightContainer .MainBanner .Details {
@@ -740,6 +867,15 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  -webkit-transition: -webkit-transform 0.6s easeOutBack;
+  transition: -webkit-transform 0.6s easeOutBack;
+  transition: transform 0.6s easeOutBack;
+  transition: transform 0.6s easeOutBack, -webkit-transform 0.6s easeOutBack;
+  -webkit-animation: animateLinks 0.6s forwards;
+          animation: animateLinks 0.6s forwards;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+  opacity: 0;
 }
 
 #root .FacultyDashboard .RightContainer .MainBanner .QuickLinks h1 {
@@ -869,5 +1005,29 @@
 #root .FacultyDashboard .RightContainer .MainBanner .QuickLinks .Sections .Section .Links .Link a {
   color: #808080;
   text-decoration: none;
+}
+
+@-webkit-keyframes animateLinks {
+  0% {
+    -webkit-transform: translateX(10%);
+            transform: translateX(10%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes animateLinks {
+  0% {
+    -webkit-transform: translateX(10%);
+            transform: translateX(10%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
 }
 /*# sourceMappingURL=FDashboard.css.map */

@@ -14,5 +14,7 @@ app.use(cors());
 app.use('/users', require('./routes/users'));
 app.use('/auth', require('./routes/auth'));
 app.use('/dashboard', require('./routes/dashboard'));
+app.use('/schedule', require('./routes/schedule'));
+
 
 exports.api = functions.https.onRequest(app)

@@ -7,7 +7,7 @@ import Temp from './Routes/temp';
 import FacultyDashboard from './Routes/FacultyDashboard';
 import PrivateRoute from './components/routing/PrivateRoute'
 import { LOGOUT } from './actions/types';
-
+import TimeTable from './Routes/TimeTable';
 import { Provider } from 'react-redux';
 import store from './store';
 import { loadUser } from './actions/auth'
@@ -36,7 +36,8 @@ const App=()=>{
           <Switch>
             <Route exact path='/login' component={LoginPage} />
             <PrivateRoute exact path='/' component={FacultyDashboard}  />
-            <PrivateRoute exact path='/schedule' component={Temp} />
+            {/* <PrivateRoute exact path='/schedule' component={Temp} /> */}
+            <PrivateRoute exact path='/timetable' component={TimeTable} />
           </Switch>
         </Router>
       </Provider>
