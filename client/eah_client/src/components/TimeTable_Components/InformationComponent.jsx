@@ -13,44 +13,7 @@ const InformationComponent=()=>{
       {
         Name:"exam1",
         Description:"this is a exam1"
-    },
-    {
-        Name:"exam2",
-        Description:"this is a exam2"
-    },
-    {
-        Name:"exam3",
-        Description:"this is a exam3"
-    },
-    {
-        Name:"exam4",
-        Description:"this is a exam4"
-    },
-    {
-        Name:"exam5",
-        Description:"this is a exam5"
-    },
-    {
-        Name:"exam5",
-        Description:"this is a exam5"
-    },
-    {
-        Name:"exam5",
-        Description:"this is a exam5"
-    },
-    {
-        Name:"exam5",
-        Description:"this is a exam5"
-    },
-
-    {
-        Name:"exam5",
-        Description:"this is a exam5"
-    },
-    {
-        Name:"exam5",
-        Description:"this is a exam5"
-    },
+    }
     
     ]
 

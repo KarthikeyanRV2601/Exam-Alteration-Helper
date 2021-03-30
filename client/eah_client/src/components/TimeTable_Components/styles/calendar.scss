@@ -190,6 +190,7 @@ table {
     // display: none;
     @include flexColumn();
     justify-content: space-around;
+    background: white;
     @include Shadow();
     .Wrapper{
         width:100%;
@@ -402,6 +403,8 @@ table {
     height: 400px;
     @include flexColumn();
     @include Shadow();
+    background: white;
+    justify-content: space-around;
     .ExamName{
         width: 300px;
         @include flexRow();
@@ -419,6 +422,89 @@ table {
           justify-content: space-between;
       }
   }
+  .exchangeRequest
+  {
+    width: 150px;
+    height: 50px;
+    background:#2F89FC;
+    color: white;
+    border: none;
+    outline: none;
+    left: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+    &:hover{
+      border: 1px solid #2F89FC;
+      color: #2F89FC;
+      background: white;
+
+    }
+
+  }
+  .pendingStatus{
+    width: 150px;
+    height: 50px;
+    border: none;
+    outline: none;
+    left: 50%;
+    background: rgb(233, 233, 0);
+    color: #353535;
+    cursor: not-allowed;
+  }
   
 }
+.ExchangeConfirmation
+{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(29, 29, 29, 0.445);
+  z-index: 10;
+  @include flexColumn();
+  backdrop-filter: blur(5px);
   
+  .container{
+  width: 400px;
+  height: 400px;
+  background: white;
+  border-radius: 10px;
+  @include flexColumn();
+  justify-content: space-evenly;
+  h2{
+    font-size: 16px;
+
+  }
+  .Buttons{
+    width: 200px;
+    height: 120px;
+    @include flexColumn();
+    justify-content: space-around;
+    button{
+      width: 150px;
+    height: 50px;
+    background:#2F89FC;
+    color: white;
+    border: none;
+    outline: none;
+    left: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+    &:hover{
+      border: 1px solid #2F89FC;
+      color: #2F89FC;
+      background: white;
+
+    }
+    }
+  }
+  }
+}
+  
+
+
+
+
+.StartDate{
+  background: green;
+  color: white;
+}

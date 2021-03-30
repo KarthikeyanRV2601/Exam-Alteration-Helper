@@ -62,7 +62,7 @@ const Form=({ login, user, isAuth })=>{
                             required />
                         <label for="pwd">password</label>
                     </div>
-                    <button className="LoginButton" >Submit</button>
+                    <button className="LoginButton">Submit</button>
                 </form>
             </div>
     )

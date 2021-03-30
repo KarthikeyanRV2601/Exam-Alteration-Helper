@@ -5,12 +5,28 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import InformationComponent from '../components/TimeTable_Components/InformationComponent';
 import ExamInfo from '../components/TimeTable_Components/ExamInformation';
+
 const TimeTable=()=>{
 
     const [Currentdate,setCurrentdate]=useState(null)
 
     const [ data, setData] = useState([])
+    var returnDate=(e)=>{
+        var dd=e.getDate();
+        var mm=e.getMonth()+1;
+        var yyyy=e.getFullYear();
+        if(dd<10) 
+        {   
+            dd='0'+dd;
+        } 
+        if(mm<10) 
+        {
+            mm='0'+mm;
+        } 
+        var date = dd+ "-" + mm + "-" + yyyy;
 
+        return date
+    }
     useEffect(() => {
         (async () => 
         {
@@ -26,8 +42,9 @@ const TimeTable=()=>{
 
     return(
         <div className="CalendarPage">
-            <CalendarComponent examData={data} setCurrentdate={setCurrentdate}/>
-            <ExamInfo examData={data} Currentdate={Currentdate}/>
+            <CalendarComponent examData={data} setCurrentdate={setCurrentdate} returnDate={returnDate}/>
+            <ExamInfo examData={data} examData={data} Currentdate={Currentdate} returnDate={returnDate}/>
+            
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import React, { useState,useEffect }  from 'react';
+import React, { useState,useEffect,useRef }  from 'react';
 import Calendar from 'react-calendar';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -7,25 +7,14 @@ import './styles/calendar.css';
 
 
 
-const ExamInfo=({Currentdate,examData})=>{
-    
-    var returnDate=(e)=>{
-        var dd=e.getDate();
-        var mm=e.getMonth()+1;
-        var yyyy=e.getFullYear();
-        if(dd<10) 
-        {   
-            dd='0'+dd;
-        } 
-        if(mm<10) 
-        {
-            mm='0'+mm;
-        } 
-        var date = dd+ "-" + mm + "-" + yyyy;
+const ExamInfo=({Currentdate,examData,returnDate})=>{
+    var statusFlag=0;
 
-        return date
-    }
-    var [CurrentData,setCurrentData]=useState(null)
+    var [CurrentData,setCurrentData]=useState(null);
+    var [showConfirmation,setShowConfirmation]=useState(false);
+    var [exchangeStatus,setExchangeStatus]=useState("Request exchange");
+    var requestButtonRef = useRef();
+
     useEffect(() => {
         
         for(let i=0;i<examData.length;++i)
@@ -33,19 +22,21 @@ const ExamInfo=({Currentdate,examData})=>{
             let data=examData[i];
             if(returnDate(new Date(data.date))==Currentdate){
                 setCurrentData(data);
-                console.log("found");
                 break;
             }
             else{
                 setCurrentData(null)
-                console.log(returnDate(new Date(data.date)),"not found")
             }
         }
 
     }, [Currentdate])
-   
-
-
+    
+    var makeRequestPending=(e)=>{
+        setExchangeStatus("Request pending");
+        statusFlag=1;
+        //set flag here
+    }
+    
     return(
         <>
         { CurrentData && 
@@ -62,7 +53,7 @@ const ExamInfo=({Currentdate,examData})=>{
                     </div>
                     <div className="Info">
                         <p>Slot</p>
-                        <p>{CurrentData.slot}</p>
+                        <p>{new Date(CurrentData.date).getHours()+":"+new Date(CurrentData.date).getMinutes()+" hr"}</p>
                     </div>
                     <div className="Info">
                         <p>Block</p>
@@ -71,8 +62,12 @@ const ExamInfo=({Currentdate,examData})=>{
                     <div className="Info">
                         <p>Room</p>
                         <p>{CurrentData.class_room}</p>
-                    </div>
+                    </div>  
+                   
                 </div>
+                <button className={statusFlag==0?"exchangeRequest":statusFlag==1?"pendingStatus":statusFlag==2?"approvedStatus":null} onClick={()=>{setShowConfirmation(true)}} ref={requestButtonRef}>
+                        {exchangeStatus}
+                </button>
             </div>
         }
         {
@@ -81,6 +76,23 @@ const ExamInfo=({Currentdate,examData})=>{
                 <h1>{Currentdate}</h1>
                 <h2>No exam scheduled on this day</h2>
             </div>
+        }
+
+        {
+            showConfirmation && <div className="ExchangeConfirmation">
+            <div className="container">
+                <h2>Are you sure you want to request for exchange</h2>
+                <div className="Buttons">
+                    <button onClick={(e)=>makeRequestPending(e)}>
+                        Yes
+                    </button>
+                    <button onClick={()=>{setShowConfirmation(false)}}>
+                        No
+                    </button>
+                </div>
+
+            </div>
+        </div>
         }
         </>
     )

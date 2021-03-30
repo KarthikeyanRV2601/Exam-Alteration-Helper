@@ -10,7 +10,7 @@ const firebase = require('firebase');
 router.get('/', auth, async (req, res) => {
     try {
         const scheduleRef = db.collection('schedule');
-        const snapshot = await scheduleRef.where('name', '==', req.user.user_name).get();
+        const snapshot = await scheduleRef.where('userID', '==', req.user.userID).get();
         // snapshot.forEach(doc => {
         //     console.log(doc);
         //   });
@@ -31,6 +31,56 @@ router.get('/', auth, async (req, res) => {
                 data:data,
                 length: data.length
             }
+        })
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send('Error')
+    }
+})
+
+// Add new exam to logged in user's exhedule
+router.post('/', auth, async (req, res) => {
+    try {
+
+        const res = await db.collection('schedule').add({
+            name: req.user.user_name,
+            block: req.body.block,
+            class_romm: req.body.class_room,
+            date: req.body.date,
+            duration: req.body.duration,
+            exam_name: req.body.exam_name,
+            reqest_status: "none",
+            userID: req.data.userID,
+        });
+        // console.log(req.body[0].date.toDate());
+        // console.log(new Date());
+
+        res.json({
+            user: {
+                user_name: req.user.user_name,
+                email: req.user.email,
+                userID: req.user.user_id,
+                data:data,
+                length: data.length
+            }
+        })
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send('Error')
+    }
+})
+
+// change status of user's scpecific schedule
+router.post('/status', auth, async (req, res) => {
+
+    try {
+        
+        const cityRef = db.collection('schedule').doc(req.body.schedule_id);
+        // Set the 'capital' field of the city
+        const res = await cityRef.update({request_status: req.body.status});
+
+        res.json({
+            res,
         })
     } catch (error) {
         console.error(error.message);

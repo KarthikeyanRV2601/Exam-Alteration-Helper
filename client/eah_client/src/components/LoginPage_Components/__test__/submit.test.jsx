@@ -1,21 +1,14 @@
+import { configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+configure({ adapter: new Adapter() });
 import React from 'react';
-import {shallow} from 'enzyme';
-import ReactDOM from 'react-dom';
-import Form from './ .. /LoginPage_Components';
+import { shallow } from 'enzyme';
+import Form from '../Form.jsx';
 
-describe('Form', () => {
-    const testValues = {
-        email: 'mighil@gmail.com',
-        password: 'mighil',
-        handleSubmit: jest.fn(),
-    };
-
-    it('Submit works', () => {
-        const component = shallow(
-            <Form {...testValues} />
-        );
-        component.find('Submit').simulate('click');
-        expect(testValues.handleSubmit).toHaveBeenCalledTimes(1);
-        expect(testValues.handleSubmit).toBeCalledWith({email: testValues.email, password: testValues.password});
-    });
-});
+    describe('Login component tests', ()=> {
+        const wrapper = shallow(<Form />);
+        it('should have a btn component', ()=> {
+            expect(wrapper.find('button')).toHaveLength(1);
+            expect(wrapper.find('button').text()).toEqual('Submit');
+        });
+    }); 
