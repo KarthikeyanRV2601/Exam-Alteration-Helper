@@ -8,7 +8,7 @@ const auth = require('../middleware/auth');
 const firebase = require('firebase');
 
 router.get('/', auth, (req, res) => {
-    console.log(req.user)
+    // console.log(req.user)
     res.json({
         status: "success",
         user: {

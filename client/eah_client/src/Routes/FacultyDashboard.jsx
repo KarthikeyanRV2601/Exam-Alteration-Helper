@@ -12,7 +12,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 const FacultyDashboard=({ isAuth, user })=>{
-    const [ data, setData] = useState([])
+    const [ Userdata, setUserData] = useState([])
+    const [ Notificationdata, setNotifData] = useState([])
     var returnDate=(e)=>{
         var dd=e.getDate();
         var mm=e.getMonth()+1;
@@ -34,17 +35,15 @@ const FacultyDashboard=({ isAuth, user })=>{
         {
             try {
                 let data = await axios.get('/schedule')
-                setData(data.data.user.data)
-                
+                setUserData(data.data.user.data)
+                let NotifData=await axios.get('/schedule/pending_schedule')
+                setNotifData(NotifData.data.data); 
             } catch (error) {
                 console.log(error)
             }
         })()
     }, [])
     
-    var NotifcationList=["A new request for faculty exchange has arrived","Thumbi kannan accepted your exchange request","Secretary has scheduled a new exam for you","Secretary has scheduled a new exam for you","Secretary has scheduled a new exam for you","Secretary has scheduled a new exam for you","Secretary has scheduled a new exam for you"]
-    
-    var requestsLinks=["Secretary has scheduled a new exam for you"]
     return(
         <div className="FacultyDashboard">
             <div className="BlueBanner">
@@ -54,11 +53,11 @@ const FacultyDashboard=({ isAuth, user })=>{
   
             className="LeftContainer">
                 <UserDetail userType="faculty" userDepartment="Department of computer science" />
-                <NotificationComponent NotifcationList={NotifcationList}/>
+                <NotificationComponent NotifcationList={Notificationdata} returnDate={returnDate}/>
             </div>
             <div className="RightContainer">
                 <TopBanner invigilationsScheduled="9" Dutyhours="7/10" exchanges="10" />
-                <MainBanner dutyLinks={data.slice(0,3)} requestLinks={requestsLinks} returnDate={returnDate} />
+                <MainBanner dutyLinks={Userdata.slice(0,3)} returnDate={returnDate} />
             </div>
         </div>
 

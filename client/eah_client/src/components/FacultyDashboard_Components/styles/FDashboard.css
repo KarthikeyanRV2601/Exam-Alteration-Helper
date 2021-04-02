@@ -444,14 +444,12 @@
 }
 
 #root .FacultyDashboard .LeftContainer .NotificationContainer .NotificationSection .Notification .Text .bullet {
-  width: 5px;
-  height: 5px;
-  background: #2F89FC;
-  border-radius: 50%;
+  width: 14px;
+  height: 14px;
 }
 
 #root .FacultyDashboard .LeftContainer .NotificationContainer .NotificationSection .Notification .Text a {
-  width: 90%;
+  width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -469,6 +467,51 @@
           justify-content: flex-start;
   cursor: pointer;
   text-decoration: none;
+  text-align: left;
+}
+
+#root .FacultyDashboard .LeftContainer .NotificationContainer .NotificationSection .Notification .Emergency {
+  width: 100%;
+  height: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#root .FacultyDashboard .LeftContainer .NotificationContainer .NotificationSection .Notification .Emergency .bullet {
+  width: 14px;
+  height: 14px;
+}
+
+#root .FacultyDashboard .LeftContainer .NotificationContainer .NotificationSection .Notification .Emergency a {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  height: 100%;
+  color: rgba(252, 52, 52, 0.836);
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: left;
 }
 
 #root .FacultyDashboard .LeftContainer .NotificationContainer .NotificationSection .Notification .Line {
@@ -1040,5 +1083,94 @@
     -webkit-transform: translateX(0);
             transform: translateX(0);
   }
+}
+
+.PopupInformation {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background: rgba(29, 29, 29, 0.445);
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+.PopupInformation .InfoContainer {
+  width: 400px;
+  height: 400px;
+  background: white;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  position: relative;
+}
+
+.PopupInformation .InfoContainer .closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  cursor: pointer;
+}
+
+.PopupInformation .InfoContainer h2 {
+  font-size: 16px;
+}
+
+.PopupInformation .InfoContainer .Element {
+  width: 100%;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.PopupInformation .InfoContainer .Element label {
+  width: 30%;
+}
+
+.PopupInformation .InfoContainer .Element p {
+  width: 60%;
 }
 /*# sourceMappingURL=FDashboard.css.map */

@@ -44,9 +44,9 @@ const TimeTable=()=>{
         <>
             <NavbarComponent/>
             <div className="CalendarPage">
-                {/* <CalendarComponent examData={data} setCurrentdate={setCurrentdate} returnDate={returnDate}/>
-                <ExamInfo examData={data} examData={data} Currentdate={Currentdate} returnDate={returnDate}/> */}
-                <ProfileSettings/>
+                <CalendarComponent examData={data} setCurrentdate={setCurrentdate} returnDate={returnDate}/>
+                <ExamInfo examData={data} examData={data} Currentdate={Currentdate} returnDate={returnDate}/>
+                {false&&<ProfileSettings/>}
             </div>
         </>
     )

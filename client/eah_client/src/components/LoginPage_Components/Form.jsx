@@ -30,8 +30,6 @@ const Form=({ login, user, isAuth })=>{
 
     const onSubmit = async e => {
         e.preventDefault();
-        console.log(formData);
-        console.log(email);
         // login("mighil@gmail.com","mighil")
         return login(email, password);
         

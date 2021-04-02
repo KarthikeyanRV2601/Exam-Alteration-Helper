@@ -48,7 +48,7 @@ async (req, res) => {
     try {
         const response = await firebase.auth().signInWithEmailAndPassword(user.email, user.password)
         const token = await response.user.getIdToken();
-
+        console.log(token);          
         return res.status(201).json({
             message: 'User logged in',
             token: token

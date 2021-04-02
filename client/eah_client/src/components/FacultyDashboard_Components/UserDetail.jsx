@@ -25,10 +25,7 @@ const UserDetail=({userName,userType,userDepartment, user})=>{
             animateRef.current.classList.add("AnimateMenu")  
     }
 
-    if(user)
-    {
-        console.log(user)
-    }
+    
 
     return(
         <div className="UserDetail">
