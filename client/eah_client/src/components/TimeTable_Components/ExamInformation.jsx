@@ -3,16 +3,13 @@ import Calendar from 'react-calendar';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import './styles/calendar.css';
-
+import axios from 'axios';
 
 
 
 const ExamInfo=({Currentdate,examData,returnDate})=>{
-    var statusFlag=0;
-
     var [CurrentData,setCurrentData]=useState(null);
     var [showConfirmation,setShowConfirmation]=useState(false);
-    var [exchangeStatus,setExchangeStatus]=useState("Request exchange");
     var requestButtonRef = useRef();
 
     useEffect(() => {
@@ -20,7 +17,8 @@ const ExamInfo=({Currentdate,examData,returnDate})=>{
         for(let i=0;i<examData.length;++i)
         {   
             let data=examData[i];
-            if(returnDate(new Date(data.date))==Currentdate){
+            let Datadate=new Date(data.date);
+            if(returnDate(Datadate)==Currentdate){
                 setCurrentData(data);
                 break;
             }
@@ -30,13 +28,46 @@ const ExamInfo=({Currentdate,examData,returnDate})=>{
         }
 
     }, [Currentdate])
+
     
+    var ButtonInnerText="loading";
     var makeRequestPending=(e)=>{
-        setExchangeStatus("Request pending");
-        statusFlag=1;
+        setShowConfirmation(false);
+        let body = {
+            schedule_id: CurrentData.id,
+            status: "pending"
+        }
+        try {
+            const res = axios.post('/schedule/status', body);
+            CurrentData.request_status="pending";
+        } catch (error) {
+            console.log(error);
+        }
+        
         //set flag here
+
     }
-    
+    var returnClassName=()=>{
+        var statusFlag=CurrentData.request_status;
+
+        if(!statusFlag||statusFlag=="none")
+        {
+        
+        ButtonInnerText="Request exchange";
+        return "exchangeRequest";
+        }
+        else if (statusFlag=="pending")
+        {
+        ButtonInnerText="Request pending";
+        return "pendingStatus";
+        }
+        else if (statusFlag=="accepted")
+        {
+        ButtonInnerText="Request approved";
+        return "approvedStatus";
+
+    }
+    }
     return(
         <>
         { CurrentData && 
@@ -65,8 +96,8 @@ const ExamInfo=({Currentdate,examData,returnDate})=>{
                     </div>  
                    
                 </div>
-                <button className={statusFlag==0?"exchangeRequest":statusFlag==1?"pendingStatus":statusFlag==2?"approvedStatus":null} onClick={()=>{setShowConfirmation(true)}} ref={requestButtonRef}>
-                        {exchangeStatus}
+                <button className={returnClassName()} onClick={()=>{setShowConfirmation(true)}} ref={requestButtonRef}>
+                        {ButtonInnerText}
                 </button>
             </div>
         }

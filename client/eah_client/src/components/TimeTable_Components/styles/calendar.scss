@@ -38,18 +38,20 @@
 
 /* ---------- GENERAL ---------- */
 #root{
+    
     width: 100%;
     height: 100%;
+    
 .CalendarPage {
     width: 100%;
-    height: 100%;
+    height: 93vh;
+    overflow-y: hidden;
     @include flexRow();
     justify-content: space-around;
-	background: #f9f9f9;
-	color: #0e171c;
-	font: 300 100%/1.5em 'Lato', sans-serif;
-	margin: 0;
-    min-height: 100vh;
+    background: #f9f9f9;
+    color: #0e171c;
+    font: 300 100%/1.5em 'Lato', sans-serif;
+    margin: 0;
 
 .ActualCalendarcontainer{
     width: 500px;
@@ -449,7 +451,19 @@ table {
     left: 50%;
     background: rgb(233, 233, 0);
     color: #353535;
-    cursor: not-allowed;
+    pointer-events: none;
+  }
+  .approvedStatus{
+    width: 150px;
+    height: 50px;
+    border: none;
+    outline: none;
+    left: 50%;
+    background: green;
+    color: white;
+    pointer-events: none;
+    
+
   }
   
 }
@@ -457,6 +471,8 @@ table {
 {
   width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
   position: absolute;
   background: rgba(29, 29, 29, 0.445);
   z-index: 10;

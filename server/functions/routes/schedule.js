@@ -11,9 +11,35 @@ router.get('/', auth, async (req, res) => {
     try {
         const scheduleRef = db.collection('schedule');
         const snapshot = await scheduleRef.where('userID', '==', req.user.userID).get();
-        // snapshot.forEach(doc => {
-        //     console.log(doc);
-        //   });
+
+        data = snapshot.docs.map(doc => {
+            obj = doc.data()
+            obj.id = doc.id
+            obj.date = obj.date.toDate()
+            return obj
+        })
+
+        res.json({
+            user: {
+                user_name: req.user.user_name,
+                email: req.user.email,
+                userID: req.user.user_id,
+                data:data,
+                length: data.length
+            }
+        })
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send('Error')
+    }
+})
+
+// get all user's schedules where request_status is pending
+router.get('/pending_schedule', async (req, res) => {
+    try {
+        const scheduleRef = db.collection('schedule');
+        const snapshot = await scheduleRef.where('request_status', '==', 'pending').get();
+
         data = snapshot.docs.map(doc => {
             obj = doc.data()
             obj.id = doc.id
@@ -24,13 +50,8 @@ router.get('/', auth, async (req, res) => {
         // console.log(new Date());
 
         res.json({
-            user: {
-                user_name: req.user.user_name,
-                email: req.user.email,
-                userID: req.user.user_id,
                 data:data,
                 length: data.length
-            }
         })
     } catch (error) {
         console.error(error.message);
@@ -73,14 +94,15 @@ router.post('/', auth, async (req, res) => {
 // change status of user's scpecific schedule
 router.post('/status', auth, async (req, res) => {
 
+    console.log(req.body);
     try {
         
         const cityRef = db.collection('schedule').doc(req.body.schedule_id);
         // Set the 'capital' field of the city
-        const res = await cityRef.update({request_status: req.body.status});
+        const result = await cityRef.update({request_status: req.body.status});
 
         res.json({
-            res,
+            result
         })
     } catch (error) {
         console.error(error.message);

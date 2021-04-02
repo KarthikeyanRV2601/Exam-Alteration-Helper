@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {Notification} from './Notification';
 export const NotificationComponent=({NotifcationList})=>{
-    
+
     return(
         <div className="NotificationContainer">
             <div className="Title">

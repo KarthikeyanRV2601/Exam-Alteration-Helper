@@ -4,8 +4,10 @@ import RequestIcon from './media/request.svg';
 import CalendarIcon from './media/calendar.svg';
 import ExchangeIcon from './media/question.svg';
 
-export const MainBanner=({dutyLinks,requestLinks})=>{
-
+export const MainBanner=({dutyLinks,requestLinks,returnDate})=>{
+    dutyLinks.sort(function(a, b) {
+        return new Date(a.date) - new Date(b.date);
+    });
     return(
         <div className="MainBanner">
 
@@ -20,8 +22,8 @@ export const MainBanner=({dutyLinks,requestLinks})=>{
                 </div>
                 <div className="ButtonElement">
                     <img src={CalendarIcon} />
-                    <a href="/schedule">
-                            Exam schedule
+                    <a href="/timetable">
+                            Time table
                     </a>
                 </div>
                 <div className="ButtonElement">
@@ -38,14 +40,19 @@ export const MainBanner=({dutyLinks,requestLinks})=>{
                         <div className="Upcoming Section">
                             <h2>Upcoming duty details</h2>
                             <div className="Links">
-                               {dutyLinks.map(link=>{
+                               {
+                                
+                               dutyLinks.map(link=>{
+                                   let date=new Date(link.date) 
+                                   let DutyText=`Exam scheduled on ${returnDate(date)}  at block ${link.block} , class room ${link.class_room}`
                                     return (
-                                        <Link linkText={link}/>
+                                        
+                                        <Link linkText={DutyText}/>
                                     )
                                 })}
                             </div>
                         </div>
-                        <div className="DeptSec Section">
+                        {/* <div className="DeptSec Section">
                         <h2>Department secretary requests</h2>
                             <div className="Links">
                                 {requestLinks.map(link=>{
@@ -54,7 +61,7 @@ export const MainBanner=({dutyLinks,requestLinks})=>{
                                     )
                                 })}
                             </div>
-                        </div>
+                        </div> */}
                     </div>
             </div>
         </div>

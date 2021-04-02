@@ -5,7 +5,8 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import InformationComponent from '../components/TimeTable_Components/InformationComponent';
 import ExamInfo from '../components/TimeTable_Components/ExamInformation';
-
+import {NavbarComponent} from '../components/Navbar';
+import {ProfileSettings} from '../components/ProfileSettings';
 const TimeTable=()=>{
 
     const [Currentdate,setCurrentdate]=useState(null)
@@ -32,7 +33,6 @@ const TimeTable=()=>{
         {
             try {
                 const data = await axios.get('/schedule')
-                console.log(data.data.user.data)
                 setData(data.data.user.data)
             } catch (error) {
                 console.log(error)
@@ -41,11 +41,14 @@ const TimeTable=()=>{
     }, [])
 
     return(
-        <div className="CalendarPage">
-            <CalendarComponent examData={data} setCurrentdate={setCurrentdate} returnDate={returnDate}/>
-            <ExamInfo examData={data} examData={data} Currentdate={Currentdate} returnDate={returnDate}/>
-            
-        </div>
+        <>
+            <NavbarComponent/>
+            <div className="CalendarPage">
+                {/* <CalendarComponent examData={data} setCurrentdate={setCurrentdate} returnDate={returnDate}/>
+                <ExamInfo examData={data} examData={data} Currentdate={Currentdate} returnDate={returnDate}/> */}
+                <ProfileSettings/>
+            </div>
+        </>
     )
 }
 const mapStateToProps = state => ({

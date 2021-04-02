@@ -11,20 +11,21 @@ const CalendarComponent=({setCurrentdate,examData,returnDate})=>{
         return
     }
     
-    setCurrentdate(returnDate(new Date()))
     var tileClassName=({date})=>{
 
         for(let i=0;i<examData.length;++i)
         {   
             let data=examData[i];
-            if(returnDate(data.date)==returnDate(date))
+            let DataDate=new Date(data.date);
+            if(returnDate(DataDate)==returnDate(date))
             {
                 return "StartDate"
             }
-            else{
-                return " "
-            }
+
         }
+       
+        return ""
+        
     }   
     return(
         <div className="ActualCalendarcontainer">

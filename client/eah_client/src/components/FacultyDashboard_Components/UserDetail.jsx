@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 const UserDetail=({userName,userType,userDepartment, user})=>{
-
+    
     const animateRef = useRef(null);
 
     var signout=(e)=>{
