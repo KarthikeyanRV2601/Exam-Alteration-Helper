@@ -12,7 +12,9 @@ router.get('/', auth, async (req, res) => {
             user: {
                 user_name: req.user.user_name,
                 email: req.user.email,
-                userID: req.user.user_id
+                userID: req.user.user_id,
+                department: req.user.department,
+                posting: req.user.posting
             }
         })
     } catch (error) {

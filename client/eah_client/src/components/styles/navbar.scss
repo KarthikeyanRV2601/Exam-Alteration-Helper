@@ -36,16 +36,18 @@
                 width: 24px;
                 height: 24px;
                 object-fit: contain;
+                cursor: pointer;
             }
 
             a{
                 color: white;
                 text-decoration: none;
                 cursor: pointer;
+                // display: none;
                 } 
         }
     .LeftDiv{
-        width: 40%;
+        width:20%;
         height: 100%;
         @include flexRow();
         justify-content: space-around;
@@ -54,7 +56,7 @@
         
     }
     .RightDiv{
-        width: 20%;
+        width: 10%;
         height: 100%;
         @include flexRow();
         justify-content: space-around;
@@ -78,6 +80,7 @@
         color: white;
         border-bottom: 1px solid #e6e6e6b2;
         cursor: pointer;
+        text-decoration: none;
         &:hover{
             background: white;
             color: #2F89FC;

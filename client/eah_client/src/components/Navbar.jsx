@@ -36,13 +36,13 @@ export const NavbarComponent=()=>{
                 <div className="RightDiv" >
                     <div className="Link">
                         <img src={SignoutIcon}/>
-                        <a onClick={e=>Show_Hide_menu(e)}>Sign out</a> 
+                        <a onClick={e=>Show_Hide_menu(e)}>Profile</a> 
                     </div>
                     
                 </div>
                 <div className="Menu" ref={animateRef}>
                     <div className="Option" id="Signout" onClick={e=>signout(e)}>Sign out</div>
-                    <div className="Option" id="Profilesettings">Profile settings</div>
+                    <a className="Option" id="Profilesettings" href="/profile-settings">Edit profile</a>
                 </div>
 
             </div>

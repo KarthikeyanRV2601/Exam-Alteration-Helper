@@ -7,14 +7,10 @@ firebase.initializeApp(config)
 const cors = require('cors');
 app.use(cors());
 
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-
 app.use('/users', require('./routes/users'));
 app.use('/auth', require('./routes/auth'));
 app.use('/dashboard', require('./routes/dashboard'));
 app.use('/schedule', require('./routes/schedule'));
-
+app.use('/profile', require('./routes/profile'));
 
 exports.api = functions.https.onRequest(app)

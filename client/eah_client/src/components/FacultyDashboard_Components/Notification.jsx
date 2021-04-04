@@ -3,36 +3,36 @@ import WarningIcon from './media/warning.svg';
 import exclamationIcon from './media/exclamation.svg';
 import {PopupContainer} from './PopupContainer';
 
-export const Notification=({notification,Classname,setpopup,date,Examtime,popup})=>{
+export const Notification=({notification,actualNotificationData,Classname,date,Examtime,setPopupData,setpopup})=>{
     var [Bullet,setBullet]=useState(exclamationIcon);
+    const NotifText=useRef(null);
     const TextRef=useRef(null);
-
+    let Id=Classname+date+Examtime;;
     useEffect(() => {
         if(Classname=="Emergency")
         {
             setBullet(WarningIcon);
+            
             TextRef.current.className=Classname;
+            
         }
       }, [TextRef]);
-    
-    
+
     return(
         <>
         <div className="Notification" onClick={e=>
-        {
-            setpopup(true)
-            console.log(popup)
-            
+        {   
+            setPopupData(actualNotificationData);
+            setpopup(true);
         }}>
             <div className="Text" ref={TextRef}>
                     <img className="bullet" src={Bullet} />
-                    <a href="#">{notification}</a>
+                    <a href="#" id={Id} ref={NotifText}>{notification}</a>
             </div>
             <div className="Line">
             </div>
             
         </div>
-        {popup&&<PopupContainer ExamData={notification} date={date} Examtime={Examtime} setpopup={setpopup}/>}
         </>
     )
 }

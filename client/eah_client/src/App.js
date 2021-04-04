@@ -12,7 +12,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 import { loadUser } from './actions/auth'
 import setAuthToken from './utils/setAuthToken'
-
+import ProfileSettings from './Routes/ProfileSettings';
 
 const App=()=>{
 
@@ -36,8 +36,9 @@ const App=()=>{
           <Switch>
             <Route exact path='/login' component={LoginPage} />
             <PrivateRoute exact path='/' component={FacultyDashboard}  />
-            {/* <PrivateRoute exact path='/schedule' component={Temp} /> */}
+            <PrivateRoute exact path='/profile-settings' component={ProfileSettings} />
             <PrivateRoute exact path='/timetable' component={TimeTable} />
+
           </Switch>
         </Router>
       </Provider>

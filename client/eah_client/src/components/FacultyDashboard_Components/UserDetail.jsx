@@ -42,7 +42,7 @@ const UserDetail=({userName,userType,userDepartment, user})=>{
 
            <div className="Menu" ref={animateRef}>
                <div className="Option" id="Signout" onClick={e=>signout(e)}>Sign out</div>
-               <div className="Option" id="Profilesettings">Profile settings</div>
+               <a className="Option" id="Profilesettings" href="/profile-settings"  >Profile settings</a>
            </div>
         </div>
     )

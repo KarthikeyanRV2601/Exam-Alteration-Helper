@@ -3,11 +3,20 @@ import cancelIcon from './media/cancel.svg'
 
 
 
-export const PopupContainer=({ExamData,date,Examtime,setpopup,popup})=>{
+export const PopupContainer=({ExamData,setpopup, returnDate })=>{
+    
+    let date=new Date(ExamData.date);
+    let minutes;
+    if(date.getMinutes()==0)
+    minutes="00"
+    else
+    minutes=date.getMinutes();
+    let Examtime=date.getHours()+":"+minutes;
+    
 
     return(
-        <>
-            {popup&&<div className="PopupInformation">
+            <>
+            <div className="PopupInformation">
                 
                     <div className="InfoContainer">
                     <img className='closeButton' src={cancelIcon} onClick={e=>setpopup(false)}/>
@@ -19,9 +28,10 @@ export const PopupContainer=({ExamData,date,Examtime,setpopup,popup})=>{
                             <label>Exam time:</label>
                             <p>{Examtime}</p>
                         </div>
+                        
                         <div className="Element">
                             <label>Exam date:</label>
-                            <p>{date}</p>
+                            <p>{returnDate(date)}</p>
                         </div><div className="Element">
                             <label>Exam block:</label>
                             <p>{ExamData.block}</p>
@@ -32,8 +42,9 @@ export const PopupContainer=({ExamData,date,Examtime,setpopup,popup})=>{
                             <label>Class room:</label>
                             <p>{ExamData.class_room}</p>
                         </div>
+                        
                     </div>
-            </div>}
-        </>
+            </div>
+            </>
     )
 }

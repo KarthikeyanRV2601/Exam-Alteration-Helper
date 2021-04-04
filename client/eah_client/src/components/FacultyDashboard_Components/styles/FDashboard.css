@@ -222,6 +222,7 @@
   color: white;
   border-bottom: 1px solid #e6e6e6b2;
   cursor: pointer;
+  text-decoration: none;
 }
 
 #root .FacultyDashboard .LeftContainer .UserDetail .Menu .Option:hover {
@@ -335,7 +336,7 @@
 }
 
 #root .FacultyDashboard .LeftContainer .NotificationContainer .Title h1 {
-  width: 40%;
+  width: 60%;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -924,7 +925,6 @@
   width: 32%;
   font-size: 24px;
   color: #808080;
-  margin-left: 5%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -960,6 +960,7 @@
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  padding-left: 10%;
 }
 
 #root .FacultyDashboard .RightContainer .MainBanner .QuickLinks .Sections .Section {
@@ -1091,7 +1092,7 @@
   top: 0;
   left: 0;
   position: absolute;
-  background: rgba(29, 29, 29, 0.445);
+  background: rgba(209, 209, 209, 0.445);
   z-index: 10;
   display: -webkit-box;
   display: -ms-flexbox;

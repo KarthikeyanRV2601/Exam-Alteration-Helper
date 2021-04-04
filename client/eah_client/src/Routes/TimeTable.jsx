@@ -6,7 +6,6 @@ import axios from 'axios';
 import InformationComponent from '../components/TimeTable_Components/InformationComponent';
 import ExamInfo from '../components/TimeTable_Components/ExamInformation';
 import {NavbarComponent} from '../components/Navbar';
-import {ProfileSettings} from '../components/ProfileSettings';
 const TimeTable=()=>{
 
     const [Currentdate,setCurrentdate]=useState(null)
@@ -33,7 +32,9 @@ const TimeTable=()=>{
         {
             try {
                 const data = await axios.get('/schedule')
-                setData(data.data.user.data)
+                setData(data.data.user.data);
+                let delme = await axios.get('/profile');
+                console.log(delme);
             } catch (error) {
                 console.log(error)
             }
@@ -44,9 +45,9 @@ const TimeTable=()=>{
         <>
             <NavbarComponent/>
             <div className="CalendarPage">
-                {/* <CalendarComponent examData={data} setCurrentdate={setCurrentdate} returnDate={returnDate}/>
-                <ExamInfo examData={data} examData={data} Currentdate={Currentdate} returnDate={returnDate}/> */}
-                {true&&<ProfileSettings/>}
+                <CalendarComponent examData={data} setCurrentdate={setCurrentdate} returnDate={returnDate}/>
+                <ExamInfo examData={data} examData={data} Currentdate={Currentdate} returnDate={returnDate}/>
+                {/* {true&&<ProfileSettings/>} */}
             </div>
         </>
     )

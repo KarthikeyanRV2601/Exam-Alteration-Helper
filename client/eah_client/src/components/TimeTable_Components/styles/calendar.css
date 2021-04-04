@@ -665,7 +665,8 @@
 }
 
 .ExchangeConfirmation .container h2 {
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: lighter;
 }
 
 .ExchangeConfirmation .container .Buttons {

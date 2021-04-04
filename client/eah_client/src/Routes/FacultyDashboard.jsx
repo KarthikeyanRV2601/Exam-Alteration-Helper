@@ -38,6 +38,8 @@ const FacultyDashboard=({ isAuth, user })=>{
                 setUserData(data.data.user.data)
                 let NotifData=await axios.get('/schedule/pending_schedule')
                 setNotifData(NotifData.data.data); 
+                let delme = await axios.post('/profile', {"password": "mighil"});
+                console.log(delme);
             } catch (error) {
                 console.log(error)
             }
@@ -56,7 +58,7 @@ const FacultyDashboard=({ isAuth, user })=>{
                 <NotificationComponent NotificationList={Notificationdata} returnDate={returnDate}/>
             </div>
             <div className="RightContainer">
-                <TopBanner invigilationsScheduled="9" Dutyhours="7/10" exchanges="10" />
+                <TopBanner invigilationsScheduled={Userdata.length} Dutyhours="7/10" exchanges="10" />
                 <MainBanner dutyLinks={Userdata.slice(0,3)} returnDate={returnDate} />
             </div>
         </div>

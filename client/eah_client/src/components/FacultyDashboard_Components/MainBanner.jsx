@@ -16,7 +16,7 @@ export const MainBanner=({dutyLinks,requestLinks,returnDate})=>{
                 <div className="ButtonSection">
                 <div className="ButtonElement">
                     <img src={RequestIcon} />
-                    <a href="/exchangeForm">
+                    <a href="/duties-page">
                             Request exchange
                     </a>
                 </div>

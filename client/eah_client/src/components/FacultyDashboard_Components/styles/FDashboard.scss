@@ -141,6 +141,7 @@
                         color: white;
                         border-bottom: 1px solid #e6e6e6b2;
                         cursor: pointer;
+                        text-decoration: none;
                         &:hover{
                             background: white;
                             color: #2F89FC;
@@ -194,7 +195,7 @@
                     padding-left: 10%;
                     justify-content: flex-start;
                     h1{
-                    width:40%;
+                    width:60%;
                     height: 100%;
                     @include flexColumn();
                     font-size: 24px;
@@ -433,7 +434,7 @@
                         width: 32%;
                         font-size: 24px;
                         color: #808080;
-                        margin-left: 5%;
+                        // margin-left: 5%;
                         @include flexRow();
                         justify-content: flex-start;
                         // border-bottom: 2px solid #808080;
@@ -443,7 +444,7 @@
                     height: 80%;
                     @include flexColumn();
                     justify-content: flex-end;
-                    // padding-left: 20%;
+                    padding-left: 10%;
                         .Section
                         {
                             width: 100%;
@@ -515,7 +516,7 @@
     top: 0;
     left: 0;
     position: absolute;
-    background: rgba(29, 29, 29, 0.445);
+    background: rgba(209, 209, 209, 0.445);
     z-index: 10;
     @include flexColumn();
     backdrop-filter: blur(5px);

@@ -13,7 +13,10 @@ const ExamInfo=({Currentdate,examData,returnDate})=>{
     var requestButtonRef = useRef();
 
     useEffect(() => {
-        
+        if(!Currentdate)
+        {
+            Currentdate=returnDate(new Date())
+        }
         for(let i=0;i<examData.length;++i)
         {   
             let data=examData[i];

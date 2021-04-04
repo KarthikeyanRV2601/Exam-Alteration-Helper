@@ -6,6 +6,10 @@ import { login } from '../../actions/auth'
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
+import logo1 from './media/yeah1.svg'
+
+import logo2 from './media/yeah2.svg'
+
 const Form=({ login, user, isAuth })=>{
 
 
@@ -38,8 +42,8 @@ const Form=({ login, user, isAuth })=>{
     return(
             <div className="LeftPanel">
                 <div className="Introtext">
-                    <h2><span>y</span>EAH</h2>
-                    <p>Your exam alteration needs ,fulfilled</p>
+                    <img className="Logo" src={logo2} />
+                    <p>Your exam alteration needs,<br/><span>fulfilled</span></p>
                 </div>
                 <form onSubmit={e => onSubmit(e)} className="LoginForm">
                     <div className="input-field">
@@ -60,7 +64,7 @@ const Form=({ login, user, isAuth })=>{
                             required />
                         <label for="pwd">password</label>
                     </div>
-                    <button className="LoginButton">Submit</button>
+                    <button className="LoginButton">Login</button>
                 </form>
             </div>
     )
