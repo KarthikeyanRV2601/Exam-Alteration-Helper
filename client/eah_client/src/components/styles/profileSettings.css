@@ -15,9 +15,10 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  padding: 10%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   position: relative;
 }
 
@@ -80,51 +81,6 @@
           box-shadow: 0 0 4px rgba(70, 70, 70, 0.274);
 }
 
-.ProfileSettings .ProfileForm .input-field {
-  position: relative;
-  width: 250px;
-  height: 44px;
-  line-height: 44px;
-}
-
-.ProfileSettings .ProfileForm label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  color: #d3d3d3;
-  -webkit-transition: 0.2s all;
-  transition: 0.2s all;
-  cursor: text;
-}
-
-.ProfileSettings .ProfileForm input {
-  width: 100%;
-  border: 0;
-  outline: 0;
-  padding: 0.5rem 0;
-  border-bottom: 2px solid #d3d3d3;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  color: #111;
-}
-
-.ProfileSettings .ProfileForm input:invalid {
-  outline: 0;
-}
-
-.ProfileSettings .ProfileForm input:focus,
-.ProfileSettings .ProfileForm input:valid {
-  border-color: #00dd22;
-}
-
-.ProfileSettings .ProfileForm input:focus ~ label,
-.ProfileSettings .ProfileForm input:valid ~ label {
-  font-size: 14px;
-  top: -24px;
-  color: #00dd22;
-}
-
 .ProfileSettings .ButtonSection {
   width: 300px;
   height: 250px;
@@ -146,36 +102,7 @@
       justify-content: space-around;
 }
 
-.ProfileSettings .ButtonSection button {
-  width: 200px;
-  height: 40px;
-  background: #2F89FC;
-  border: 1px solid white;
-  color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
-  cursor: pointer;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  text-decoration: none;
-  z-index: 5;
-}
-
-.ProfileSettings .ButtonSection button:hover {
-  background: white;
-  border: 1px solid #2F89FC;
-  color: #2F89FC;
-}
-
-.ConfirmationOverlay {
+.ProfileSettings .ConfirmationOverlay {
   width: 100%;
   height: 100%;
   top: 0;
@@ -201,7 +128,7 @@
           backdrop-filter: blur(5px);
 }
 
-.ConfirmationOverlay .container {
+.ProfileSettings .ConfirmationOverlay .container {
   width: 400px;
   height: 400px;
   background: white;
@@ -223,13 +150,14 @@
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  position: relative;
 }
 
-.ConfirmationOverlay .container h2 {
+.ProfileSettings .ConfirmationOverlay .container h2 {
   font-size: 16px;
 }
 
-.ConfirmationOverlay .container .Buttons {
+.ProfileSettings .ConfirmationOverlay .container .Buttons {
   width: 200px;
   height: 120px;
   display: -webkit-box;
@@ -250,7 +178,7 @@
       justify-content: space-around;
 }
 
-.ConfirmationOverlay .container .Buttons button {
+.ProfileSettings .ConfirmationOverlay .container .Buttons button {
   width: 150px;
   height: 50px;
   background: #2F89FC;
@@ -263,9 +191,94 @@
   transition: 0.2s;
 }
 
-.ConfirmationOverlay .container .Buttons button:hover {
+.ProfileSettings .ConfirmationOverlay .container .Buttons button:hover {
   border: 1px solid #2F89FC;
   color: #2F89FC;
   background: white;
+}
+
+.ProfileSettings .input-field {
+  position: relative;
+  width: 250px;
+  height: 44px;
+  line-height: 44px;
+}
+
+.ProfileSettings label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #d3d3d3;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+  cursor: text;
+}
+
+.ProfileSettings input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid #d3d3d3;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #111;
+}
+
+.ProfileSettings input:invalid {
+  outline: 0;
+}
+
+.ProfileSettings input:focus,
+.ProfileSettings input:valid {
+  border-color: #00dd22;
+}
+
+.ProfileSettings input:focus ~ label,
+.ProfileSettings input:valid ~ label {
+  font-size: 14px;
+  top: -24px;
+  color: #00dd22;
+}
+
+.ProfileSettings .closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  cursor: pointer;
+}
+
+.ProfileSettings button {
+  width: 200px;
+  height: 40px;
+  background: #2F89FC;
+  border: 1px solid white;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  text-decoration: none;
+  z-index: 5;
+}
+
+.ProfileSettings button:hover {
+  background: white;
+  border: 1px solid #2F89FC;
+  color: #2F89FC;
 }
 /*# sourceMappingURL=profileSettings.css.map */

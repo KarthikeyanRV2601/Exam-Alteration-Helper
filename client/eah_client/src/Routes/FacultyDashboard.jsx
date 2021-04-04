@@ -1,6 +1,6 @@
 import React, { useState,useEffect} from 'react';
 import UserDetail from '../components/FacultyDashboard_Components/UserDetail';
-import {NotificationComponent} from '../components/FacultyDashboard_Components/NotificationComponent';
+import NotificationComponent from '../components/FacultyDashboard_Components/NotificationComponent';
 import {TopBanner} from '../components/FacultyDashboard_Components/TopBanner';
 import {MainBanner} from '../components/FacultyDashboard_Components/MainBanner';
 import '../components/FacultyDashboard_Components/styles/FDashboard.css';
@@ -53,7 +53,7 @@ const FacultyDashboard=({ isAuth, user })=>{
   
             className="LeftContainer">
                 <UserDetail userType="faculty" userDepartment="Department of computer science" />
-                <NotificationComponent NotifcationList={Notificationdata} returnDate={returnDate}/>
+                <NotificationComponent NotificationList={Notificationdata} returnDate={returnDate}/>
             </div>
             <div className="RightContainer">
                 <TopBanner invigilationsScheduled="9" Dutyhours="7/10" exchanges="10" />

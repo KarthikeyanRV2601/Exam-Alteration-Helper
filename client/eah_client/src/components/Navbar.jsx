@@ -6,6 +6,7 @@ import SignoutIcon from './styles/media/signout.svg';
 
 export const NavbarComponent=()=>{
     const animateRef=useRef(null);
+    
     var signout=(e)=>{
         localStorage.removeItem("token");
         animateRef.current.classList.remove("AnimateMenu");
