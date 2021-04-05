@@ -102,6 +102,7 @@ const ExamInfo=({Currentdate,examData,returnDate})=>{
                 <button className={returnClassName()} onClick={()=>{setShowConfirmation(true)}} ref={requestButtonRef}>
                         {ButtonInnerText}
                 </button>
+                
             </div>
         }
         {
@@ -111,7 +112,7 @@ const ExamInfo=({Currentdate,examData,returnDate})=>{
                 <h2>No exam scheduled on this day</h2>
             </div>
         }
-
+        
         {
             showConfirmation && <div className="ExchangeConfirmation">
             <div className="container">

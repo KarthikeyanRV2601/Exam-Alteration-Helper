@@ -48,7 +48,7 @@
 
 #root .CalendarPage .ActualCalendarcontainer {
   width: 500px;
-  height: 500px;
+  height: 550px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -63,7 +63,42 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   /* ---------- CALENDAR ---------- */
+}
+
+#root .CalendarPage .ActualCalendarcontainer .DownloadButton {
+  width: 150px;
+  height: 50px;
+  background: #2F89FC;
+  color: white;
+  border: none;
+  outline: none;
+  left: 50%;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#root .CalendarPage .ActualCalendarcontainer .DownloadButton:hover {
+  border: 1px solid #2F89FC;
+  color: #2F89FC;
+  background: white;
 }
 
 #root .CalendarPage .ActualCalendarcontainer a {
