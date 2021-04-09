@@ -16,18 +16,18 @@ export const MainBanner=({dutyLinks,requestLinks,returnDate})=>{
                 <div className="ButtonSection">
                 <div className="ButtonElement">
                     <img src={RequestIcon} />
-                    <a href="/duties-page">
+                    <a href="/duties-page" id="dutiespageBtn">
                             Request exchange
                     </a>
                 </div>
                 <div className="ButtonElement">
                     <img src={CalendarIcon} />
-                    <a href="/timetable">
+                    <a href="/timetable" id="timetableBtn">
                             Time table
                     </a>
                 </div>
                 <div className="ButtonElement">
-                    <img src={ExchangeIcon} />
+                    <img src={ExchangeIcon}  id="availablerequestsBtn"/>
                     <a>
                             Available requests
                     </a>

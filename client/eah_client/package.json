@@ -8,6 +8,9 @@
     "aos": "^2.3.4",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
+    "check-prop-types": "^1.1.2",
+    "chromedriver": "^89.0.0",
+    "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-bootstrap": "^1.5.1",
     "react-calendar": "^3.3.1",
@@ -21,6 +24,7 @@
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.3.0",
+    "selenium-webdriver": "^4.0.0-beta.2",
     "web-vitals": "^1.1.0"
   },
   "scripts": {

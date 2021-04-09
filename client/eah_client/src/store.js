@@ -6,7 +6,7 @@ import setAuthToken from './utils/setAuthToken';
 
 const initialState = {};
 
-const middleware = [thunk];
+export const middleware = [thunk];
 
 const store = createStore(
     rootReducer, 

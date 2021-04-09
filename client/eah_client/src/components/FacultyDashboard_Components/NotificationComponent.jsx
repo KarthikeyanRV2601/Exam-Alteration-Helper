@@ -16,7 +16,7 @@ const NotificationComponent=({NotificationList,returnDate, user})=>{
     NotificationList=NotificationList.filter((item)=>{
         let date=new Date(item.date);
         
-        return ((item.name !== user.user_name)&&(!dateInPast(date)))
+        return ((item.name !== "karthi")&&(!dateInPast(date)))
     })
     NotificationList.sort(function(a, b) {
         return new Date(a.date) - new Date(b.date);

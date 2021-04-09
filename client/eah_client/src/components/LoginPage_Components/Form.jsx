@@ -13,6 +13,7 @@ import logo2 from './media/yeah2.svg'
 const Form=({ login, user, isAuth })=>{
 
 
+    
     const [ formData , setFormData ] = useState({
         "email": "",
         "password": "",
@@ -28,7 +29,7 @@ const Form=({ login, user, isAuth })=>{
     }
     if (isAuth) 
     {
-        return <Redirect to='/' />
+        return <Redirect to='/faculty-dashboard' data-test="redirect"/>
         
     }
 
@@ -40,9 +41,9 @@ const Form=({ login, user, isAuth })=>{
     }
 
     return(
-            <div className="LeftPanel">
+            <div className="LeftPanel" data-test="LeftPanel">
                 <div className="Introtext">
-                    <img className="Logo" src={logo2} />
+                    <img className="Logo" src={logo2} data-test="logo" />
                     <p>Your exam alteration needs,<br/><span>fulfilled</span></p>
                 </div>
                 <form onSubmit={e => onSubmit(e)} className="LoginForm">
@@ -64,7 +65,7 @@ const Form=({ login, user, isAuth })=>{
                             required />
                         <label for="pwd">password</label>
                     </div>
-                    <button className="LoginButton">Login</button>
+                    <button className="LoginButton" data-test="LoginButton">Login</button>
                 </form>
             </div>
     )

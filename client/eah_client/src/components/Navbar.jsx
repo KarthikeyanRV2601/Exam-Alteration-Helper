@@ -18,14 +18,14 @@ export const NavbarComponent=()=>{
         else
             animateRef.current.classList.add("AnimateMenu")  
     }
-
+    
     return(
         <header className="navBar">
             <div className="wrapNavBar">
                 <div className="LeftDiv">
                     <div className="Link">
                         <img src={DashboardIcon}/>
-                    <a href="/">Dashboard</a>
+                    <a href="/faculty-dashboard">Dashboard</a>
                     </div>
                     <div className="Link">
                         <img src={CalendarIcon}/>

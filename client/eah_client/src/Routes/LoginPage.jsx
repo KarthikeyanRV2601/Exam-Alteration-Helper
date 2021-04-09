@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import IllustrationContainer from '../components/LoginPage_Components/Illustration';
-import Form from '../components/LoginPage_Components/Form';
+import IllustrationContainer from '../components/LoginPage_Components/illustration';
+import Form from '../components/LoginPage_Components/form';
 import '../components/LoginPage_Components/styles/Login.css';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
