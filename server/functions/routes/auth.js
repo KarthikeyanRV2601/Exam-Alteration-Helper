@@ -6,6 +6,7 @@ const config = require('../utils/config')
 const auth = require('../middleware/auth');
 const firebase = require('firebase');
 
+
 router.get('/', auth, async (req, res) => {
     try {
         res.json({
