@@ -1,9 +1,7 @@
 import React, { useState }  from 'react';
-import Calendar from 'react-calendar';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import './styles/calendar.css';
-import back from './media/icons/back.svg';
+// import back from './media/icons/back.svg';
 
 
 
@@ -13,11 +11,11 @@ const InformationComponent=()=>{
       {
         Name:"exam1",
         Description:"this is a exam1"
-    }
+        }
     
     ]
 
-    const [ExamNumber,setExamNumber]=useState(0);
+    // const [ExamNumber,setExamNumber]=useState(0);
 
     return(
         <div className="InformationContainer" >

@@ -1,4 +1,3 @@
-const {Builder,By,Key,util,JavascriptExecutor}=require("selenium-webdriver")
 require("chromedriver");
 const signin= require('../Login/signin');
 async function openTimetable(){
@@ -7,6 +6,6 @@ async function openTimetable(){
         await driver.executeScript("document.querySelector('#timetableBtn').click();");
     }, 5000);
 
-    
+    return driver
 }
-openTimetable()
+module.exports=openTimetable;

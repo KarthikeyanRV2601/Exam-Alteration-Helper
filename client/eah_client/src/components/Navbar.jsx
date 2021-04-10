@@ -25,7 +25,7 @@ export const NavbarComponent=()=>{
                 <div className="LeftDiv">
                     <div className="Link">
                         <img src={DashboardIcon}/>
-                    <a href="/faculty-dashboard">Dashboard</a>
+                    <a href="/">Dashboard</a>
                     </div>
                     <div className="Link">
                         <img src={CalendarIcon}/>
@@ -36,7 +36,7 @@ export const NavbarComponent=()=>{
                 <div className="RightDiv" >
                     <div className="Link">
                         <img src={SignoutIcon}/>
-                        <a onClick={e=>Show_Hide_menu(e)}>Profile</a> 
+                        <a onClick={e=>Show_Hide_menu(e)} id="profileIcon">Profile</a> 
                     </div>
                     
                 </div>

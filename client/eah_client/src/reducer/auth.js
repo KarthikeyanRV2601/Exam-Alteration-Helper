@@ -28,7 +28,7 @@ export default function(state = initialState, action ) {
             }
 
         case USER_LOADED:
-            console.log(payload)
+            // console.log(payload)
             return {
                 ...state,
                 isAuth: true,

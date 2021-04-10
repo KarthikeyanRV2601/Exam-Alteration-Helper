@@ -32,7 +32,7 @@ const NotificationComponent=({NotificationList,returnDate, user})=>{
                 <div id="NotificationCount" src="">{NotificationList.length}</div>
             </div>
            <div className="NotificationSection">
-                {NotificationList.map(notification=>{
+                {NotificationList.map((notification,Id)=>{
 
                    
                     let date=new Date(notification.date);
@@ -55,7 +55,7 @@ const NotificationComponent=({NotificationList,returnDate, user})=>{
   
                     return (
                         <>
-                        <Notification notification={NotifText} actualNotificationData={notification} Classname={Classname} setpopup={setpopup} date={returnDate(date)} Examtime={Examtime+"hr"} popup={popup} setPopupData={setPopupData}/>
+                        <Notification notification={NotifText} Id={Id} actualNotificationData={notification} Classname={Classname} setpopup={setpopup} date={returnDate(date)} Examtime={Examtime+"hr"} popup={popup} setPopupData={setPopupData}/>
                         </>
                     )
                         

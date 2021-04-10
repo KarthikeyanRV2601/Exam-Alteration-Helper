@@ -1,9 +1,7 @@
 import React, { useEffect } from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route,Redirect } from 'react-router-dom';
 import {LoginPage} from './Routes/LoginPage';
 // import {ExamSchedule} from './Routes/ExamSchedule';
-import Temp from './Routes/temp';
 import FacultyDashboard from './Routes/FacultyDashboard';
 import PrivateRoute from './components/routing/PrivateRoute'
 import { LOGOUT } from './actions/types';
@@ -35,7 +33,7 @@ const App=()=>{
         <Router>
           <Switch>
             <Route exact path='/login' component={LoginPage} />
-            <PrivateRoute exact path='/faculty-dashboard' component={FacultyDashboard}  />
+            <PrivateRoute exact path='/' component={FacultyDashboard}  />
             <PrivateRoute exact path='/profile-settings' component={ProfileSettings} />
             <PrivateRoute exact path='/timetable' component={TimeTable} />
 

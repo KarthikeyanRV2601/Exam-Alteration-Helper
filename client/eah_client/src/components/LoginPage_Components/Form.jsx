@@ -29,7 +29,7 @@ const Form=({ login, user, isAuth })=>{
     }
     if (isAuth) 
     {
-        return <Redirect to='/faculty-dashboard' data-test="redirect"/>
+        return <Redirect to='/' data-test="redirect"/>
         
     }
 

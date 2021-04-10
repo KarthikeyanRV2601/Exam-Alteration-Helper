@@ -1,4 +1,4 @@
-const {Builder,By,Key,util,JavascriptExecutor}=require("selenium-webdriver")
+const {Builder,By,Key}=require("selenium-webdriver")
 require("chromedriver");
 
 async function signin (){
@@ -9,4 +9,5 @@ async function signin (){
     await driver.executeScript("document.querySelector('.LoginButton').click()");
     return driver
 }
+
 module.exports=signin

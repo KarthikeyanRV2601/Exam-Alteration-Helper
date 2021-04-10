@@ -8,6 +8,7 @@ async function openProfliesettings(){
         await driver.executeScript("document.querySelector('#Profilesettings').click();");
     }, 5000);
 
-    
+    return driver
 }
-openProfliesettings()
+
+module.exports=openProfliesettings;
