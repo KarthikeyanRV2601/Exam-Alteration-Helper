@@ -31,9 +31,9 @@ describe("Login", function(){
                     // console.log(res.body)
                     // done(err)
                     
-                    res.should.have.status(201);
-                    chai.expect(res.body).to.contain.property('token')
-                    chai.expect(res.body).to.contain.property('message')
+                res.should.have.status(201);
+                chai.expect(res.body).to.contain.property('token')
+                chai.expect(res.body).to.contain.property('message')
 
             });
                 
@@ -51,7 +51,7 @@ describe("Login", function(){
         chai.request(path)
             .post('/login')
             .set('content-type', 'application/x-www-form-urlencoded')
-            .send({"email": "mighil@gmail.com","password": "miighil"})
+            .send({"email": "mighil@gmail.com","password": "abcdefghijk"})
             .end(function (err, res) {
 
                     // console.log(res)
@@ -64,12 +64,44 @@ describe("Login", function(){
         done()
     })
 
+    it("Should not login a user as email is invalid", async (done) => {
+        
+        // const result = await axios.post('http://localhost:5000/vathiraid-6beca/us-central1/api/auth/login', body)
+        // console.log(result)
+        chai.request(path)
+            .post('/login')
+            .set('content-type', 'application/x-www-form-urlencoded')
+            .send({"email": "mighilgmail.com","password": "mighil"})
+            .end(function (err, res) {
+
+                    // console.log(res)
+                    // done(err)
+                    res.should.have.status(400);
+                    chai.expect(res.body).to.contain.property('email')
+                    chai.expect(res.body.email).to.equal('Email is not valid')
+            });
+                
+        done();
+    })
+
+    it("Should not login if password less than 6 characters", async (done) => {
+
+        chai.request(path)
+            .post('/login')
+            .set('content-type', 'application/x-www-form-urlencoded')
+            .send({"email": "mighil@gmail.com","password": "mig"})
+            .end(function (err, res) {
+
+                    res.should.have.status(400);
+                    chai.expect(res.body).to.contain.property('password')
+                    chai.expect(res.body.password).to.equal('Passwords need to have a minimum of 6 characters')
+            });
+                
+        done()
+    })
+
     it("Should not login a user as wrong email is entered", async (done) => {
         
-        let body = {
-            "email": "mighil@gmail.com",
-            "password": "mighil"
-        }
         // const result = await axios.post('http://localhost:5000/vathiraid-6beca/us-central1/api/auth/login', body)
         // console.log(result)
         chai.request(path)
@@ -102,8 +134,9 @@ describe("User details", function(){
             const result = await axios.post('http://localhost:5000/vathiraid-6beca/us-central1/api/auth/login', body);
             token = result.data.token;
         } catch (error) {
-            console.log("axios post request failed  ")
+            console.log("axios post request failed ")
         }
+        
         
     })
         

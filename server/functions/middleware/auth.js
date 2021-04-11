@@ -11,7 +11,7 @@ module.exports = async function(req, res, next) {
     try {
         const decodedToken = await admin.auth().verifyIdToken(token);
         req.user = decodedToken;
-        console.log("Decoded token" + decodedToken)
+        // console.log("Decoded token" + decodedToken)
         userData = await db.collection('users').where('userID', '==', req.user.uid).limit(1).get()
         req.user.user_name = userData.docs[0].data().user_name;
         req.user.userID = userData.docs[0].id;
