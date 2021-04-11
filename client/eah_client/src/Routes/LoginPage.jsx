@@ -5,10 +5,11 @@ import '../components/LoginPage_Components/styles/Login.css';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-
+import videosrc from '../components/LoginPage_Components/media/bgv.mp4';
 
 export const LoginPage=({ isAuth })=>{
 
+    var [showForm,setshowForm]=useState(false)
     if (isAuth) 
     {
         return <Redirect to='/' />
@@ -16,8 +17,29 @@ export const LoginPage=({ isAuth })=>{
 
     return(
         <div className="LoginPage">
-            <Form/>
-            <IllustrationContainer/>
+            {!showForm&&
+            <>
+                <video id="videoBkg" preload autoPlay muted loop>
+                <source src={videosrc} type="video/mp4"/>
+                </video>
+
+                <div class="hero-section">
+                <h1>Your</h1>
+                <h1>Exam</h1>
+                <h1>Alteration</h1>
+                <h1>Helper</h1>
+                {/* <p>Need we say more? <br/>Login to<strong>YEAH</strong>and make your life easy.</p> */}
+
+                <button onClick={e=>setshowForm(true)}>Get started</button>
+                </div>
+            </>
+                }
+
+            {showForm&&<div className="Container">
+                <Form/>
+                <IllustrationContainer/>
+            </div>}
+            
         </div>
     )
 }

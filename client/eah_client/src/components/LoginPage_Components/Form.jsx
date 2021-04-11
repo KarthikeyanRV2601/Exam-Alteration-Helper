@@ -8,7 +8,7 @@ import { Redirect } from 'react-router-dom';
 
 import logo1 from './media/yeah1.svg'
 
-import logo2 from './media/yeah2.svg'
+import logo2 from './media/logoYeah.png'
 
 const Form=({ login, user, isAuth })=>{
 
@@ -44,7 +44,7 @@ const Form=({ login, user, isAuth })=>{
             <div className="LeftPanel" data-test="LeftPanel">
                 <div className="Introtext">
                     <img className="Logo" src={logo2} data-test="logo" />
-                    <p>Your exam alteration needs,<br/><span>fulfilled</span></p>
+                    <p><span>Your exam alteration </span> needs,<br/>fulfilled</p>
                 </div>
                 <form onSubmit={e => onSubmit(e)} className="LoginForm">
                     <div className="input-field">
