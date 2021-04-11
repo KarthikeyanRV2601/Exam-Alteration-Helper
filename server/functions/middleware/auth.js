@@ -23,7 +23,7 @@ module.exports = async function(req, res, next) {
         next()
     } catch (error) {
         console.error(error)
-        return res.status(400).json(err)
+        return res.status(400).json({ error: 'Incorrect token'})
     }
     
 }
