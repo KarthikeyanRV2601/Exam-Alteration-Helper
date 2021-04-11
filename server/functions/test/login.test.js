@@ -1,3 +1,4 @@
+
 const chai = require("chai")
 const axios = require("axios")
 let chaiHttp = require('chai-http');
@@ -8,38 +9,13 @@ let should = chai.should();
 let path = 'http://localhost:5000/vathiraid-6beca/us-central1/api/auth/'
 
 
-let token;
 
 describe("Login", function(){
-    this.timeout(20000);
-
-    before(async (done) => {
-        let body = {
-            "email": "mighil@gmail.com",
-            "password": "mighil"
-        }
-
-        const result = await axios.post('http://localhost:5000/vathiraid-6beca/us-central1/api/auth/login', body)
-        token = result.body.token
-        console.log(token)
-        done()  
-
-        // chai.request(path)
-        //     .post('/login')
-        //     .set('content-type', 'application/x-www-form-urlencoded')
-        //     .send({"email": "mighil@gmail.com","password": "mighil"})
-        //     .end(function (err, res) {
-
-        //             // console.log(res.body)
-        //             // done(err)
-        //             token = res.body.token
-        //             // console.log(token)
-        //     });
-    })
+    
 
     it("Should login a user", (done) => {
         
-        console.log(token)
+        // console.log(token)
         let body = {
             "email": "mighil@gmail.com",
             "password": "mighil"
@@ -114,44 +90,65 @@ describe("Login", function(){
 
 })
 
-// describe("User details", function(){
+describe("User details", function(){
 
-//     it("Get user details", async (done) => {
+    this.timeout(20000)
+    let token;
+    beforeEach(async function() {
 
-//         let token;
-//         before(async (done) => {
-//             let body = {
-//                 "email": "mighil@gmail.com",
-//                 "password": "mighil"
-//             }
-
-//             const result = await axios.post('http://localhost:5000/vathiraid-6beca/us-central1/api/auth/login', body)
-//             token = result.body.token
-//             console.log(token)
+        let body = { "email": "mighil@gmail.com","password":"mighil" }
+        try {
             
-//         })
+            const result = await axios.post('http://localhost:5000/vathiraid-6beca/us-central1/api/auth/login', body);
+            token = result.data.token;
+        } catch (error) {
+            console.log("axios post request failed  ")
+        }
         
-//         // const result = await axios.post('http://localhost:5000/vathiraid-6beca/us-central1/api/auth/login', body)
-//         // console.log(result)
-//         // chai.request(path)
-//         //     .post('/login')
-//         //     .set('content-type', 'application/x-www-form-urlencoded')
-//         //     .send({"email": "mighil@gmail.com","password": "mighil"})
-//         //     .end(function (err, res) {
+    })
+        
+    it("Should get back user details of the given token", async (done) => {
 
-//         //             // console.log(res.body)
-//         //             // done(err) 
-//         //         res.should.have.status(201);
-//         //         chai.expect(res.body).to.contain.property('token')
-//         //         chai.expect(res.body).to.contain.property('message')
-
-//         //     });
+        chai.request(path)
+            .get('/')
+            .set('auth-token', token)
+            .end(function (err, res) {
+                chai.expect(res.body.user).to.contain.property('email')
+                chai.expect(res.body.user.email).to.equal('mighil@gmail.com')
+                chai.expect(res.body.user).to.contain.property('department')
+                chai.expect(res.body.user.department).to.equal('ECE')
+                chai.expect(res.body.user).to.contain.property('user_name')
+                chai.expect(res.body.user.user_name).to.equal('mighil')
+            });
                 
-//         // done()
-//     })
+        done()
+    })
 
+    it("Should give error since no token is supplied", async (done) => {
+        chai.request(path)
+            .get('/')
+            .end(function (err, res) {
+                res.should.have.status(403);
+            });
+                
+        done()
+    })
 
-// })
+    it("Should give error since provided is incorrect", async (done) => {
+        chai.request(path)
+            .get('/')
+            .set('auth-token', "qwerty")
+            .end(function (err, res) {
+                res.should.have.status(400);
+                chai.expect(res.body).to.contain.property('error')
+                chai.expect(res.body.error).to.equal('Incorrect token')
+            });
+                
+        done()
+    })
+                
+
+})
 
 // describe("Schedule", function(){
 
