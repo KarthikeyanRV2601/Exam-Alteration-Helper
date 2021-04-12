@@ -449,4 +449,22 @@
   top: -24px;
   color: #00dd22;
 }
+
+#root .LoginPage .Container .LeftPanel .LoginForm .Error {
+  border-bottom: 2px solid red;
+  color: red;
+  -webkit-animation: vibrate 0.5s ease-in forwards;
+          animation: vibrate 0.5s ease-in forwards;
+}
+
+#root .LoginPage .Container .LeftPanel .LoginForm .Error:focus, #root .LoginPage .Container .LeftPanel .LoginForm .Error:valid {
+  border-color: red;
+}
+
+#root .LoginPage .Container .LeftPanel .LoginForm .Error:focus ~ label,
+#root .LoginPage .Container .LeftPanel .LoginForm .Error:valid ~ label {
+  font-size: 14px;
+  top: -24px;
+  color: red;
+}
 /*# sourceMappingURL=Login.css.map */

@@ -10,7 +10,7 @@ import logo1 from './media/yeah1.svg'
 
 import logo2 from './media/logoYeah.png'
 
-const Form=({ login, user, isAuth })=>{
+const Form=({ login, user, isAuth,classname })=>{
 
 
     
@@ -36,7 +36,11 @@ const Form=({ login, user, isAuth })=>{
     const onSubmit = async e => {
         e.preventDefault();
         // login("mighil@gmail.com","mighil")
-        return login(email, password);
+        if(await login(email, password))
+        return
+        else
+        // "please enter valid credentials"
+        return 
         
     }
 
@@ -53,16 +57,17 @@ const Form=({ login, user, isAuth })=>{
                         id="email"
                         name="email"
                         onChange={e => onChange(e)}
-                        required />
+                        required className={classname}/>
                     <label for="email">email</label>
                     </div>
-                    <div className="input-field">
+                    <div className="input-field ">
                         <input 
+                            
                             type="password" 
                             id="pwd"
                             name="password" 
                             onChange={e => onChange(e)}
-                            required />
+                            required className={classname}/>
                         <label for="pwd">password</label>
                     </div>
                     <button className="LoginButton" data-test="LoginButton">Login</button>

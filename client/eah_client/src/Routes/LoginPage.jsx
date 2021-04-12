@@ -8,11 +8,16 @@ import { Redirect } from 'react-router-dom';
 import videosrc from '../components/LoginPage_Components/media/bgv.mp4';
 
 export const LoginPage=({ isAuth })=>{
-
     var [showForm,setshowForm]=useState(false)
+    var [classname,setclassname]=useState("")
     if (isAuth) 
     {
+        
         return <Redirect to='/' />
+    }
+    else{
+        // setclassname("Error")
+        console.log("failed")
     }
 
     return(
@@ -36,7 +41,7 @@ export const LoginPage=({ isAuth })=>{
                 }
 
             {showForm&&<div className="Container">
-                <Form/>
+                <Form classname={classname}/>
                 <IllustrationContainer/>
             </div>}
             

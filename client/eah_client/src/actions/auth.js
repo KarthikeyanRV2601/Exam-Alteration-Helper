@@ -15,9 +15,11 @@ export const loadUser = () => async dispatch => {
             payload: res.data
         });
     } catch (err) {
+
         dispatch({
             type: AUTH_ERROR,
         });
+        
     }
 }
 
@@ -33,11 +35,12 @@ export const login = (email, password) => async dispatch => {
       });
       
       dispatch(loadUser());
-      return "Login Success";
+      return true;
 
     } catch (err) {
-      const errors = err.response.data.errors;
-      return "Login failed";
+    //   const errors = err.response.data.errors;
+    //  console.log("failed")   
+      return false;
       
     }
 };
