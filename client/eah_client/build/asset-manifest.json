@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/static/css/main.44445c65.chunk.css",
+    "main.js": "/static/js/main.48bb5ff0.chunk.js",
+    "main.js.map": "/static/js/main.48bb5ff0.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.9df9aa5b.js",
+    "runtime-main.js.map": "/static/js/runtime-main.9df9aa5b.js.map",
+    "static/css/2.7fc9bc2b.chunk.css": "/static/css/2.7fc9bc2b.chunk.css",
+    "static/js/2.22ae4d9c.chunk.js": "/static/js/2.22ae4d9c.chunk.js",
+    "static/js/2.22ae4d9c.chunk.js.map": "/static/js/2.22ae4d9c.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.7fc9bc2b.chunk.css.map": "/static/css/2.7fc9bc2b.chunk.css.map",
+    "static/css/main.44445c65.chunk.css.map": "/static/css/main.44445c65.chunk.css.map",
+    "static/js/2.22ae4d9c.chunk.js.LICENSE.txt": "/static/js/2.22ae4d9c.chunk.js.LICENSE.txt",
+    "static/media/bgv.25a5b21d.mp4": "/static/media/bgv.25a5b21d.mp4",
+    "static/media/calendar.0b264fda.svg": "/static/media/calendar.0b264fda.svg",
+    "static/media/calendar.b79a46de.svg": "/static/media/calendar.b79a46de.svg",
+    "static/media/cancel.9895197a.svg": "/static/media/cancel.9895197a.svg",
+    "static/media/clock.b589b153.svg": "/static/media/clock.b589b153.svg",
+    "static/media/dashboard.09f8d9bf.svg": "/static/media/dashboard.09f8d9bf.svg",
+    "static/media/exclamation.175963bb.svg": "/static/media/exclamation.175963bb.svg",
+    "static/media/illustro.7d04ce13.svg": "/static/media/illustro.7d04ce13.svg",
+    "static/media/logoYeah.ee0bef39.png": "/static/media/logoYeah.ee0bef39.png",
+    "static/media/man.4b684e29.svg": "/static/media/man.4b684e29.svg",
+    "static/media/profile.92ece6fa.svg": "/static/media/profile.92ece6fa.svg",
+    "static/media/question.ab482b54.svg": "/static/media/question.ab482b54.svg",
+    "static/media/request.987b5a2b.svg": "/static/media/request.987b5a2b.svg",
+    "static/media/settings.4b9f8c3e.svg": "/static/media/settings.4b9f8c3e.svg",
+    "static/media/signout.e6967d50.svg": "/static/media/signout.e6967d50.svg",
+    "static/media/warning.fb997e48.svg": "/static/media/warning.fb997e48.svg",
+    "static/media/yeah1.b803adde.svg": "/static/media/yeah1.b803adde.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9df9aa5b.js",
+    "static/css/2.7fc9bc2b.chunk.css",
+    "static/js/2.22ae4d9c.chunk.js",
+    "static/css/main.44445c65.chunk.css",
+    "static/js/main.48bb5ff0.chunk.js"
+  ]
+}

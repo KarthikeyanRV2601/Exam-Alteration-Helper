@@ -8,7 +8,7 @@ import { Redirect } from 'react-router-dom';
 import videosrc from '../components/LoginPage_Components/media/bgv.mp4';
 
 export const LoginPage=({ isAuth })=>{
-    var [showForm,setshowForm]=useState(false)
+    var [showForm,setshowForm]=useState(true)
     var [classname,setclassname]=useState("")
     if (isAuth) 
     {
@@ -35,7 +35,7 @@ export const LoginPage=({ isAuth })=>{
                 <h1>Helper</h1>
                 {/* <p>Need we say more? <br/>Login to<strong>YEAH</strong>and make your life easy.</p> */}
 
-                <button onClick={e=>setshowForm(true)}>Get started</button>
+                <button id="getStartedbtn" Click={e=>setshowForm(true)}>Get started</button>
                 </div>
             </>
                 }

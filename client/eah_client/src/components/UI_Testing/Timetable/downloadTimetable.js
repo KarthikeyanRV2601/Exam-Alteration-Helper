@@ -6,7 +6,7 @@ async function downloadTimetable(){
     setTimeout(async() => {
         await driver.executeScript("document.querySelector('.DownloadButton').click();");
     }, 5000);
-
+    
     
 }
 downloadTimetable()

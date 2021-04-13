@@ -3,7 +3,7 @@ const chai = require("chai")
 const axios = require("axios")
 let chaiHttp = require('chai-http');
 chai.use(chaiHttp);
-
+let should = chai.should();
 let path = 'http://localhost:5000/vathiraid-6beca/us-central1/api/schedule'
 
 describe("Schedule test", function() {
@@ -44,14 +44,13 @@ describe("Schedule test", function() {
                     res.should.have.status(400);
                     chai.expect(res.body).to.contain.property('block')
                     chai.expect(res.body.block).to.equal('block is not valid')
-     
                 });
                     
             done()
         })
 
         it("Should return error if class room no is not valid", async (done) => {
-            
+        
             let body = {
                 "block": "AB-203",
                 "class_room": "x",
@@ -219,7 +218,6 @@ describe("Schedule test", function() {
 
     describe("All schedule", () => {
         
-<<<<<<< Updated upstream
     
         it("Should return schedule of current user", async (done) => {
     
@@ -260,25 +258,6 @@ describe("Schedule test", function() {
                     
             done()
         })
-=======
-        let body = {
-            "email": "mighil@gmail.com",
-            "password": "mighil"
-        }
-        // const result = await axios.post('http://localhost:5000/vathiraid-6beca/us-central1/api/auth/login', body)
-        // console.log(result)
-        chai.request(path)
-            .post('/login')
-            .set('content-type', 'application/x-www-form-urlencoded')
-            .send({"email": "miighil@gmail.com","password": "miighil"})
-            .end(function (err, res) {
-                res.should.have.status(500);
-                chai.expect(res.body).to.contain.property('error')
-                chai.expect(res.body.error).to.equal('auth/user-not-found')
-            });
-                
-        done()
->>>>>>> Stashed changes
     })
 
     describe("Pending schedules", () => {

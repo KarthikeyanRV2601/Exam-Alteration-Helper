@@ -15,22 +15,15 @@ describe("Login", function(){
 
     it("Should login a user", (done) => {
         
-        // console.log(token)
         let body = {
             "email": "mighil@gmail.com",
             "password": "mighil"
         }
-        // const result = await axios.post('http://localhost:5000/vathiraid-6beca/us-central1/api/auth/login', body)
-        // console.log(result)
         chai.request(path)
             .post('/login')
             .set('content-type', 'application/x-www-form-urlencoded')
             .send({"email": "mighil@gmail.com","password": "mighil"})
             .end(function (err, res) {
-
-                    // console.log(res.body)
-                    // done(err)
-                    
                 res.should.have.status(201);
                 chai.expect(res.body).to.contain.property('token')
                 chai.expect(res.body).to.contain.property('message')
@@ -46,16 +39,11 @@ describe("Login", function(){
             "email": "mighil@gmail.com",
             "password": "mighil"
         }
-        // const result = await axios.post('http://localhost:5000/vathiraid-6beca/us-central1/api/auth/login', body)
-        // console.log(result)
         chai.request(path)
             .post('/login')
             .set('content-type', 'application/x-www-form-urlencoded')
             .send({"email": "mighil@gmail.com","password": "abcdefghijk"})
             .end(function (err, res) {
-
-                    // console.log(res)
-                    // done(err)
                     res.should.have.status(403);
                     chai.expect(res.body).to.contain.property('general')
                     chai.expect(res.body.general).to.equal('The password is incorrect.')
@@ -65,17 +53,13 @@ describe("Login", function(){
     })
 
     it("Should not login a user as email is invalid", async (done) => {
-        
-        // const result = await axios.post('http://localhost:5000/vathiraid-6beca/us-central1/api/auth/login', body)
-        // console.log(result)
+
         chai.request(path)
             .post('/login')
             .set('content-type', 'application/x-www-form-urlencoded')
             .send({"email": "mighilgmail.com","password": "mighil"})
             .end(function (err, res) {
 
-                    // console.log(res)
-                    // done(err)
                     res.should.have.status(400);
                     chai.expect(res.body).to.contain.property('email')
                     chai.expect(res.body.email).to.equal('Email is not valid')
@@ -102,16 +86,11 @@ describe("Login", function(){
 
     it("Should not login a user as wrong email is entered", async (done) => {
         
-        // const result = await axios.post('http://localhost:5000/vathiraid-6beca/us-central1/api/auth/login', body)
-        // console.log(result)
         chai.request(path)
             .post('/login')
             .set('content-type', 'application/x-www-form-urlencoded')
             .send({"email": "miighil@gmail.com","password": "miighil"})
             .end(function (err, res) {
-
-                    // console.log(res)
-                    // done(err)
                 res.should.have.status(500);
                 chai.expect(res.body).to.contain.property('error')
                 chai.expect(res.body.error).to.equal('auth/user-not-found')
