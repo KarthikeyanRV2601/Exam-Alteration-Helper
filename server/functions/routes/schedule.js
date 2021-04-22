@@ -10,7 +10,8 @@ const firebase = require('firebase');
 router.get('/', auth, async (req, res) => {
     try {
         const scheduleRef = db.collection('schedule');
-        const snapshot = await scheduleRef.where('userID', '==', req.user.userID).get();
+        // console.log(req.user)
+        const snapshot = await scheduleRef.where('userID', '==', req.user.uid).get();
 
         data = snapshot.docs.map(doc => {
             obj = doc.data()

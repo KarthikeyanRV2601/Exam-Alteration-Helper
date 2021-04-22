@@ -5,6 +5,7 @@ import CalendarIcon from './media/calendar.svg';
 import ExchangeIcon from './media/question.svg';
 
 export const MainBanner=({dutyLinks,requestLinks,returnDate})=>{
+    // console.log(dutyLinks);
     dutyLinks.sort(function(a, b) {
         return new Date(a.date) - new Date(b.date);
     });

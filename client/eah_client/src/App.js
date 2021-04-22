@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route,Redirect } from 'react-router-dom';
 import {LoginPage} from './Routes/LoginPage';
-// import {ExamSchedule} from './Routes/ExamSchedule';
+import ExamSchedule from './Routes/ExamSchedule';
 import FacultyDashboard from './Routes/FacultyDashboard';
 import PrivateRoute from './components/routing/PrivateRoute'
 import { LOGOUT } from './actions/types';
@@ -11,7 +11,7 @@ import store from './store';
 import { loadUser } from './actions/auth'
 import setAuthToken from './utils/setAuthToken'
 import ProfileSettings from './Routes/ProfileSettings';
-
+import {ExcelRenderer} from './Routes/tempSchedule';
 const App=()=>{
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const App=()=>{
             <PrivateRoute exact path='/' component={FacultyDashboard}  />
             <PrivateRoute exact path='/profile-settings' component={ProfileSettings} />
             <PrivateRoute exact path='/timetable' component={TimeTable} />
-
+            <PrivateRoute exact path='/exam-schedule' component={ExcelRenderer} />
           </Switch>
         </Router>
       </Provider>

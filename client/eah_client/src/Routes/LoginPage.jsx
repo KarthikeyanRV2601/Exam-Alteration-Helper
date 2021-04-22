@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import IllustrationContainer from '../components/LoginPage_Components/illustration';
-import Form from '../components/LoginPage_Components/form';
+import IllustrationContainer from '../components/LoginPage_Components/Illustration';
+import Form from '../components/LoginPage_Components/Form';
 import '../components/LoginPage_Components/styles/Login.css';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -8,11 +8,10 @@ import { Redirect } from 'react-router-dom';
 import videosrc from '../components/LoginPage_Components/media/bgv.mp4';
 
 export const LoginPage=({ isAuth })=>{
-    var [showForm,setshowForm]=useState(true)
+    var [showForm,setshowForm]=useState(false)
     var [classname,setclassname]=useState("")
     if (isAuth) 
     {
-        
         return <Redirect to='/' />
     }
     else{
@@ -34,8 +33,8 @@ export const LoginPage=({ isAuth })=>{
                 <h1>Alteration</h1>
                 <h1>Helper</h1>
                 {/* <p>Need we say more? <br/>Login to<strong>YEAH</strong>and make your life easy.</p> */}
-
-                <button id="getStartedbtn" Click={e=>setshowForm(true)}>Get started</button>
+                
+                <button id="getStartedbtn" onClick={e=>setshowForm(true)}>Get started</button>
                 </div>
             </>
                 }

@@ -14,6 +14,7 @@ import { connect } from 'react-redux';
 const FacultyDashboard=({ isAuth, user })=>{
     const [ Userdata, setUserData] = useState([])
     const [ Notificationdata, setNotifData] = useState([])
+    console.log(Userdata);
     var returnDate=(e)=>{
         var dd=e.getDate();
         var mm=e.getMonth()+1;
@@ -38,8 +39,7 @@ const FacultyDashboard=({ isAuth, user })=>{
                 setUserData(data.data.user.data)
                 let NotifData=await axios.get('/schedule/pending_schedule')
                 setNotifData(NotifData.data.data); 
-                let delme = await axios.post('/profile', {"password": "mighil"});
-                console.log(delme);
+
             } catch (error) {
                 console.log(error)
             }
