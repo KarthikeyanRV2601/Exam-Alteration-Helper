@@ -481,8 +481,14 @@ table {
     left: 50%;
     background: green;
     color: white;
-    pointer-events: none;
-    
+    cursor: pointer;
+    transition: 0.2s;
+    &:hover{
+      border: 1px solid green;
+      color: green;
+      background: white;
+
+    }
 
   }
   

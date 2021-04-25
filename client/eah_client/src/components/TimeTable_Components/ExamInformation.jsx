@@ -64,9 +64,9 @@ const ExamInfo=({Currentdate,examData,returnDate})=>{
         ButtonInnerText="Request pending";
         return "pendingStatus";
         }
-        else if (statusFlag=="accepted")
+        else if (statusFlag=="alloted")
         {
-        ButtonInnerText="Request approved";
+        ButtonInnerText="Request exchange";
         return "approvedStatus";
 
     }

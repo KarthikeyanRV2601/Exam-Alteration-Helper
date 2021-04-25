@@ -26,8 +26,6 @@ const ProfileSettingsComponent=({user})=>{
         UpdatedData.posting=FormData.current[2].value;
         UpdatedData.department=FormData.current[3].value;
         let User_given_password=passwordConfirm.current.value;
-        console.log(User_given_password);
-        //api post request here for userdata 
         setpopup(false);
     }
 

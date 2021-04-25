@@ -29,7 +29,7 @@
           flex-direction: column;
 }
 
-#root .FacultyDashboard {
+#root .SupervisorDashboard {
   width: 100%;
   height: 100vh;
   display: -webkit-box;
@@ -53,17 +53,17 @@
   overflow: hidden;
 }
 
-#root .FacultyDashboard .BlueBanner {
+#root .SupervisorDashboard .BlueBanner {
   position: absolute;
   top: 0;
   left: 0;
-  background: #2F89FC;
+  background: #ff9000;
   width: 100%;
   height: 19vh;
   z-index: 1;
 }
 
-#root .FacultyDashboard .LeftContainer {
+#root .SupervisorDashboard .LeftContainer {
   z-index: 10;
   width: 30%;
   height: 90%;
@@ -86,7 +86,7 @@
           justify-content: space-between;
 }
 
-#root .FacultyDashboard .LeftContainer .UserDetail {
+#root .SupervisorDashboard .LeftContainer .UserDetail {
   width: 100%;
   height: 30%;
   border-radius: 10px;
@@ -113,14 +113,14 @@
           animation: animateUser 0.6s forwards;
 }
 
-#root .FacultyDashboard .LeftContainer .UserDetail .ProfileDp {
+#root .SupervisorDashboard .LeftContainer .UserDetail .ProfileDp {
   width: 120px;
   height: 120px;
   background: #f5f5f5;
   border-radius: 50%;
 }
 
-#root .FacultyDashboard .LeftContainer .UserDetail .Details {
+#root .SupervisorDashboard .LeftContainer .UserDetail .Details {
   width: 50%;
   height: 40%;
   display: -webkit-box;
@@ -145,24 +145,24 @@
   position: relative;
 }
 
-#root .FacultyDashboard .LeftContainer .UserDetail .Details h2 {
+#root .SupervisorDashboard .LeftContainer .UserDetail .Details h2 {
   font-size: 18px;
 }
 
-#root .FacultyDashboard .LeftContainer .UserDetail .Details .Label {
+#root .SupervisorDashboard .LeftContainer .UserDetail .Details .Label {
   width: 70px;
   height: 20px;
   background: #eeeeee;
-  color: #2F89FC;
+  color: #ff9000;
   border-radius: 6px;
 }
 
-#root .FacultyDashboard .LeftContainer .UserDetail .Details p {
+#root .SupervisorDashboard .LeftContainer .UserDetail .Details p {
   font-size: 12px;
   color: #8B8B8B;
 }
 
-#root .FacultyDashboard .LeftContainer .UserDetail #SettingsIcon {
+#root .SupervisorDashboard .LeftContainer .UserDetail #SettingsIcon {
   width: 24px;
   height: 24px;
   position: absolute;
@@ -173,16 +173,16 @@
   transition: 0.2s;
 }
 
-#root .FacultyDashboard .LeftContainer .UserDetail #SettingsIcon:hover {
+#root .SupervisorDashboard .LeftContainer .UserDetail #SettingsIcon:hover {
   -webkit-transform: rotate(30deg);
           transform: rotate(30deg);
 }
 
-#root .FacultyDashboard .LeftContainer .UserDetail .Menu {
+#root .SupervisorDashboard .LeftContainer .UserDetail .Menu {
   width: 200px;
   height: 150px;
   position: absolute;
-  background: #2F89FC;
+  background: #ff9000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -202,7 +202,7 @@
   display: none;
 }
 
-#root .FacultyDashboard .LeftContainer .UserDetail .Menu .Option {
+#root .SupervisorDashboard .LeftContainer .UserDetail .Menu .Option {
   width: 90%;
   height: 30px;
   display: -webkit-box;
@@ -225,12 +225,12 @@
   text-decoration: none;
 }
 
-#root .FacultyDashboard .LeftContainer .UserDetail .Menu .Option:hover {
+#root .SupervisorDashboard .LeftContainer .UserDetail .Menu .Option:hover {
   background: white;
-  color: #2F89FC;
+  color: #ff9000;
 }
 
-#root .FacultyDashboard .LeftContainer .UserDetail .AnimateMenu {
+#root .SupervisorDashboard .LeftContainer .UserDetail .AnimateMenu {
   -webkit-animation: 0.2s animate ease-in-out forwards;
           animation: 0.2s animate ease-in-out forwards;
   display: inherit;
@@ -280,7 +280,7 @@
   }
 }
 
-#root .FacultyDashboard .LeftContainer .NotificationContainer {
+#root .SupervisorDashboard .LeftContainer .NotificationContainer {
   width: 100%;
   height: 65%;
   border-radius: 10px;
@@ -316,7 +316,7 @@
           animation-delay: 0.3s;
 }
 
-#root .FacultyDashboard .LeftContainer .NotificationContainer .Title {
+#root .SupervisorDashboard .LeftContainer .NotificationContainer .Title {
   width: 100%;
   height: 10%;
   display: -webkit-box;
@@ -335,8 +335,8 @@
           justify-content: flex-start;
 }
 
-#root .FacultyDashboard .LeftContainer .NotificationContainer .Title h1 {
-  width: 60%;
+#root .SupervisorDashboard .LeftContainer .NotificationContainer .Title h1 {
+  width: 80%;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -359,7 +359,7 @@
   color: #808080;
 }
 
-#root .FacultyDashboard .LeftContainer .NotificationContainer .Title #NotificationCount {
+#root .SupervisorDashboard .LeftContainer .NotificationContainer .Title #NotificationCount {
   width: 20px;
   height: 20px;
   background: #37DA0E;
@@ -382,7 +382,7 @@
           flex-direction: column;
 }
 
-#root .FacultyDashboard .LeftContainer .NotificationContainer .NotificationSection {
+#root .SupervisorDashboard .LeftContainer .NotificationContainer .NotificationSection {
   width: 100%;
   min-height: 70%;
   max-height: 70%;
@@ -406,7 +406,7 @@
   overflow-y: scroll;
 }
 
-#root .FacultyDashboard .LeftContainer .NotificationContainer .NotificationSection .Notification {
+#root .SupervisorDashboard .LeftContainer .NotificationContainer .NotificationSection .Notification {
   width: 90%;
   min-height: 50px;
   display: -webkit-box;
@@ -427,7 +427,7 @@
       justify-content: space-around;
 }
 
-#root .FacultyDashboard .LeftContainer .NotificationContainer .NotificationSection .Notification .Text {
+#root .SupervisorDashboard .LeftContainer .NotificationContainer .NotificationSection .Notification .Text {
   width: 100%;
   height: 70%;
   display: -webkit-box;
@@ -444,12 +444,12 @@
       justify-content: space-around;
 }
 
-#root .FacultyDashboard .LeftContainer .NotificationContainer .NotificationSection .Notification .Text .bullet {
+#root .SupervisorDashboard .LeftContainer .NotificationContainer .NotificationSection .Notification .Text .bullet {
   width: 14px;
   height: 14px;
 }
 
-#root .FacultyDashboard .LeftContainer .NotificationContainer .NotificationSection .Notification .Text a {
+#root .SupervisorDashboard .LeftContainer .NotificationContainer .NotificationSection .Notification .Text a {
   width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -471,7 +471,7 @@
   text-align: left;
 }
 
-#root .FacultyDashboard .LeftContainer .NotificationContainer .NotificationSection .Notification .Emergency {
+#root .SupervisorDashboard .LeftContainer .NotificationContainer .NotificationSection .Notification .Emergency {
   width: 100%;
   height: 70%;
   display: -webkit-box;
@@ -488,12 +488,12 @@
       justify-content: space-around;
 }
 
-#root .FacultyDashboard .LeftContainer .NotificationContainer .NotificationSection .Notification .Emergency .bullet {
+#root .SupervisorDashboard .LeftContainer .NotificationContainer .NotificationSection .Notification .Emergency .bullet {
   width: 14px;
   height: 14px;
 }
 
-#root .FacultyDashboard .LeftContainer .NotificationContainer .NotificationSection .Notification .Emergency a {
+#root .SupervisorDashboard .LeftContainer .NotificationContainer .NotificationSection .Notification .Emergency a {
   width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -515,7 +515,7 @@
   text-align: left;
 }
 
-#root .FacultyDashboard .LeftContainer .NotificationContainer .NotificationSection .Notification .Line {
+#root .SupervisorDashboard .LeftContainer .NotificationContainer .NotificationSection .Notification .Line {
   width: 100%;
   border-top: 1px solid rgba(165, 165, 165, 0.57);
 }
@@ -544,7 +544,7 @@
   }
 }
 
-#root .FacultyDashboard .RightContainer {
+#root .SupervisorDashboard .RightContainer {
   z-index: 10;
   width: 60%;
   height: 90%;
@@ -567,7 +567,7 @@
           justify-content: space-between;
 }
 
-#root .FacultyDashboard .RightContainer .TopBanner {
+#root .SupervisorDashboard .RightContainer .TopBanner {
   width: 100%;
   height: 40%;
   border-radius: 10px;
@@ -599,7 +599,7 @@
           animation: animateTop 0.6s forwards;
 }
 
-#root .FacultyDashboard .RightContainer .TopBanner h1 {
+#root .SupervisorDashboard .RightContainer .TopBanner h1 {
   margin-top: 2%;
   width: 18%;
   height: 30px;
@@ -620,7 +620,7 @@
           justify-content: flex-start;
 }
 
-#root .FacultyDashboard .RightContainer .TopBanner .Details {
+#root .SupervisorDashboard .RightContainer .TopBanner .Details {
   width: 80%;
   height: 95%;
   display: -webkit-box;
@@ -637,7 +637,7 @@
       justify-content: space-around;
 }
 
-#root .FacultyDashboard .RightContainer .TopBanner .Details .Detail {
+#root .SupervisorDashboard .RightContainer .TopBanner .Details .Detail {
   width: 30%;
   height: 50%;
   display: -webkit-box;
@@ -658,8 +658,8 @@
       justify-content: space-around;
 }
 
-#root .FacultyDashboard .RightContainer .TopBanner .Details .Detail .Value {
-  color: #2F89FC;
+#root .SupervisorDashboard .RightContainer .TopBanner .Details .Detail .Value {
+  color: #ff9000;
   font-size: 40px;
   height: 50px;
   width: 100px;
@@ -679,17 +679,17 @@
           flex-direction: column;
 }
 
-#root .FacultyDashboard .RightContainer .TopBanner .Details .Detail .Label {
+#root .SupervisorDashboard .RightContainer .TopBanner .Details .Detail .Label {
   color: #3D3D3D;
   font-size: 14px;
 }
 
-#root .FacultyDashboard .RightContainer .TopBanner .Details .Detail .MidDetail {
+#root .SupervisorDashboard .RightContainer .TopBanner .Details .Detail .MidDetail {
   width: 100px;
   height: 50px;
   font-size: 40px;
   color: white;
-  background: #2F89FC;
+  background: #ff9000;
   border-radius: 10px;
 }
 
@@ -717,7 +717,7 @@
   }
 }
 
-#root .FacultyDashboard .RightContainer .MainBanner {
+#root .SupervisorDashboard .RightContainer .MainBanner {
   width: 100%;
   height: 55%;
   border-radius: 10px;
@@ -771,7 +771,7 @@
   }
 }
 
-#root .FacultyDashboard .RightContainer .MainBanner .Details {
+#root .SupervisorDashboard .RightContainer .MainBanner .Details {
   width: 50%;
   height: 100%;
   display: -webkit-box;
@@ -793,7 +793,7 @@
           align-items: flex-start;
 }
 
-#root .FacultyDashboard .RightContainer .MainBanner .Details h1 {
+#root .SupervisorDashboard .RightContainer .MainBanner .Details h1 {
   margin-left: 10%;
   width: 18%;
   height: 30px;
@@ -814,7 +814,7 @@
           justify-content: flex-start;
 }
 
-#root .FacultyDashboard .RightContainer .MainBanner .Details .ButtonSection {
+#root .SupervisorDashboard .RightContainer .MainBanner .Details .ButtonSection {
   width: 100%;
   height: 80%;
   display: -webkit-box;
@@ -835,7 +835,7 @@
       justify-content: space-around;
 }
 
-#root .FacultyDashboard .RightContainer .MainBanner .Details .ButtonSection .ButtonElement {
+#root .SupervisorDashboard .RightContainer .MainBanner .Details .ButtonSection .ButtonElement {
   width: 60%;
   height: 60px;
   display: -webkit-box;
@@ -852,17 +852,17 @@
       justify-content: space-around;
 }
 
-#root .FacultyDashboard .RightContainer .MainBanner .Details .ButtonSection .ButtonElement img {
+#root .SupervisorDashboard .RightContainer .MainBanner .Details .ButtonSection .ButtonElement img {
   width: 35px;
   height: 35px;
   -o-object-fit: contain;
      object-fit: contain;
 }
 
-#root .FacultyDashboard .RightContainer .MainBanner .Details .ButtonSection .ButtonElement a {
+#root .SupervisorDashboard .RightContainer .MainBanner .Details .ButtonSection .ButtonElement a {
   width: 200px;
   height: 60px;
-  background: #2F89FC;
+  background: #ff9000;
   border: 1px solid white;
   color: white;
   display: -webkit-box;
@@ -884,13 +884,13 @@
   outline: none;
 }
 
-#root .FacultyDashboard .RightContainer .MainBanner .Details .ButtonSection .ButtonElement a:hover {
+#root .SupervisorDashboard .RightContainer .MainBanner .Details .ButtonSection .ButtonElement a:hover {
   background: white;
-  border: 1px solid #2F89FC;
-  color: #2F89FC;
+  border: 1px solid #ff9000;
+  color: #ff9000;
 }
 
-#root .FacultyDashboard .RightContainer .MainBanner .QuickLinks {
+#root .SupervisorDashboard .RightContainer .MainBanner .QuickLinks {
   width: 50%;
   height: 100%;
   display: -webkit-box;
@@ -921,7 +921,7 @@
   opacity: 0;
 }
 
-#root .FacultyDashboard .RightContainer .MainBanner .QuickLinks h1 {
+#root .SupervisorDashboard .RightContainer .MainBanner .QuickLinks h1 {
   width: 32%;
   font-size: 24px;
   color: #808080;
@@ -940,7 +940,7 @@
           justify-content: flex-start;
 }
 
-#root .FacultyDashboard .RightContainer .MainBanner .QuickLinks .Sections {
+#root .SupervisorDashboard .RightContainer .MainBanner .QuickLinks .Sections {
   width: 100%;
   height: 80%;
   display: -webkit-box;
@@ -963,7 +963,7 @@
   padding-left: 10%;
 }
 
-#root .FacultyDashboard .RightContainer .MainBanner .QuickLinks .Sections .Section {
+#root .SupervisorDashboard .RightContainer .MainBanner .QuickLinks .Sections .Section {
   width: 100%;
   height: 80%;
   display: -webkit-box;
@@ -984,7 +984,7 @@
       justify-content: space-around;
 }
 
-#root .FacultyDashboard .RightContainer .MainBanner .QuickLinks .Sections .Section h2 {
+#root .SupervisorDashboard .RightContainer .MainBanner .QuickLinks .Sections .Section h2 {
   width: 100%;
   height: 10%;
   display: -webkit-box;
@@ -1003,7 +1003,7 @@
           justify-content: flex-start;
 }
 
-#root .FacultyDashboard .RightContainer .MainBanner .QuickLinks .Sections .Section .Links {
+#root .SupervisorDashboard .RightContainer .MainBanner .QuickLinks .Sections .QuickButtons {
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -1024,9 +1024,9 @@
       justify-content: space-around;
 }
 
-#root .FacultyDashboard .RightContainer .MainBanner .QuickLinks .Sections .Section .Links .Link {
+#root .SupervisorDashboard .RightContainer .MainBanner .QuickLinks .Sections .QuickButtons .ButtonElement {
   width: 100%;
-  height: 50px;
+  height: 150px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1037,29 +1037,41 @@
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  gap: 2%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
-#root .FacultyDashboard .RightContainer .MainBanner .QuickLinks .Sections .Section .Links .Link img {
-  width: 15px;
-  height: 15px;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-}
-
-#root .FacultyDashboard .RightContainer .MainBanner .QuickLinks .Sections .Section .Links .Link a {
-  width: 90%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  text-align: left;
-  color: #808080;
+#root .SupervisorDashboard .RightContainer .MainBanner .QuickLinks .Sections .QuickButtons .ButtonElement a {
+  width: 200px;
+  height: 60px;
+  background: #ff9000;
+  border: 1px solid white;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
   text-decoration: none;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
+  border-radius: 30px;
+  z-index: 5;
+  height: 120px;
+  width: 80%;
+  outline: none;
+}
+
+#root .SupervisorDashboard .RightContainer .MainBanner .QuickLinks .Sections .QuickButtons .ButtonElement a:hover {
+  background: white;
+  border: 1px solid #ff9000;
+  color: #ff9000;
 }
 
 @-webkit-keyframes animateLinks {
@@ -1086,7 +1098,7 @@
   }
 }
 
-#root .FacultyDashboard .PopupInformation {
+#root .SupervisorDashboard .PopupInformation {
   width: 100%;
   height: 100%;
   top: 0;
@@ -1108,12 +1120,11 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background: rgba(94, 94, 94, 0.356);
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
 }
 
-#root .FacultyDashboard .PopupInformation .InfoContainer {
+#root .SupervisorDashboard .PopupInformation .InfoContainer {
   width: 400px;
   height: 400px;
   background: rgba(255, 255, 255, 0.945);
@@ -1137,12 +1148,12 @@
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  position: relative;
   -webkit-box-shadow: 0px 2px 5px 2px rgba(148, 148, 148, 0.16);
           box-shadow: 0px 2px 5px 2px rgba(148, 148, 148, 0.16);
-  position: relative;
 }
 
-#root .FacultyDashboard .PopupInformation .InfoContainer .closeButton {
+#root .SupervisorDashboard .PopupInformation .InfoContainer .closeButton {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -1153,11 +1164,11 @@
   cursor: pointer;
 }
 
-#root .FacultyDashboard .PopupInformation .InfoContainer h2 {
+#root .SupervisorDashboard .PopupInformation .InfoContainer h2 {
   font-size: 16px;
 }
 
-#root .FacultyDashboard .PopupInformation .InfoContainer .Element {
+#root .SupervisorDashboard .PopupInformation .InfoContainer .Element {
   width: 100%;
   height: 40px;
   display: -webkit-box;
@@ -1172,43 +1183,11 @@
   text-align: center;
 }
 
-#root .FacultyDashboard .PopupInformation .InfoContainer .Element label {
+#root .SupervisorDashboard .PopupInformation .InfoContainer .Element label {
   width: 30%;
 }
 
-#root .FacultyDashboard .PopupInformation .InfoContainer .Element p {
+#root .SupervisorDashboard .PopupInformation .InfoContainer .Element p {
   width: 60%;
 }
-
-#root .FacultyDashboard .PopupInformation .InfoContainer button {
-  width: 200px;
-  height: 60px;
-  background: #2F89FC;
-  border: 1px solid white;
-  color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
-  cursor: pointer;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  text-decoration: none;
-  border-radius: 30px;
-  z-index: 5;
-  width: 120px;
-  height: 40px;
-}
-
-#root .FacultyDashboard .PopupInformation .InfoContainer button:hover {
-  background: white;
-  border: 1px solid #2F89FC;
-  color: #2F89FC;
-}
-/*# sourceMappingURL=FDashboard.css.map */
+/*# sourceMappingURL=SDashboard.css.map */

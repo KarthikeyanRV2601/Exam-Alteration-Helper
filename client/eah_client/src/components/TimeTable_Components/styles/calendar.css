@@ -646,7 +646,15 @@
   left: 50%;
   background: green;
   color: white;
-  pointer-events: none;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.ExamInfo .approvedStatus:hover {
+  border: 1px solid green;
+  color: green;
+  background: white;
 }
 
 .ExchangeConfirmation {

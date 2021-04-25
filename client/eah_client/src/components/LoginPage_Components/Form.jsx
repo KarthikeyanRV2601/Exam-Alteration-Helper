@@ -27,8 +27,9 @@ const Form=({ login, user, isAuth,classname })=>{
             [e.target.name]: e.target.value
         })
     }
-    if (isAuth) 
+    if (isAuth && user) 
     {
+        
         return <Redirect to='/' data-test="redirect"/>
         
     }

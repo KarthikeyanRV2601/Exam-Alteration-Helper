@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import videosrc from '../components/LoginPage_Components/media/bgv.mp4';
 
-export const LoginPage=({ isAuth })=>{
+export const LoginPage=({ isAuth, user })=>{
     var [showForm,setshowForm]=useState(false)
     var [classname,setclassname]=useState("")
     if (isAuth) 
@@ -15,7 +15,6 @@ export const LoginPage=({ isAuth })=>{
         return <Redirect to='/' />
     }
     else{
-        // setclassname("Error")
         console.log("failed")
     }
 

@@ -2,12 +2,50 @@ import React, { useState ,useEffect} from "react";
 import Spreadsheet from "react-spreadsheet";
 import CSVReader from 'react-csv-reader'
 import Matrix from "react-spreadsheet";
+import '../components/ExamSchedule_Components/styles/style.css';
+import {NavbarComponent} from '../components/NavbarSupervisor';
+import axios from 'axios';
 export const ExcelRenderer = () =>{
     const [FinalData,setFinalData]=useState([]);
-    var [Data,setData]=useState([]);
-        useEffect(() => {
-            console.log(Data)
-        }, [Data])
+    const [userIDMap,setUserIdMap]=useState({});
+    useEffect(async () => {
+        let res=await axios.get('/schedule/get_id');
+        setUserIdMap(res.data.data);
+    }, [])
+    var GetData=async ()=>{
+
+            let trs=document.querySelectorAll("tr");
+            let data=[]
+            let dataStructure={
+                0: "exam_name",
+                1: "date",
+                2: "duration",
+                3: "class_room",
+                4: "block",
+                5: "user_name"
+            }
+            for (let i=2;i < trs.length;++i)
+                {
+                let trCells=trs[i].children;
+                let tempDict={}
+                for (let j=1;j < trCells.length;++j)
+                {
+                    tempDict[dataStructure[j-1]]=trCells[j].innerText
+                }
+                if(tempDict.user_name in userIDMap)
+                {
+                    tempDict["userID"]=userIDMap[tempDict.user_name];
+                    tempDict["date"]=new Date(tempDict["date"])
+                    data.push(tempDict)
+                }
+                
+            }
+            let res=await axios.post('/schedule/list',data);
+            // console.log(data);
+
+            return data
+            //api post data 
+        }
       const RangeEdit = ({ cell, onChange }) => (
         
         <input
@@ -46,19 +84,37 @@ export const ExcelRenderer = () =>{
               tempData.push(DataRow)
           })
           setFinalData(tempData)
-          setData(tempData)
       }
     return(
         <>
-            <CSVReader
-                cssClass="csv-reader-input"
-                label="Select CSV with secret Death Star statistics"
-                onFileLoaded={data=>onFileLoaded(data)}
-                // onError={this.handleDarkSideForce}
-                inputId="ObiWan"
-                inputStyle={{color: 'red'}}
-            />
-            {FinalData.length>0 && <Spreadsheet data={FinalData}/>}
+                <NavbarComponent/>
+               
+                <div className="Examschedule_Page">
+                    <h2 className="Title">
+                            Schedule exams here
+                    </h2>
+                    <CSVReader
+                        cssClass="csv-reader-input"
+                        label="Upload timetable csv file"
+                        onFileLoaded={data=>onFileLoaded(data)}
+                        // onError={this.handleDarkSideForce}
+                        inputId="ObiWan"
+                        inputStyle={{
+                            
+                            
+                        }}
+                    />
+                    
+                    {FinalData.length>0 && 
+                    <>
+                        <div className="SpreadSheetWrap">
+                            <Spreadsheet data={FinalData}/>
+                        </div>
+                        
+                        <button onClick={e=>GetData()} className="updateButton">Update exam schedule</button>
+                    </>
+                        }
+                </div>
         </>
     )
 }

@@ -4,4 +4,93 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+
+.Title {
+  width: 100%;
+  font-size: 24px;
+  color: #353535;
+}
+
+.Examschedule_Page {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 5%;
+  padding-bottom: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 5%;
+}
+
+.Examschedule_Page .Title {
+  width: 100%;
+  font-size: 24px;
+  color: #353535;
+  min-height: 10%;
+}
+
+.Examschedule_Page .csv-reader-input {
+  width: 80%;
+  min-height: 300px;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-shadow: 0px 2px 5px 2px rgba(148, 148, 148, 0.16);
+          box-shadow: 0px 2px 5px 2px rgba(148, 148, 148, 0.16);
+  color: white;
+}
+
+.Examschedule_Page .csv-reader-input #ObiWan {
+  width: 92px;
+  height: 50px;
+  color: white;
+}
+
+.Examschedule_Page .updateButton {
+  width: 200px;
+  min-height: 50px;
+  background: #ff9000;
+  color: white;
+  border: 1px solid white;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.Examschedule_Page .updateButton:hover {
+  cursor: pointer;
+  background: white;
+  color: #ff9000;
+  border: 1px solid #ff9000;
+}
+
+.Examschedule_Page .SpreadSheetWrap {
+  width: 100%;
+  margin-top: 5%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
 /*# sourceMappingURL=style.css.map */

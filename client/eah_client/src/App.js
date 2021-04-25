@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route,Redirect } from 'react-router-dom';
 import {LoginPage} from './Routes/LoginPage';
 import ExamSchedule from './Routes/ExamSchedule';
-import FacultyDashboard from './Routes/FacultyDashboard';
+// import FacultyDashboard from './Routes/FacultyDashboard';
+// import SupervisorDashboard from './Routes/secretaryDashboard';
 import PrivateRoute from './components/routing/PrivateRoute'
 import { LOGOUT } from './actions/types';
 import TimeTable from './Routes/TimeTable';
@@ -12,8 +13,8 @@ import { loadUser } from './actions/auth'
 import setAuthToken from './utils/setAuthToken'
 import ProfileSettings from './Routes/ProfileSettings';
 import {ExcelRenderer} from './Routes/tempSchedule';
+import Dashboard from './Routes/Dashboard';
 const App=()=>{
-
   useEffect(() => {
     // check for token in LS
     if (localStorage.token) {
@@ -33,10 +34,12 @@ const App=()=>{
         <Router>
           <Switch>
             <Route exact path='/login' component={LoginPage} />
-            <PrivateRoute exact path='/' component={FacultyDashboard}  />
+            <PrivateRoute exact path='/' component={Dashboard}/>
+            {/* <PrivateRoute exact path='/faculty' component={FacultyDashboard}  /> */}
             <PrivateRoute exact path='/profile-settings' component={ProfileSettings} />
             <PrivateRoute exact path='/timetable' component={TimeTable} />
             <PrivateRoute exact path='/exam-schedule' component={ExcelRenderer} />
+            {/* <PrivateRoute exact path='/supervisor' component={SupervisorDashboard} /> */}
           </Switch>
         </Router>
       </Provider>
@@ -45,4 +48,4 @@ const App=()=>{
   )
 }
 
-export default App;
+export default App

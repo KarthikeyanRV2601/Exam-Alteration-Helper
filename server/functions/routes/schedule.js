@@ -42,22 +42,110 @@ router.get('/pending_schedule', async (req, res) => {
         const snapshot = await scheduleRef.where('request_status', '==', 'pending').get();
 
         data = snapshot.docs.map(doc => {
+            
             obj = doc.data()
+            
             obj.id = doc.id
             obj.date = obj.date.toDate()
+            // console.log(obj);
+            // const Ref = db.collection('users');
+            // // console.log(obj.userID)
+            // const snapshot = await Ref.where('userID', '==', obj.userID).get();
+            // snapshot.forEach(doc => {
+            //     console.log(doc.data().user_name)
+            //     obj.user_name = doc.data().user_name
+            //   })
+            //   console.log(obj.user_name)
             return obj
         })
-        // console.log(data[0].date.toDate());
+
+        console.log(data);
         // console.log(new Date());
 
         res.json({
-                data:data,
+                data,
                 length: data.length
         })
     } catch (error) {
         console.error(error.message);
         res.status(500).send('Error')
     }
+})
+
+// change ownership of exam duty
+router.post('/alter', auth, async (req, res) => {
+    try {
+
+        const ref = db.collection('schedule').doc(req.body.schedule_id);
+        const result = await ref.update({userID: req.user.uid, request_status: "alloted"});
+        // console.log(data[0].date.toDate());
+        // console.log(new Date());
+
+        res.status(200).json({
+                "result" : "success"
+        })
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send('Error')
+    }
+})
+
+// get user name and ids
+router.get('/get_id', async (req, res) => {
+    try {
+        const userRef = db.collection('users');
+        const snapshot = await userRef.where('posting', '==', 'faculty').get();
+
+        if (snapshot.empty) {
+            console.log('No matching documents.');
+            res.status(200).json({
+                "result" : "failure"
+            })
+        }  
+        let data = {}
+        snapshot.forEach(doc => {
+            console.log(doc.id, '=>', doc.data());
+            data[doc.data().user_name] = doc.data().userID;
+          });
+
+        res.status(200).json({
+                "result" : "success",
+                data
+        })
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send('Error')
+    }
+})
+
+// Add 
+router.post('/list', async (req, res) => {
+
+    try {
+        const scheduleRef = db.collection('schedule');
+        req.body.forEach(async function (item) {
+            // console.log("pee date",firebase.firestore.Timestamp.fromDate(new Date(item.date)))
+            let new_date = firebase.firestore.Timestamp.fromDate(new Date(item.date));
+            // console.log("pee date",new_date)
+            const res = await db.collection('schedule').add({
+                block: item.block,
+                class_room: item.class_room,
+                date: new Date(item.date),
+                duration: item.duration,
+                exam_name: item.exam_name,
+                reqest_status: "none",
+                userID: item.userID,
+            });
+        });
+
+        res.json({
+            "a":"b"
+        })
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send('Error')   
+    }
+
 })
 
 // Add new exam to logged in user's exhedule

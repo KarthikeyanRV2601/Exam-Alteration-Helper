@@ -1,0 +1,172 @@
+.navBarSupervisor {
+  width: 100%;
+  min-height: 7vh;
+  background: #ff9000;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+}
+
+.navBarSupervisor .wrapNavBar {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.navBarSupervisor .wrapNavBar .Link {
+  width: 120px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.navBarSupervisor .wrapNavBar .Link img {
+  width: 24px;
+  height: 24px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  cursor: pointer;
+}
+
+.navBarSupervisor .wrapNavBar .Link a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navBarSupervisor .wrapNavBar .LeftDiv {
+  width: 20%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.navBarSupervisor .wrapNavBar .RightDiv {
+  width: 10%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.navBarSupervisor .Menu {
+  width: 200px;
+  height: 150px;
+  position: absolute;
+  background: #ff9000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  top: 8%;
+  border-radius: 20px;
+  display: none;
+}
+
+.navBarSupervisor .Menu .Option {
+  width: 90%;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: white;
+  border-bottom: 1px solid #e6e6e6b2;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.navBarSupervisor .Menu .Option:hover {
+  background: white;
+  color: #ff9000;
+}
+
+.navBarSupervisor .AnimateMenu {
+  -webkit-animation: 0.2s animate ease-in-out forwards;
+          animation: 0.2s animate ease-in-out forwards;
+  display: inherit;
+}
+
+@-webkit-keyframes animate {
+  0% {
+    right: 0%;
+    opacity: 0;
+  }
+  100% {
+    right: 2%;
+    opacity: 1;
+  }
+}
+
+@keyframes animate {
+  0% {
+    right: 0%;
+    opacity: 0;
+  }
+  100% {
+    right: 2%;
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=NavbarSupervisor.css.map */

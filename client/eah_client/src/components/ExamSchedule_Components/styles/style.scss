@@ -1,5 +1,96 @@
+
+@mixin flexRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+@mixin ButtonStyle {
+  width: 200px;
+  height:60px;
+  background: #2F89FC;
+  border: 1px solid white;
+  color: white;
+  @include flexRow();
+  cursor: pointer;
+  transition: 0.2s;
+  text-decoration: none;
+  border-radius: 30px;
+  &:hover{
+      background: white;
+      border: 1px solid #2F89FC;
+      color: #2F89FC;
+  }
+      z-index: 5;
+  
+}
+@mixin Shadow {
+    box-shadow: 0px 2px 5px 2px rgba(148, 148, 148, 0.16);
+}
+@mixin flexColumn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+.Title{
+    width: 100%;
+    font-size: 24px;
+    color: #353535;
+}
+.Examschedule_Page{
+    width: 100%;
+    min-height: 100vh;
+    // height: fit-content;
+    padding-top:5%;
+    padding-bottom:10%;
+    @include flexColumn();
+    gap: 5%;
+    .Title{
+        width: 100%;
+        font-size: 24px;
+        color: #353535;
+        min-height: 10%;
+    }
+    .csv-reader-input{
+        width: 80%;
+        min-height: 300px;
+        border-radius: 10px;
+        @include flexColumn();
+        @include Shadow();  
+        color: white;
+        // background: #ff9000;
+        #ObiWan{
+            width: 92px;
+            height: 50px;
+            color: white;
+        }
+    }
+    .updateButton{
+        width: 200px;
+        min-height: 50px;
+        background: #ff9000;
+        color: white;
+        border: 1px solid white;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        &:hover{
+            cursor: pointer;
+            background: white;
+            color: #ff9000;
+            border: 1px solid #ff9000;
+        }
+    }
+    .SpreadSheetWrap{
+        width: 100%;
+        margin-top: 5%;
+        height: fit-content;
+    }
 }

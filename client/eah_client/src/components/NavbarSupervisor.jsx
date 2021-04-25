@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import '../components/styles/navbar.css';
+import '../components/styles/NavbarSupervisor.css';
 import DashboardIcon from './styles/media/dashboard.svg';
 import CalendarIcon from './styles/media/calendar.svg';
 import SignoutIcon from './styles/media/signout.svg';
@@ -20,7 +20,7 @@ export const NavbarComponent=()=>{
     }
     
     return(
-        <header className="navBar">
+        <header className="navBarSupervisor">
             <div className="wrapNavBar">
                 <div className="LeftDiv">
                     <div className="Link">
