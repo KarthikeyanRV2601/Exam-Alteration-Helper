@@ -14,6 +14,7 @@ import setAuthToken from './utils/setAuthToken'
 import ProfileSettings from './Routes/ProfileSettings';
 import {ExcelRenderer} from './Routes/tempSchedule';
 import Dashboard from './Routes/Dashboard';
+import {DutyPage} from './Routes/DutyPage';
 const App=()=>{
   useEffect(() => {
     // check for token in LS
@@ -39,6 +40,8 @@ const App=()=>{
             <PrivateRoute exact path='/profile-settings' component={ProfileSettings} />
             <PrivateRoute exact path='/timetable' component={TimeTable} />
             <PrivateRoute exact path='/exam-schedule' component={ExcelRenderer} />
+            <PrivateRoute exact path='/duties-page' component={DutyPage} />
+            
             {/* <PrivateRoute exact path='/supervisor' component={SupervisorDashboard} /> */}
           </Switch>
         </Router>

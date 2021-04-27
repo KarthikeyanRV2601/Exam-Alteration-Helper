@@ -5,7 +5,8 @@ import axios from 'axios';
 
 export const PopupContainer=({ExamData,NotificationList,setpopup,setNotifData, returnDate })=>{
     
-    let date=new Date(ExamData.date);
+    // let date=new Date(ExamData.date);
+    let date=new Date(new Date(ExamData.date).getTime()-19800000);
     let minutes;
     if(date.getMinutes()==0)
     minutes="00"

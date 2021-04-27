@@ -24,7 +24,7 @@ const CalendarComponent=({setCurrentdate,examData,returnDate})=>{
         for(let i=0;i<examData.length;++i)
         {   
             let data=examData[i];
-            let DataDate=new Date(data.date);
+            let DataDate=new Date(new Date(data.date).getTime()-19800000);
             if(returnDate(DataDate)==returnDate(date))
             {
                 return "StartDate"

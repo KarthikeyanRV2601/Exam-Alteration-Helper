@@ -87,7 +87,7 @@ const ExamInfo=({Currentdate,examData,returnDate})=>{
                     </div>
                     <div className="Info">
                         <p>Slot</p>
-                        <p>{new Date(CurrentData.date).getHours()+":"+new Date(CurrentData.date).getMinutes()+" hr"}</p>
+                        <p>{new Date(new Date(CurrentData.date).getTime()-19800000).getHours()+":"+new Date(new Date(CurrentData.date).getTime()-19800000).getMinutes()+" hr"}</p>
                     </div>
                     <div className="Info">
                         <p>Block</p>

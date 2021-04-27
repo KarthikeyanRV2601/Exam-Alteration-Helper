@@ -11,10 +11,10 @@ import axios from 'axios';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-const FacultyDashboard=({ isAuth, user })=>{
+const FacultyDashboard=({ isAuth, user })=>{  
     const [ Userdata, setUserData] = useState([])
     const [ Notificationdata, setNotifData] = useState([])
-    
+    const[UserIdMap,setUserIdMap]=useState({})
         useEffect(() => {
             (async () => 
             {
@@ -22,15 +22,17 @@ const FacultyDashboard=({ isAuth, user })=>{
                     let data = await axios.get('/schedule')
                     setUserData(data.data.user.data)
                     let NotifData=await axios.get('/schedule/pending_schedule');
-                    console.log(NotifData);
                     setNotifData(NotifData.data.data); 
-
+                    let res=await axios.get('/schedule/get_id');
+                    setUserIdMap(res.data.data);
                 } catch (error) {
                     console.log(error)
                 }
             })()
         }, [])
-  
+        useEffect(async () => {
+            
+        }, [])
     var returnDate=(e)=>{
         var dd=e.getDate();
         var mm=e.getMonth()+1;
@@ -58,7 +60,7 @@ const FacultyDashboard=({ isAuth, user })=>{
   
             className="LeftContainer">
                 <UserDetail userType={user.posting} userDepartment="Department of computer science" />
-                <NotificationComponent NotificationList={Notificationdata} setNotifData={setNotifData} returnDate={returnDate}/>
+                <NotificationComponent NotificationList={Notificationdata} UserIdMap={UserIdMap} setNotifData={setNotifData} returnDate={returnDate}/>
             </div>
             <div className="RightContainer">
                 <TopBanner invigilationsScheduled={Userdata.length} Dutyhours="7/10" exchanges="10" />

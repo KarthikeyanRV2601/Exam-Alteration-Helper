@@ -40,24 +40,15 @@
     padding: 0;
     box-sizing: border-box;
 }
-.Title{
-    width: 100%;
-    font-size: 24px;
-    color: #353535;
-}
 .Examschedule_Page{
     width: 100%;
-    min-height: 100vh;
-    // height: fit-content;
-    padding-top:5%;
-    padding-bottom:10%;
+    min-height: 150vh;
     @include flexColumn();
-    gap: 5%;
+    padding-top: 10vh;
     .Title{
         width: 100%;
         font-size: 24px;
         color: #353535;
-        min-height: 10%;
     }
     .csv-reader-input{
         width: 80%;
@@ -91,6 +82,10 @@
     .SpreadSheetWrap{
         width: 100%;
         margin-top: 5%;
-        height: fit-content;
+        max-height: 300px;
+        .Spreadsheet{
+            max-height: 300px;
+            overflow-y: scroll;
+        }
     }
 }

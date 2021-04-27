@@ -18,7 +18,7 @@ export const MainBanner=({dutyLinks,requestLinks,returnDate})=>{
                 <div className="ButtonElement">
                     <img src={RequestIcon} />
                     <a href="/duties-page" id="dutiespageBtn">
-                    Faculty registrations
+                    Faculty schedules
                     </a>
                 </div>
                 <div className="ButtonElement">

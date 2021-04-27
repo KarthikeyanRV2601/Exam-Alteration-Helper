@@ -36,6 +36,8 @@ export const ExcelRenderer = () =>{
                 {
                     tempDict["userID"]=userIDMap[tempDict.user_name];
                     tempDict["date"]=new Date(tempDict["date"])
+                    // console.log(tempDict["date"].toUTCString())
+                    // console.log(tempDict["date"])
                     data.push(tempDict)
                 }
                 
@@ -87,9 +89,9 @@ export const ExcelRenderer = () =>{
       }
     return(
         <>
-                <NavbarComponent/>
-               
+                
                 <div className="Examschedule_Page">
+                    <NavbarComponent/>
                     <h2 className="Title">
                             Schedule exams here
                     </h2>

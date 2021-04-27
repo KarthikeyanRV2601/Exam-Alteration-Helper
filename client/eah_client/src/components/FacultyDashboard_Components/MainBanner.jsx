@@ -44,7 +44,7 @@ export const MainBanner=({dutyLinks,requestLinks,returnDate})=>{
                                {
                                 
                                dutyLinks.map(link=>{
-                                   let date=new Date(link.date) 
+                                   let date=new Date(new Date(link.date).getTime()-19800000);
                                    let DutyText=`Exam scheduled on ${returnDate(date)}  at block ${link.block} , class room ${link.class_room}`
                                     return (
                                         

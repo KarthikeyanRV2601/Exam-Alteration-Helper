@@ -22,7 +22,8 @@
     min-height: 7vh;
     background: #ff9000;;
     z-index: 100;
-    position: fixed;
+    @include flexColumn();
+    position: absolute;
     top: 0;
     .wrapNavBar{
         width: 100%;
