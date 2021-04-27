@@ -12,11 +12,10 @@ router.get('/', auth, async (req, res) => {
         const scheduleRef = db.collection('schedule');
         // console.log(req.user)
         const snapshot = await scheduleRef.where('userID', '==', req.user.uid).get();
-
         data = snapshot.docs.map(doc => {
             obj = doc.data()
             obj.id = doc.id
-            obj.date = obj.date.toDate()
+            // obj.date = obj.date.toDate()
             return obj
         })
 
@@ -35,6 +34,28 @@ router.get('/', auth, async (req, res) => {
     }
 })
 
+// get all schedules
+router.get('/all',async (req, res) => {
+    try {
+        const scheduleRef = db.collection('schedule');
+        // console.log(req.user)
+        const snapshot = await scheduleRef.get();
+        data = snapshot.docs.map(doc => {
+            obj = doc.data()
+            obj.id = doc.id
+            // obj.date = obj.date.toDate()
+            return obj
+        })
+
+        res.json({
+                data:data,
+        })
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send('Error')
+    }
+})
+
 // get all user's schedules where request_status is pending
 router.get('/pending_schedule', async (req, res) => {
     try {
@@ -46,7 +67,6 @@ router.get('/pending_schedule', async (req, res) => {
             obj = doc.data()
             
             obj.id = doc.id
-            obj.date = obj.date.toDate()
             // console.log(obj);
             // const Ref = db.collection('users');
             // // console.log(obj.userID)
@@ -127,10 +147,12 @@ router.post('/list', async (req, res) => {
             // console.log("pee date",firebase.firestore.Timestamp.fromDate(new Date(item.date)))
             let new_date = firebase.firestore.Timestamp.fromDate(new Date(item.date));
             // console.log("pee date",new_date)
+            
             const res = await db.collection('schedule').add({
+
                 block: item.block,
                 class_room: item.class_room,
-                date: new Date(item.date),
+                date: new Date(item.date).toUTCString(),
                 duration: item.duration,
                 exam_name: item.exam_name,
                 reqest_status: "none",

@@ -7,6 +7,30 @@ const config = require('../utils/config')
 
 const firebase = require('firebase');
 
+// Get all users
+router.get('/all',async (req, res) => {
+    try {
+
+        const scheduleRef = db.collection('users');
+        // console.log(req.user)
+        const snapshot = await scheduleRef.where('posting', '==', "faculty").get();
+
+        data = snapshot.docs.map(doc => {
+            obj = doc.data()
+            obj.id = doc.id
+            // obj.date = obj.date.toDate()
+            return obj
+        })
+
+        res.status(200).json({
+                data
+        })
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send('Error')
+    }
+})
+
 router.post('/signup', [
         check('user_name', 'User name is required').not().isEmpty(),
         check('email', 'Email is not valid').isEmail(),
