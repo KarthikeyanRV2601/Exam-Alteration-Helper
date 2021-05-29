@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import {NavbarComponent} from '../components/Navbar';
 
 const ProfileSettings=()=>{
+
     return(
         <>
             <NavbarComponent/>

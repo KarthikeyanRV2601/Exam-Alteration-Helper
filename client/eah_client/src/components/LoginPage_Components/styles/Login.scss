@@ -100,7 +100,7 @@
   .hero-section p strong {
     color: #2F89FC;
   }
-  .hero-section button {
+  .hero-section a{
     width: 150px;
     height: 50px;
     padding: 1em 1.2em;
@@ -115,8 +115,9 @@
     transition: background-color 0.3s;
     border: 2px solid white;
     margin-top: 20%;
+    text-decoration: none;
   }
-  .hero-section button:hover {
+  .hero-section a:hover {
     background-color:  #2F89FC;
     color: #ffffff;
     border: 2px solid  #2F89FC;
@@ -134,7 +135,7 @@
   .hero-section p {
     animation-delay: 1s;
   }
-  .hero-section button {
+  .hero-section a {
     animation-delay: 1.2s;
   }
   @keyframes fadeUp {
@@ -169,7 +170,7 @@
         z-index: -1;
         top: -50%;
         left: -50%;
-        animation: animatebefore 0.4s ease-in-out forwards;
+        animation: animatebefore 0.5s ease-in-out forwards;
         @keyframes animatebefore {
           
         0%{
@@ -187,19 +188,19 @@
       // background: rgba(255, 255, 255, 0.562);
 
       z-index: 10;
-        animation: animateIllustration 0.4s ease-in-out forwards;
-        @keyframes animateIllustration {
-          0%{
-            transform: translateY(-50%) translateX(5%);
-            opacity: 0.8;
-          }
-          100%{
-            transform: translateY(-50%) translateX(0%);
-            opacity: 1;
-          }
+        // animation: animateIllustration 0.4s ease-in-out forwards;
+        // @keyframes animateIllustration {
+        //   0%{
+        //     transform: translateY(-50%) translateX(5%);
+        //     opacity: 0.8;
+        //   }
+        //   100%{
+        //     transform: translateY(-50%) translateX(0%);
+        //     opacity: 1;
+        //   }
           
-        }
-
+        // }
+      border-radius: 10px;
     .IllustrationContainer{
         width: 50%;
         height:100%;
@@ -210,7 +211,7 @@
         object-fit: contain;
         border-top-right-radius:10px ;
         border-bottom-right-radius: 10px;
-
+        // 
     }
     .LeftPanel{
         width: 50%;
@@ -253,9 +254,36 @@
             @include flexColumn();
             justify-content: space-around;
             align-items: flex-start;
-           
+            .NewUser{
+              width: 100%;
+              height: 30px;
+              @include flexRow();
+              justify-content: flex-start;
+              gap: 2%;
+              p{
+                font-size: 16px;
+                color: rgb(129, 129, 129);
+              }
+              a{
+                text-decoration: none;
+                font-size: 16px;
+                font-weight: bold;
+                color: #2F89FC;
+              }
+            
+            }
             .LoginButton{
-              @include ButtonStyle();
+              width: 200px;
+              height: 50px;
+              background: #2F89FC;
+              border: 1px solid white;
+              color: white;
+              &:hover{
+                background: white;
+                border: 1px solid #2F89FC;
+                color: #2F89FC;
+                cursor: pointer;
+              }
             }
           .input-field {
             position: relative;
@@ -328,4 +356,7 @@
     }
     
 }
+
+
 }
+

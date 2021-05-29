@@ -20,7 +20,7 @@
 .navBarSupervisor{
     width: 100%;
     min-height: 7vh;
-    background: #ff9000;;
+    background: #ff9000;
     z-index: 100;
     @include flexColumn();
     position: absolute;
@@ -30,11 +30,13 @@
         height: 100%;
         @include flexRow();
         justify-content: space-between;
+        padding-left:2%;
         .Link{
-            width: 120px;
+            width: 200px;
             height: 100%;
             @include flexRow();
-            justify-content: space-around;
+            justify-content: flex-start;
+            gap: 5%;
             img{
                 width: 24px;
                 height: 24px;
@@ -46,14 +48,15 @@
                 color: white;
                 text-decoration: none;
                 cursor: pointer;
+                width: fit-content;
                 // display: none;
                 } 
         }
     .LeftDiv{
-        width:20%;
+        width:40%;
         height: 100%;
         @include flexRow();
-        justify-content: space-around;
+        justify-content: space-between;
           
         
         

@@ -29,7 +29,11 @@ export const NavbarComponent=()=>{
                     </div>
                     <div className="Link">
                         <img src={CalendarIcon}/>
-                        <a href="#">Time Table</a>
+                        <a href="/exam-schedule">Invigilations</a>
+                    </div>
+                    <div className="Link">
+                        <img src={CalendarIcon}/>
+                        <a href="/duties-page">Duties page</a>
                     </div>
                 </div>
 

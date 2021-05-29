@@ -3,12 +3,26 @@ import {Link} from './MainBannerComponents/Link';
 import RequestIcon from './media/request.svg';
 import CalendarIcon from './media/calendar.svg';
 import ExchangeIcon from './media/question.svg';
-
-export const MainBanner=({dutyLinks,requestLinks,returnDate})=>{
+import {Redirect} from 'react-router-dom';
+export const MainBanner=({dutyLinks,requestLinks,returnDate,user})=>{
     // console.log(dutyLinks);
     dutyLinks.sort(function(a, b) {
         return new Date(a.date) - new Date(b.date);
     });
+    const [isRedirect,setisRedirect]=useState({})
+    if(Object.keys(isRedirect).length != 0)
+    {
+            return(
+                <Redirect to={isRedirect}/>
+            )
+    }
+    var handleTimetableClick=(e)=>{
+        let UserTimetable={
+            pathname: "/timetable",
+            state: { userID: user.userID}
+          }
+        setisRedirect(UserTimetable)
+    }
     return(
         <div className="MainBanner">
 
@@ -17,13 +31,13 @@ export const MainBanner=({dutyLinks,requestLinks,returnDate})=>{
                 <div className="ButtonSection">
                 <div className="ButtonElement">
                     <img src={RequestIcon} />
-                    <a href="/duties-page" id="dutiespageBtn">
+                    <a href="/" id="dutiespageBtn">
                             Request exchange
                     </a>
                 </div>
                 <div className="ButtonElement">
                     <img src={CalendarIcon} />
-                    <a href="/timetable" id="timetableBtn">
+                    <a id="timetableBtn" onClick={e=>handleTimetableClick(e)}>
                             Time table
                     </a>
                 </div>

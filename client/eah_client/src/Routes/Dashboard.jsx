@@ -3,15 +3,22 @@ import SupervisorDashboard from './secretaryDashboard';
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-const Dashboard=({ isAuth, user })=>{
-
+import { Redirect } from 'react-router-dom';
+const Dashboard=({ user })=>{
+    if(user)
+    {
+        if(user.account_status!="approved" && user.posting!="supervisor")
+        {
+            return <Redirect to='/not-approved'/>
+        }
+    }
     return(
         <>
             {
-                user.posting=="faculty"&&<FacultyDashboard/>
+                user&&user.posting=="faculty"&&<FacultyDashboard/>
             }
             {
-                user.posting=="supervisor"&&<SupervisorDashboard/>
+                user&&user.posting=="supervisor"&&<SupervisorDashboard/>
             }
         </>
     )

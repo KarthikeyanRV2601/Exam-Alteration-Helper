@@ -34,14 +34,10 @@ const Form=({ login, user, isAuth,classname })=>{
         
     }
 
-    const onSubmit = async e => {
+    const onSubmit = e => {
         e.preventDefault();
         // login("mighil@gmail.com","mighil")
-        if(await login(email, password))
-        return
-        else
-        // "please enter valid credentials"
-        return 
+        login(email, password)
         
     }
 
@@ -53,13 +49,13 @@ const Form=({ login, user, isAuth,classname })=>{
                 </div>
                 <form onSubmit={e => onSubmit(e)} className="LoginForm">
                     <div className="input-field">
-                    <input 
-                        type="text" 
-                        id="email"
-                        name="email"
-                        onChange={e => onChange(e)}
-                        required className={classname}/>
-                    <label for="email">email</label>
+                        <input 
+                            type="text" 
+                            id="email"
+                            name="email"
+                            onChange={e => onChange(e)}
+                            required className={classname}/>
+                        <label for="email">email</label>
                     </div>
                     <div className="input-field ">
                         <input 
@@ -72,6 +68,10 @@ const Form=({ login, user, isAuth,classname })=>{
                         <label for="pwd">password</label>
                     </div>
                     <button className="LoginButton" data-test="LoginButton">Login</button>
+                    <div className="NewUser">
+                        <p>New user?</p>
+                        <a href="/register-user">Register here</a>
+                    </div>
                 </form>
             </div>
     )

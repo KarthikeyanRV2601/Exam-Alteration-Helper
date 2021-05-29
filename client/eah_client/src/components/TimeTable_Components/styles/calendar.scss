@@ -55,12 +55,12 @@
 
 .ActualCalendarcontainer{
     width: 500px;
-    height: 550px;
+    height: 600px;
     @include flexColumn();
-    justify-content: space-around;
+    justify-content: space-between;
     .DownloadButton{
     width: 150px;
-    height: 50px;
+    min-height: 50px;
     background:#2F89FC;
     color: white;
     border: none;

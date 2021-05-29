@@ -5,13 +5,23 @@ import Matrix from "react-spreadsheet";
 import '../components/ExamSchedule_Components/styles/style.css';
 import {NavbarComponent} from '../components/NavbarSupervisor';
 import axios from 'axios';
-export const ExcelRenderer = () =>{
+import { Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+const ExcelRenderer = ({user}) =>{
     const [FinalData,setFinalData]=useState([]);
     const [userIDMap,setUserIdMap]=useState({});
     useEffect(async () => {
         let res=await axios.get('/schedule/get_id');
         setUserIdMap(res.data.data);
     }, [])
+    if(user)
+    {
+        if(user.account_status!="approved")
+        {
+            return <Redirect to='/not-approved'/>
+        }
+    }
     var GetData=async ()=>{
 
             let trs=document.querySelectorAll("tr");
@@ -120,3 +130,16 @@ export const ExcelRenderer = () =>{
         </>
     )
 }
+
+
+
+const mapStateToProps = state => {
+
+    const props = {
+    isAuth: state.auth.isAuth,
+    user: state.auth.user
+    }
+    return props
+};
+
+export default connect(mapStateToProps, null)(ExcelRenderer);

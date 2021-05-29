@@ -18,6 +18,7 @@ module.exports = async function(req, res, next) {
         req.user.email = userData.docs[0].data().email;
         req.user.department = userData.docs[0].data().department;
         req.user.posting = userData.docs[0].data().posting;
+        req.user.account_status = userData.docs[0].data().account_status;
 
         // console.log(req.user)
         next()

@@ -7,11 +7,12 @@ const auth = require('../middleware/auth');
 const firebase = require('firebase');
 // const { check, validationResult } = require('express-validator');
 
-router.get('/', auth, async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const scheduleRef = db.collection('schedule');
         // console.log(req.user)
-        const snapshot = await scheduleRef.where('userID', '==', req.user.uid).get();
+        console.log(req.body)
+        const snapshot = await scheduleRef.where('userID', '==', req.body.uid).get();
         data = snapshot.docs.map(doc => {
             obj = doc.data()
             obj.id = doc.id
@@ -20,13 +21,7 @@ router.get('/', auth, async (req, res) => {
         })
 
         res.json({
-            user: {
-                user_name: req.user.user_name,
-                email: req.user.email,
-                userID: req.user.user_id,
-                data:data,
-                length: data.length
-            }
+            data
         })
     } catch (error) {
         console.error(error.message);
@@ -127,6 +122,35 @@ router.get('/get_id', async (req, res) => {
             console.log(doc.id, '=>', doc.data());
             data[doc.data().user_name] = doc.data().userID;
           });
+          
+        res.status(200).json({
+                "result" : "success",
+                data
+        })
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send('Error')
+    }
+})
+
+// get account details of pending accounts
+router.get('/pending_account', async (req, res) => {
+    try {
+        const userRef = db.collection('users');
+        const snapshot = await userRef.where('account_status', '==', 'pending').get();
+
+        if (snapshot.empty) {
+            console.log('No matching documents.');
+            res.status(200).json({
+                "result" : "failure"
+            })
+        }  
+        data = snapshot.docs.map(doc => {
+            
+            obj = doc.data()
+            obj.id = doc.id
+            return obj
+        })
 
         res.status(200).json({
                 "result" : "success",
@@ -232,6 +256,44 @@ router.post('/status', auth, async (req, res) => {
         const cityRef = db.collection('schedule').doc(req.body.schedule_id);
         // Set the 'capital' field of the city
         const result = await cityRef.update({request_status: req.body.status});
+
+        res.json({
+            result
+        })
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send('Error')
+    }
+})
+
+// change account status to approved
+router.post('/change_account_status',async (req, res) => {
+
+    console.log(req.body);
+    try {
+        
+        const cityRef = db.collection('users').doc(req.body.user_name);
+        // Set the 'capital' field of the city
+        const result = await cityRef.update({account_status: req.body.status});
+
+        res.json({
+            result
+        })
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send('Error')
+    }
+})
+
+// change status of user's account
+router.post('/account_status', async (req, res) => {
+
+    console.log(req.body);
+    try {
+        
+        const cityRef = db.collection('users').doc(req.body.user_name);
+        // Set the 'capital' field of the city
+        const result = await cityRef.update({account_status: req.body.account_status});
 
         res.json({
             result

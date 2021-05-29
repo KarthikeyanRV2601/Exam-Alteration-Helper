@@ -1,23 +1,42 @@
 import React, { useRef, useState,useEffect } from 'react';
-import '../DutiesPage_Components/styles/styles.css';
+import './styles/styles.css';
 import ManDP from './media/man.svg';
 import searchIcon from './media/search.svg';
 import axios from 'axios';
-export const DutiesPage=()=>{
+import {Redirect} from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+const DutiesPage=({user})=>{
     const [usersDataTemp,setusersDataTemp]=useState([]);
     const [usersData,setusersData]=useState([]);
     const [SearchValue,setSearchValue]=useState("");
+    const [isRedirect,setisRedirect]=useState({})
     useEffect(async () => {
         let res1=await axios.get('/users/all');
         setusersData(res1.data.data);
         setusersDataTemp(res1.data.data)
     }, [])
-    
+
     useEffect(async () => {
         setusersDataTemp(usersData.filter((user)=>user.user_name.indexOf(SearchValue)==0))
     }, [SearchValue])
 
+    if(Object.keys(isRedirect).length != 0)
+    {
+            return(
+                <Redirect to={isRedirect}/>
+            )
+    }
+    var handleProfileClick=(userdata)=>{
+        let UserTimetable={
+            pathname: "/timetable-duties",
+            state: { userID: userdata.userID,username:userdata.user_name}
+          }
+        setisRedirect(UserTimetable)
+        
+    }
     
+
     var HandleChange=(e)=>{
         setSearchValue(e.target.value)
         
@@ -37,7 +56,7 @@ export const DutiesPage=()=>{
                     {
                         usersDataTemp&&usersDataTemp.map((userdata,key)=>{
                             return(
-                                <div className="Profile">
+                                <div className="Profile" onClick={e=>handleProfileClick(userdata)} >
                                     <div className="Text">
                                         {userdata.user_name}
                                     </div>
@@ -55,3 +74,19 @@ export const DutiesPage=()=>{
         </>
     )
 }
+
+
+
+
+DutiesPage.propTypes = {
+    isAuth: PropTypes.bool,
+    user: PropTypes.object,
+}
+
+const mapStateToProps = state => ({
+    isAuth: state.auth.isAuth,
+    user: state.auth.user
+});
+
+
+export default connect(mapStateToProps, null)(DutiesPage)

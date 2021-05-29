@@ -15,7 +15,8 @@ router.get('/', auth, async (req, res) => {
                 email: req.user.email,
                 userID: req.user.user_id,
                 department: req.user.department,
-                posting: req.user.posting
+                posting: req.user.posting,
+                account_status: req.user.account_status
             }
         })
     } catch (error) {
@@ -50,8 +51,7 @@ async (req, res) => {
 
     try {
         const response = await firebase.auth().signInWithEmailAndPassword(user.email, user.password)
-        const token = await response.user.getIdToken();
-        // console.log(token);          
+        const token = await response.user.getIdToken();       
         return res.status(201).json({
             message: 'User logged in',
             token: token

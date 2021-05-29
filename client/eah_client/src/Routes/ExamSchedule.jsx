@@ -2,11 +2,20 @@ import React, { useState,useEffect} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {OutTable, ExcelRenderer} from 'react-excel-renderer';
-const ExamSchedule=({ isAuth })=>{
+import { Redirect } from 'react-router-dom';
+const ExamSchedule=({ isAuth ,user})=>{
+ 
   var [State,setstate]=useState({
     cols: null,
     rows: null
   })
+  if(user)
+  {
+      if(user.account_status!="approved")
+      {
+          return <Redirect to='/not-approved'/>
+      }
+  }
   var fileHandler = (event) => {
     let fileObj = event.target.files[0];
     ExcelRenderer(fileObj, (err, resp) => {
@@ -21,6 +30,7 @@ const ExamSchedule=({ isAuth })=>{
     });               
 
   }
+
     return(
       <>
         <div className="ExamSchedule">

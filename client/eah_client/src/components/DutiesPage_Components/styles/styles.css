@@ -25,6 +25,7 @@
 }
 
 .DutiesPage .SearchBarWrap {
+  margin-top: 5%;
   width: 80%;
   height: 15%;
   display: -webkit-box;
@@ -65,8 +66,8 @@
   width: 80%;
   -webkit-box-shadow: 0px 2px 5px 2px rgba(148, 148, 148, 0.16);
           box-shadow: 0px 2px 5px 2px rgba(148, 148, 148, 0.16);
-  min-height: 80%;
-  max-height: 80%;
+  min-height: 60%;
+  max-height: 60%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

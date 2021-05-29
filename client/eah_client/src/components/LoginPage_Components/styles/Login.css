@@ -105,7 +105,7 @@
   color: #2F89FC;
 }
 
-#root .LoginPage .hero-section button {
+#root .LoginPage .hero-section a {
   width: 150px;
   height: 50px;
   padding: 1em 1.2em;
@@ -121,9 +121,10 @@
   transition: background-color 0.3s;
   border: 2px solid white;
   margin-top: 20%;
+  text-decoration: none;
 }
 
-#root .LoginPage .hero-section button:hover {
+#root .LoginPage .hero-section a:hover {
   background-color: #2F89FC;
   color: #ffffff;
   border: 2px solid  #2F89FC;
@@ -149,7 +150,7 @@
           animation-delay: 1s;
 }
 
-#root .LoginPage .hero-section button {
+#root .LoginPage .hero-section a {
   -webkit-animation-delay: 1.2s;
           animation-delay: 1.2s;
 }
@@ -203,8 +204,7 @@
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   z-index: 10;
-  -webkit-animation: animateIllustration 0.4s ease-in-out forwards;
-          animation: animateIllustration 0.4s ease-in-out forwards;
+  border-radius: 10px;
 }
 
 #root .LoginPage .Container::before {
@@ -217,8 +217,8 @@
   z-index: -1;
   top: -50%;
   left: -50%;
-  -webkit-animation: animatebefore 0.4s ease-in-out forwards;
-          animation: animatebefore 0.4s ease-in-out forwards;
+  -webkit-animation: animatebefore 0.5s ease-in-out forwards;
+          animation: animatebefore 0.5s ease-in-out forwards;
 }
 
 @-webkit-keyframes animatebefore {
@@ -240,32 +240,6 @@
   100% {
     width: 100%;
     height: 180%;
-  }
-}
-
-@-webkit-keyframes animateIllustration {
-  0% {
-    -webkit-transform: translateY(-50%) translateX(5%);
-            transform: translateY(-50%) translateX(5%);
-    opacity: 0.8;
-  }
-  100% {
-    -webkit-transform: translateY(-50%) translateX(0%);
-            transform: translateY(-50%) translateX(0%);
-    opacity: 1;
-  }
-}
-
-@keyframes animateIllustration {
-  0% {
-    -webkit-transform: translateY(-50%) translateX(5%);
-            transform: translateY(-50%) translateX(5%);
-    opacity: 0.8;
-  }
-  100% {
-    -webkit-transform: translateY(-50%) translateX(0%);
-            transform: translateY(-50%) translateX(0%);
-    opacity: 1;
   }
 }
 
@@ -375,12 +349,9 @@
           align-items: flex-start;
 }
 
-#root .LoginPage .Container .LeftPanel .LoginForm .LoginButton {
-  width: 120px;
-  height: 40px;
-  background: black;
-  border: 1px solid white;
-  color: white;
+#root .LoginPage .Container .LeftPanel .LoginForm .NewUser {
+  width: 100%;
+  height: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -391,17 +362,37 @@
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  cursor: pointer;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 2%;
+}
+
+#root .LoginPage .Container .LeftPanel .LoginForm .NewUser p {
+  font-size: 16px;
+  color: #818181;
+}
+
+#root .LoginPage .Container .LeftPanel .LoginForm .NewUser a {
   text-decoration: none;
-  z-index: 5;
+  font-size: 16px;
+  font-weight: bold;
+  color: #2F89FC;
+}
+
+#root .LoginPage .Container .LeftPanel .LoginForm .LoginButton {
+  width: 200px;
+  height: 50px;
+  background: #2F89FC;
+  border: 1px solid white;
+  color: white;
 }
 
 #root .LoginPage .Container .LeftPanel .LoginForm .LoginButton:hover {
   background: white;
-  border: 1px solid #353535;
-  color: #353535;
+  border: 1px solid #2F89FC;
+  color: #2F89FC;
+  cursor: pointer;
 }
 
 #root .LoginPage .Container .LeftPanel .LoginForm .input-field {

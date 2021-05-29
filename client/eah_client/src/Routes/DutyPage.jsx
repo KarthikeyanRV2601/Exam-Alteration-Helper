@@ -1,10 +1,13 @@
 import React, { useRef, useState,useEffect } from 'react';
-import {DutiesPage} from '../components/DutiesPage_Components/DutiesPage';
-
+import DutiesPage from '../components/DutiesPage_Components/DutiesPage';
+import {NavbarComponent} from '../components/NavbarSupervisor';
 
 
 
 export const DutyPage=({})=>{
     return (
-        <DutiesPage/>
+        <>
+            <NavbarComponent/>
+            <DutiesPage/>
+        </>
     )}

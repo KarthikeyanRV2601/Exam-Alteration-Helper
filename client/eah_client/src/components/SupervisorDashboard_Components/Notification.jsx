@@ -7,16 +7,7 @@ export const Notification=({Id,notification,actualNotificationData,Classname,dat
     var [Bullet,setBullet]=useState(exclamationIcon);
     const NotifText=useRef(null);
     const TextRef=useRef(null);
-    // let Id=Classname+date+Examtime;
-    useEffect(() => {
-        if(Classname=="Emergency")
-        {
-            setBullet(WarningIcon);
-            
-            TextRef.current.className=Classname;
-            
-        }
-      }, [TextRef]);
+  
 
     return(
         <>

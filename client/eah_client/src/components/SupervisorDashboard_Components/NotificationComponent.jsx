@@ -5,22 +5,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {PopupContainer} from './PopupContainer';
 const NotificationComponent=({NotificationList,returnDate, user})=>{
-    var dateInPast = function(firstDate) {
-        let secondDate=new Date();
-        if (firstDate.setHours(0, 0, 0, 0) <= secondDate.setHours(0, 0, 0, 0)) {
-          return true;
-        }
-      
-        return false;
-      };
-    NotificationList=NotificationList.filter((item)=>{
-        let date=new Date(item.date);
-        
-        return ((item.name !== "karthi")&&(!dateInPast(date)))
-    })
-    NotificationList.sort(function(a, b) {
-        return new Date(a.date) - new Date(b.date);
-    });
+ 
+
   
     var [popup,setpopup]=useState(false);
     var [PopupData,setPopupData]=useState(null);
@@ -34,28 +20,15 @@ const NotificationComponent=({NotificationList,returnDate, user})=>{
            <div className="NotificationSection">
                 {NotificationList.map((notification,Id)=>{
 
+                    let date=new Date(notification.createdAt);
+                    
+
+                    let NotifText=`New signup request from ${notification.user_name} on ${returnDate(date)}`;
                    
-                    let date=new Date(notification.date);
-                    console.log(dateInPast(date)) 
-                    let minutes;
-                    if(date.getMinutes()==0)
-                    minutes="00"
-                    else
-                    minutes=date.getMinutes();
-                    let Examtime=date.getHours()+":"+minutes;
-                    let NotifText=`New request from ${notification.name} on ${returnDate(date)}`;
-                    let CurrentDate=new Date();
-                    
-                    let Classname="Text"
-                    if(returnDate(CurrentDate)==returnDate(date)  && (date.getHours()-CurrentDate.getHours()<1))
-                    {
-                        Classname="Emergency"
-                    }
-                    
   
                     return (
                         <>
-                        <Notification notification={NotifText} Id={Id} actualNotificationData={notification} Classname={Classname} setpopup={setpopup} date={returnDate(date)} Examtime={Examtime+"hr"} popup={popup} setPopupData={setPopupData}/>
+                        <Notification notification={NotifText} Id={Id} actualNotificationData={notification} setpopup={setpopup} date={returnDate(date)}  popup={popup} setPopupData={setPopupData}/>
                         </>
                     )
                         
@@ -63,7 +36,7 @@ const NotificationComponent=({NotificationList,returnDate, user})=>{
  
                 })}
             
-            {popup&&<PopupContainer ExamData={PopupData} setpopup={setpopup}  returnDate={returnDate} />}
+            {popup&&<PopupContainer userdata={PopupData} setpopup={setpopup}  returnDate={returnDate} />}
            </div>
         </div>
         

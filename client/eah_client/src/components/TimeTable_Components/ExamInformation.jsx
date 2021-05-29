@@ -7,7 +7,7 @@ import axios from 'axios';
 
 
 
-const ExamInfo=({Currentdate,examData,returnDate})=>{
+const ExamInfo=({Currentdate,examData,returnDate,isMyTimetable})=>{
     var [CurrentData,setCurrentData]=useState(null);
     var [showConfirmation,setShowConfirmation]=useState(false);
     var requestButtonRef = useRef();
@@ -99,9 +99,13 @@ const ExamInfo=({Currentdate,examData,returnDate})=>{
                     </div>  
                    
                 </div>
-                <button className={returnClassName()} onClick={()=>{setShowConfirmation(true)}} ref={requestButtonRef}>
-                        {ButtonInnerText}
-                </button>
+                {
+                    isMyTimetable &&
+                    <button className={returnClassName()} onClick={()=>{setShowConfirmation(true)}} ref={requestButtonRef}>
+                    {ButtonInnerText}
+                    </button>
+                }
+                
                 
             </div>
         }

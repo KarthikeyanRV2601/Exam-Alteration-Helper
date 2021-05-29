@@ -4,11 +4,9 @@ import RequestIcon from './media/request.svg';
 import CalendarIcon from './media/calendar.svg';
 import ExchangeIcon from './media/question.svg';
 
-export const MainBanner=({dutyLinks,requestLinks,returnDate})=>{
+export const MainBanner=()=>{
     // console.log(dutyLinks);
-    dutyLinks.sort(function(a, b) {
-        return new Date(a.date) - new Date(b.date);
-    });
+
     return(
         <div className="MainBanner">
 
@@ -18,19 +16,19 @@ export const MainBanner=({dutyLinks,requestLinks,returnDate})=>{
                 <div className="ButtonElement">
                     <img src={RequestIcon} />
                     <a href="/duties-page" id="dutiespageBtn">
-                    Faculty schedules
+                        Faculty schedules
                     </a>
                 </div>
                 <div className="ButtonElement">
                     <img src={CalendarIcon} />
-                    <a href="/timetable" id="timetableBtn">
-                    Schedule exams
+                    <a href="/exam-schedule" id="timetableBtn">
+                        Schedule invigilations
                     </a>
                 </div>
                 <div className="ButtonElement">
                     <img src={ExchangeIcon}  id="availablerequestsBtn"/>
-                    <a>
-                            Available requests
+                    <a href="/user-registrations">
+                        User registrations
                     </a>
                 </div>
                 </div>  

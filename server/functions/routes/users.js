@@ -34,7 +34,8 @@ router.get('/all',async (req, res) => {
 router.post('/signup', [
         check('user_name', 'User name is required').not().isEmpty(),
         check('email', 'Email is not valid').isEmail(),
-        check('password', 'Please enter a password with 6 or more characters').isLength({ min: 6})
+        check('password', 'Please enter a password with 6 or more characters').isLength({ min: 6}),
+        
     ],
 
     async (req, res) => {
@@ -56,6 +57,7 @@ router.post('/signup', [
             email: req.body.email,
             password: req.body.password,
             user_name: req.body.user_name,
+            department: req.body.department
         };
 
     
@@ -79,7 +81,10 @@ router.post('/signup', [
                     user_name: newUser.user_name,
                     email: newUser.email,
                     createdAt: new Date().toISOString(),
-                    userID: userID
+                    userID: userID,
+                    posting: "faculty",
+                    department: newUser.department,
+                    account_status: "pending"
                 }
 
                 const addUser = await db.doc(`/users/${newUser.user_name}`).set(userCredentials)

@@ -6,11 +6,12 @@ import axios from 'axios';
 import InformationComponent from '../components/TimeTable_Components/InformationComponent';
 import ExamInfo from '../components/TimeTable_Components/ExamInformation';
 import {NavbarComponent} from '../components/Navbar';
-const TimeTable=()=>{
+import { Redirect } from 'react-router-dom';
+const TimeTable=({user})=>{
 
     const [Currentdate,setCurrentdate]=useState(null)
+    const [ scheduledata, setscheduleData] = useState([])
 
-    const [ data, setData] = useState([])
     var returnDate=(e)=>{
         var dd=e.getDate();
         var mm=e.getMonth()+1;
@@ -27,26 +28,43 @@ const TimeTable=()=>{
 
         return date
     }
+    var dateInPast = function(firstDate) {
+        let secondDate=new Date();
+        if (firstDate.setHours(0, 0, 0, 0) <= secondDate.setHours(0, 0, 0, 0)) {
+          return true;
+        }
+      
+        return false;
+      };
     useEffect(() => {
         (async () => 
         {
             try {
-                const data = await axios.get('/schedule')
-                setData(data.data.user.data);
-                let delme = await axios.get('/profile');
-                console.log(delme);
+                let body = { "uid": user.userID}
+                const data = await axios.post('/schedule',body)
+                setscheduleData(data.data.data.filter((item)=>{
+                    let date=new Date(item.date);
+                    return (!dateInPast(date))
+                }))
+                
             } catch (error) {
                 console.log(error)
             }
         })()
     }, [])
-
+    if(user)
+    {
+        if(user.account_status!="approved")
+        {
+            return <Redirect to='/not-approved'/>
+        }
+    }
     return(
         <>
             <NavbarComponent/>
             <div className="CalendarPage">
-                <CalendarComponent examData={data} setCurrentdate={setCurrentdate} returnDate={returnDate}/>
-                <ExamInfo examData={data} examData={data} Currentdate={Currentdate} returnDate={returnDate}/>
+                <CalendarComponent examData={scheduledata} setCurrentdate={setCurrentdate} returnDate={returnDate}/>
+                <ExamInfo examData={scheduledata} Currentdate={Currentdate} returnDate={returnDate} isMyTimetable={true}/>
                 
             </div>
         </>

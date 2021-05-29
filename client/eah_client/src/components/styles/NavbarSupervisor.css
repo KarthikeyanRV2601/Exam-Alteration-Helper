@@ -37,10 +37,11 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding-left: 2%;
 }
 
 .navBarSupervisor .wrapNavBar .Link {
-  width: 120px;
+  width: 200px;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -52,8 +53,10 @@
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 5%;
 }
 
 .navBarSupervisor .wrapNavBar .Link img {
@@ -68,10 +71,13 @@
   color: white;
   text-decoration: none;
   cursor: pointer;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .navBarSupervisor .wrapNavBar .LeftDiv {
-  width: 20%;
+  width: 40%;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -83,8 +89,9 @@
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .navBarSupervisor .wrapNavBar .RightDiv {

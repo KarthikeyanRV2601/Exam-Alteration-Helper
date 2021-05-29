@@ -27,6 +27,7 @@
     // background: green;
     @include flexColumn();
     .SearchBarWrap{
+        margin-top: 5%;
         width: 80%;
         height: 15%;
         @include flexRow();
@@ -52,13 +53,14 @@
     .SearchResult{
         width: 80%;
         @include Shadow();
-        min-height: 80%;
-        max-height: 80%;
+        min-height: 60%;
+        max-height: 60%;
         @include flexColumn();
         justify-content: flex-start;
         overflow-y: scroll;
         padding-top: 2%;
         gap: 5px;
+        
         .Profile
                  {  width: 90%;
                     min-height: 50px;

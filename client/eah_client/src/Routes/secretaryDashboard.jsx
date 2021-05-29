@@ -12,24 +12,25 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 const SupervisorDashboard=({ isAuth, user })=>{
-    const [ Userdata, setUserData] = useState([])
+    
     const [ Notificationdata, setNotifData] = useState([])
-    console.log(user);
+
         useEffect(() => {
             (async () => 
             {
                 try {
-                    let data = await axios.get('/schedule')
-                    setUserData(data.data.user.data)
-                    let NotifData=await axios.get('/schedule/pending_schedule')
-                    setNotifData(NotifData.data.data); 
-
+ 
+                    
+                    let res1=await axios.get('/schedule/pending_account');
+                    setNotifData(res1.data.data);
                 } catch (error) {
                     console.log(error)
                 }
             })()
         }, [])
- 
+
+
+    
 
     var returnDate=(e)=>{
         var dd=e.getDate();
@@ -61,8 +62,8 @@ const SupervisorDashboard=({ isAuth, user })=>{
                 <NotificationComponent NotificationList={Notificationdata} returnDate={returnDate}/>
             </div>
             <div className="RightContainer">
-                <TopBanner invigilationsScheduled={Userdata.length} Dutyhours="7/10" exchanges="10" />
-                <MainBanner dutyLinks={Userdata.slice(0,3)} returnDate={returnDate} />
+                <TopBanner invigilationsScheduled={2} Dutyhours="7/10" exchanges="10" />
+                <MainBanner />
             </div>
         </div>
 
