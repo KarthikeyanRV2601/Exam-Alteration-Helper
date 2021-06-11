@@ -17,7 +17,6 @@ const TimeTableDuties=(props)=>{
         setUserID(props.location.state.userID)
     }
 
-    let ManDp=`https://randomuser.me/api/portraits/men/${Math.floor((Math.random() * 50) + 1)}.jpg`;
     var returnDate=(e)=>{
         var dd=e.getDate();
         var mm=e.getMonth()+1;
@@ -42,7 +41,7 @@ const TimeTableDuties=(props)=>{
             {
                 try {
                     let body={"uid":userId}
-                    const data = await axios.post('/schedule',body)
+                    const data = await axios.post('/schedule/get',body)
                     setData(data.data.data);
                 } catch (error) {
                     console.log(error)
@@ -59,7 +58,7 @@ const TimeTableDuties=(props)=>{
             <div className="CalendarPage">
                     <div className="UserProfile">
                         <div className="dp">
-                            <img src={ManDp} alt=""/>
+                            <img src={`https://randomuser.me/api/portraits/men/${props.location.state.username.length+ props.location.state.username.charCodeAt(0) - 65}.jpg`} alt=""/>
                         </div>
                         <div className="Detail">
                                 <p>{props.location.state.username.slice(0,1).toUpperCase()+props.location.state.username.slice(1)}</p>

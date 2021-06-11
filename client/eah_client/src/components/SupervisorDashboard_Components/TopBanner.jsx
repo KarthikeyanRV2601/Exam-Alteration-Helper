@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export const TopBanner=({invigilationsScheduled,Dutyhours,exchanges})=>{
+export const TopBanner=({invigilationsScheduled,PendingInvigilations,exchanges})=>{
     return(
         <div className="TopBanner">
             <h1>Exam duties</h1>
@@ -15,10 +15,10 @@ export const TopBanner=({invigilationsScheduled,Dutyhours,exchanges})=>{
                 </div>
                 <div className="Detail">
                     <div className="MidDetail">
-                    {Dutyhours}
+                    {PendingInvigilations}
                     </div>
                     <p className="Label">
-                        Duty hours
+                     Pending Invigilations
                     </p>
                 </div>
                 <div className="Detail">

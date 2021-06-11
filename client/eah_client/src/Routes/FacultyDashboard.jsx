@@ -30,7 +30,7 @@ const FacultyDashboard=({ isAuth, user })=>{
             {
                 try {
                     let body = { "uid": user.userID}
-                    let data = await axios.post('/schedule',body)
+                    let data = await axios.post('/schedule/get',body)
                     setUserData(data.data.data.filter((item)=>{
                         let date=new Date(item.date);
                         return (!dateInPast(date))

@@ -103,14 +103,13 @@ const ExcelRenderer = ({user}) =>{
                 <div className="Examschedule_Page">
                     <NavbarComponent/>
                     <h2 className="Title">
-                            Schedule exams here
+                         Upload exam schedule here
                     </h2>
                     <CSVReader
                         cssClass="csv-reader-input"
                         label="Upload timetable csv file"
                         onFileLoaded={data=>onFileLoaded(data)}
-                        // onError={this.handleDarkSideForce}
-                        inputId="ObiWan"
+                        inputId="inputFile"
                         inputStyle={{
                             
                             

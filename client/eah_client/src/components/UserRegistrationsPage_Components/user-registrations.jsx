@@ -77,7 +77,7 @@ const UserRegistrations=({user})=>{
                         usersDataTemp&&usersDataTemp.map((userdata,key)=>{
                             return(
                                 <div className="Profile" onClick={e=>handleClick(userdata)}>
-                                        <img src={`https://randomuser.me/api/portraits/men/${Math.floor((Math.random() * 50) + 1)}.jpg`} alt="" className="DP"/>
+                                        <img src={`https://randomuser.me/api/portraits/men/${userdata.user_name.length+userdata.user_name.charCodeAt(0) - 65}.jpg`} alt="" className="DP"/>
                                         <div className="Text">
                                             {userdata.user_name}
                                         </div>
@@ -108,7 +108,7 @@ const UserRegistrations=({user})=>{
              <div className="Overlay">
                 <div className="Content">
                     <img className="cancel" src={Cancel} onClick={e=>setshowPopup(false)}/>
-                    <img src={ManDP} alt="" className="dp" />
+                    <img src={`https://randomuser.me/api/portraits/men/${popupData.name.length+ popupData.name.charCodeAt(0) - 65}.jpg`} alt="" className="dp" />
 
                     <div className="Name field">
                         <div className="Label">
