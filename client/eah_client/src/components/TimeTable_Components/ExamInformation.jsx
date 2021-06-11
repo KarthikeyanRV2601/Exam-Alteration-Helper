@@ -38,7 +38,7 @@ const ExamInfo=({Currentdate,examData,returnDate,isMyTimetable})=>{
         setShowConfirmation(false);
         let body = {
             schedule_id: CurrentData.id,
-            status: "pending"
+            request_status: "pending"
         }
         try {
             const res = axios.post('/schedule/status', body);
@@ -51,6 +51,7 @@ const ExamInfo=({Currentdate,examData,returnDate,isMyTimetable})=>{
 
     }
     var returnClassName=()=>{
+        console.log(examData);
         var statusFlag=CurrentData.request_status;
 
         if(!statusFlag||statusFlag=="none")

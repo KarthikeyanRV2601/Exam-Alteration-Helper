@@ -5,6 +5,9 @@ const config = require('./utils/config')
 const firebase = require('firebase');
 firebase.initializeApp(config)
 const cors = require('cors');
+
+const PORT=process.env.PORT || 8080;
+app.listen(PORT,()=>console.log("Listening to port",PORT))
 app.use(cors());
 
 app.use('/users', require('./routes/users'));

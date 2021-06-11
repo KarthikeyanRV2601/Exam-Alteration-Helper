@@ -46,6 +46,7 @@ const TimeTable=({user})=>{
                     let date=new Date(item.date);
                     return (!dateInPast(date))
                 }))
+                // console.log(scheduledata);
                 
             } catch (error) {
                 console.log(error)

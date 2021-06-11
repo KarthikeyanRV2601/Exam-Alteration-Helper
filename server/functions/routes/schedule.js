@@ -284,7 +284,6 @@ router.post('/status',[
         console.log(errorList)
         return res.status(400).json(errorList);
     }
-    
     // console.log(req.body);
     try {
         

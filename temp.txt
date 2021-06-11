@@ -1,0 +1,6 @@
+"Exam name","Date and time","Duration","Class room","Block","Faculty name"
+"Periodical 2","2021-06-20T03:30:00.000Z","3","J-205","AB-3","mighil"
+"Periodical 2","2021-06-21T03:30:00.000Z","3","K-215","AB-1","karthi"
+"Periodical 2","2021-06-22T03:30:00.000Z","3","A-212","AB-3","tanmaay"
+"Periodical 2","2021-06-25T03:30:00.000Z","3","K-205","AB-1","kirthi"
+"Periodical 2","2021-06-26T03:30:00.000Z","3","K-205","AB-1","sidhi"

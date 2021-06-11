@@ -48,7 +48,7 @@ export const PopupContainer=({ExamData,NotificationList,setpopup,setNotifData, r
                                 <label>Class room:</label>
                                 <p>{ExamData.class_room}</p>
                             </div>
-                            <button onClick={e=>{acceptRequest()}}>Accept</button>
+                            <button id="RequestAcceptButton" onClick={e=>{acceptRequest()}}>Accept</button>
                     </div>
                     
             </div>

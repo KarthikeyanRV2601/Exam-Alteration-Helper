@@ -13,17 +13,17 @@ export const MainBanner=()=>{
             <div className="Details">
                 <h1>Details</h1>
                 <div className="ButtonSection">
-                <a className="ButtonElement" href="/duties-page">
+                <a className="ButtonElement" href="/duties-page" id="DutiesPage">
                     <img src={RequestIcon} />
                     Faculty schedules
                     
                 </a>
-                <a className="ButtonElement" href="/exam-schedule">
+                <a className="ButtonElement" href="/exam-schedule" id="scheduleInvigilations">
                     <img src={CalendarIcon} />
                     Schedule invigilations
                     
                 </a>
-                <a className="ButtonElement" href="/user-registrations">
+                <a className="ButtonElement" href="/user-registrations" id="UserRegistrations">
                     <img src={ExchangeIcon}  id="availablerequestsBtn"/>
                     
                     User registrations

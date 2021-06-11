@@ -333,8 +333,6 @@ describe("Schedule test", function() {
             chai.request(path)
                 .get('/pending_account')
                 .end(function (err, res) {
-                    // chai.expect(res.body.data).to.have.lengthOf.above(1);
-                    // console.log(res.body)
                     chai.expect(res.body.data[0]).to.contain.property('user_name')
                     chai.expect(res.body.data[0]).to.contain.property('email')
                     chai.expect(res.body.data[0]).to.contain.property('userID')
@@ -342,9 +340,7 @@ describe("Schedule test", function() {
                     chai.expect(res.body.data[0]).to.contain.property('department')
                     chai.expect(res.body.result).to.equal('success')
                     res.should.have.status(200);
-
                 });
-                    
             done()
         })
     })
@@ -352,7 +348,6 @@ describe("Schedule test", function() {
     describe("Add schedules from excel sheet", () => {
 
         it("Should not accept wrong information", async (done) => {
-    
             let body = {
                 "block": "A",
                 "duration": "240 hours",
@@ -364,8 +359,6 @@ describe("Schedule test", function() {
                 .post('/list')
                 .send(body)
                 .end(function (err, res) {
-                    // chai.expect(res.body.data).to.have.lengthOf.above(1);
-                    // console.log(res.body)
                     chai.expect(res.body).to.contain.property('block')
                     chai.expect(res.body.block).to.equal('block is not valid')
                     chai.expect(res.body).to.contain.property('duration')
@@ -416,7 +409,6 @@ describe("Schedule test", function() {
     })
 
     describe("Change status of user's scpecific schedule", () => {
-
         it("Should not change schedule if schedule ID is wrong", async (done) => {
     
             let body = {
@@ -427,14 +419,12 @@ describe("Schedule test", function() {
                 .post('/status')
                 .send(body)
                 .end(function (err, res) {
-                    // chai.expect(res.body.data).to.have.lengthOf.above(1);
-                    // console.log(res.body)
                     res.should.have.status(403);
                 });
                     
             done()
         })
-
+        
         it("Should not change schedule if status is wrong", async (done) => {
     
             let body = {
@@ -446,16 +436,12 @@ describe("Schedule test", function() {
                 .set('auth-token', token)
                 .send(body)
                 .end(function (err, res) {
-                    // chai.expect(res.body.data).to.have.lengthOf.above(1);
-                    // console.log(res.body)
                     chai.expect(res.body).to.contain.property('request_status')
                     chai.expect(res.body.request_status).to.equal('request status is not valid')
                     res.should.have.status(400);
                 });
-                    
             done()
-        })
-    })
+        })})
 
     describe("Change status of user's account", () => {
 

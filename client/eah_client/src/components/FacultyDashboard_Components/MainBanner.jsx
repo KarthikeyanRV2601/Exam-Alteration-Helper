@@ -67,16 +67,6 @@ export const MainBanner=({dutyLinks,requestLinks,returnDate,user})=>{
                                 })}
                             </div>
                         </div>
-                        {/* <div className="DeptSec Section">
-                        <h2>Department secretary requests</h2>
-                            <div className="Links">
-                                {requestLinks.map(link=>{
-                                    return (
-                                        <Link linkText={link}/>
-                                    )
-                                })}
-                            </div>
-                        </div> */}
                     </div>
             </div>
         </div>

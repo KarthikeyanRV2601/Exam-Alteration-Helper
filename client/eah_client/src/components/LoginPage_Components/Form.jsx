@@ -70,7 +70,7 @@ const Form=({ login, user, isAuth,classname })=>{
                     <button className="LoginButton" data-test="LoginButton">Login</button>
                     <div className="NewUser">
                         <p>New user?</p>
-                        <a href="/register-user">Register here</a>
+                        <a href="/register-user" id="registerRedirect">Register here</a>
                     </div>
                 </form>
             </div>
