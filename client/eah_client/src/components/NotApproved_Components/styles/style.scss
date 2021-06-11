@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito&family=Roboto+Slab:wght@900&display=swap");
+@mixin flexRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+@mixin ButtonStyle {
+  width: 120px;
+  height:40px;
+  background: black;
+  border: 1px solid white;
+  color: white;
+  @include flexRow();
+  cursor: pointer;
+  transition: 0.2s;
+  text-decoration: none;
+  &:hover{
+      background: white;
+      border: 1px solid #353535;
+      color: #353535;
+  }
+      z-index: 5;
+  
+}
+@mixin Shadow {
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+@mixin flexColumn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+
+.ErrorDisplay{
+    width: 100%;
+    height: 100vh;
+    @include flexRow();
+
+    .Left{
+        width: 50%;
+        height: 40%;
+        padding-left: 15%;
+        @include flexColumn();
+        align-items: flex-start;
+        text-align: left;
+        justify-content: space-around;
+        h1{
+            font-size: 80px;
+            color: #1a97e5;
+        }
+        h2{
+            font-size: 16px;
+            color: #1a97e5;
+        }
+        button{
+            width: 200px;
+            height: 50px;
+            background: #7237ff;
+            outline: none;
+            border: 1px solid white;
+            color: white;
+            cursor: pointer;
+            &:hover{
+                background: white;
+                color: #7237ff;
+                border: 1px solid #7237ff;
+            }
+        }
+    }
+    .Right
+    {
+        width: 50%;
+        img{
+            width: 80%;
+            object-fit: contain;
+        }
+    }
+}
+

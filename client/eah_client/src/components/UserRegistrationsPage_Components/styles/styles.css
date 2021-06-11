@@ -1,0 +1,332 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.RegistrationsPage {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.RegistrationsPage .SearchBarWrap {
+  width: 80%;
+  height: 15%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.RegistrationsPage .SearchBarWrap .Searchbar {
+  width: 80%;
+  height: 40%;
+  border: 1px solid #353535;
+  outline: none;
+  font-size: 16px;
+  padding-left: 5px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.RegistrationsPage .SearchBarWrap .Searchbar:hover {
+  padding-left: 20px;
+}
+
+.RegistrationsPage .SearchBarWrap .Searchbar:focus {
+  padding-left: 20px;
+}
+
+.RegistrationsPage .SearchBarWrap .SearchButton {
+  width: 5%;
+  height: 35%;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.RegistrationsPage .SearchBarWrap .SearchButton:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.RegistrationsPage .SearchResult {
+  width: 80%;
+  -webkit-box-shadow: 0px 2px 5px 2px rgba(148, 148, 148, 0.16);
+          box-shadow: 0px 2px 5px 2px rgba(148, 148, 148, 0.16);
+  min-height: 70%;
+  max-height: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  overflow-y: scroll;
+  padding-top: 2%;
+  gap: 5px;
+}
+
+.RegistrationsPage .SearchResult .Profile {
+  width: 90%;
+  min-height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border: 1px solid #68686841;
+}
+
+.RegistrationsPage .SearchResult .Profile .Text {
+  width: 40%;
+  height: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  color: #777777;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: left;
+}
+
+.RegistrationsPage .SearchResult .Profile .DP {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.RegistrationsPage .SearchResult .Profile .Buttons {
+  width: 300px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.RegistrationsPage .SearchResult .Profile .Buttons .Button {
+  width: 150px;
+  height: 40px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.RegistrationsPage .SearchResult .Profile .Buttons .Allow {
+  background: #44bd32;
+  border: 1px solid white;
+}
+
+.RegistrationsPage .SearchResult .Profile .Buttons .Allow:hover {
+  background: white;
+  border: 1px solid #44bd32;
+  color: #44bd32;
+}
+
+.RegistrationsPage .SearchResult .Profile .Buttons .Deny {
+  background: #ff4d4d;
+  border: 1px solid white;
+}
+
+.RegistrationsPage .SearchResult .Profile .Buttons .Deny:hover {
+  background: white;
+  color: #ff4d4d;
+  border: 1px solid #ff4d4d;
+}
+
+.RegistrationsPage .SearchResult .Profile:hover {
+  -webkit-box-shadow: 0px 2px 5px 2px rgba(148, 148, 148, 0.16);
+          box-shadow: 0px 2px 5px 2px rgba(148, 148, 148, 0.16);
+}
+
+.Overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #00000021;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.Overlay .Content {
+  width: 400px;
+  height: 400px;
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 10px;
+  position: relative;
+  -webkit-box-shadow: 0px 2px 5px 2px rgba(148, 148, 148, 0.16);
+          box-shadow: 0px 2px 5px 2px rgba(148, 148, 148, 0.16);
+}
+
+.Overlay .Content .cancel {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.Overlay .Content .cancel:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.Overlay .Content .dp {
+  width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 50px;
+  border-radius: 50%;
+}
+
+.Overlay .Content .field {
+  width: 80%;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.Overlay .Content .field .Label, .Overlay .Content .field .Text {
+  width: 40%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-left: 5%;
+  border: 1px solid #35353527;
+}
+
+.Overlay .Content .field .Text {
+  width: 60%;
+  padding-left: 15%;
+}
+/*# sourceMappingURL=styles.css.map */

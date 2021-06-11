@@ -1,0 +1,461 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito&family=Roboto+Slab:wght@900&display=swap");
+* {
+  margin: 0%;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+#root .LoginPage {
+  width: 100%;
+  height: 100vh;
+  padding-top: 5%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  font-family: "Nunito", sans-serif;
+  overflow: hidden;
+}
+
+#root .LoginPage h1 {
+  font-family: "Roboto Slab", serif;
+  color: white;
+}
+
+#root .LoginPage ul {
+  list-style: none;
+}
+
+#root .LoginPage #videoBkg {
+  position: fixed;
+  z-index: 10;
+}
+
+#root .LoginPage .hero-section {
+  position: absolute;
+  top: 35%;
+  left: 2%;
+  width: 30%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-transform: translateY(-30%);
+          transform: translateY(-30%);
+  z-index: 100;
+}
+
+#root .LoginPage .hero-section > * {
+  -webkit-transform: translateY(80px);
+          transform: translateY(80px);
+  opacity: 0;
+  -webkit-animation: fadeUp 1s ease-out forwards;
+          animation: fadeUp 1s ease-out forwards;
+}
+
+#root .LoginPage .hero-section h1 {
+  font-size: 5rem;
+  text-align: left;
+}
+
+#root .LoginPage .hero-section p {
+  font-size: 1.2rem;
+  margin: 4em 0 2em 0;
+  line-height: 30px;
+}
+
+#root .LoginPage .hero-section p strong {
+  color: #2F89FC;
+}
+
+#root .LoginPage .hero-section a {
+  width: 150px;
+  height: 50px;
+  padding: 1em 1.2em;
+  outline: none;
+  color: white;
+  text-transform: uppercase;
+  background: transparent;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+  border: 2px solid white;
+  margin-top: 20%;
+  text-decoration: none;
+}
+
+#root .LoginPage .hero-section a:hover {
+  background-color: #2F89FC;
+  color: #ffffff;
+  border: 2px solid  #2F89FC;
+}
+
+#root .LoginPage .hero-section h1:nth-child(2) {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+#root .LoginPage .hero-section h1:nth-child(3) {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+#root .LoginPage .hero-section h1:nth-child(4) {
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}
+
+#root .LoginPage .hero-section p {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+#root .LoginPage .hero-section a {
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+}
+
+@-webkit-keyframes fadeUp {
+  0% {
+    -webkit-transform: translateY(80px);
+            transform: translateY(80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    -webkit-transform: translateY(80px);
+            transform: translateY(80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+#root .LoginPage .Container {
+  width: 70%;
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-shadow: 0 0 5px #2f86f75d;
+          box-shadow: 0 0 5px #2f86f75d;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 10;
+  border-radius: 10px;
+}
+
+#root .LoginPage .Container::before {
+  content: "";
+  width: 20%;
+  height: 70%;
+  border-radius: 50%;
+  background: #2F89FC;
+  position: absolute;
+  z-index: -1;
+  top: -50%;
+  left: -50%;
+  -webkit-animation: animatebefore 0.5s ease-in-out forwards;
+          animation: animatebefore 0.5s ease-in-out forwards;
+}
+
+@-webkit-keyframes animatebefore {
+  0% {
+    width: 20%;
+    height: 70%;
+  }
+  100% {
+    width: 100%;
+    height: 180%;
+  }
+}
+
+@keyframes animatebefore {
+  0% {
+    width: 20%;
+    height: 70%;
+  }
+  100% {
+    width: 100%;
+    height: 180%;
+  }
+}
+
+#root .LoginPage .Container .IllustrationContainer {
+  width: 50%;
+  height: 100%;
+  padding-top: 10%;
+  padding-left: 2%;
+  padding-right: 2%;
+  background: #a4edff;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+#root .LoginPage .Container .LeftPanel {
+  width: 50%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 5%;
+  background: white;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+#root .LoginPage .Container .LeftPanel .Introtext {
+  width: 100%;
+  height: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+#root .LoginPage .Container .LeftPanel .Introtext .Logo {
+  width: 100px;
+  height: 100px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+#root .LoginPage .Container .LeftPanel .Introtext p {
+  width: 300px;
+  text-align: left;
+  font-size: 18px;
+  color: #353535;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#root .LoginPage .Container .LeftPanel .Introtext p span {
+  color: #2F89FC;
+  font-size: 22px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#root .LoginPage .Container .LeftPanel .LoginForm {
+  width: 100%;
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+#root .LoginPage .Container .LeftPanel .LoginForm .NewUser {
+  width: 100%;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 2%;
+}
+
+#root .LoginPage .Container .LeftPanel .LoginForm .NewUser p {
+  font-size: 16px;
+  color: #818181;
+}
+
+#root .LoginPage .Container .LeftPanel .LoginForm .NewUser a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: #2F89FC;
+}
+
+#root .LoginPage .Container .LeftPanel .LoginForm .LoginButton {
+  width: 200px;
+  height: 50px;
+  background: #2F89FC;
+  border: 1px solid white;
+  color: white;
+}
+
+#root .LoginPage .Container .LeftPanel .LoginForm .LoginButton:hover {
+  background: white;
+  border: 1px solid #2F89FC;
+  color: #2F89FC;
+  cursor: pointer;
+}
+
+#root .LoginPage .Container .LeftPanel .LoginForm .input-field {
+  position: relative;
+  width: 250px;
+  height: 44px;
+  line-height: 44px;
+}
+
+#root .LoginPage .Container .LeftPanel .LoginForm label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: left;
+  width: 100%;
+  color: #d3d3d3;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+  cursor: text;
+}
+
+#root .LoginPage .Container .LeftPanel .LoginForm input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid #d3d3d3;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #111;
+}
+
+#root .LoginPage .Container .LeftPanel .LoginForm input:invalid {
+  outline: 0;
+}
+
+#root .LoginPage .Container .LeftPanel .LoginForm input:focus,
+#root .LoginPage .Container .LeftPanel .LoginForm input:valid {
+  border-color: #00dd22;
+}
+
+#root .LoginPage .Container .LeftPanel .LoginForm input:focus ~ label,
+#root .LoginPage .Container .LeftPanel .LoginForm input:valid ~ label {
+  font-size: 14px;
+  top: -24px;
+  color: #00dd22;
+}
+
+#root .LoginPage .Container .LeftPanel .LoginForm .Error {
+  border-bottom: 2px solid red;
+  color: red;
+  -webkit-animation: vibrate 0.5s ease-in forwards;
+          animation: vibrate 0.5s ease-in forwards;
+}
+
+#root .LoginPage .Container .LeftPanel .LoginForm .Error:focus, #root .LoginPage .Container .LeftPanel .LoginForm .Error:valid {
+  border-color: red;
+}
+
+#root .LoginPage .Container .LeftPanel .LoginForm .Error:focus ~ label,
+#root .LoginPage .Container .LeftPanel .LoginForm .Error:valid ~ label {
+  font-size: 14px;
+  top: -24px;
+  color: red;
+}
+/*# sourceMappingURL=Login.css.map */

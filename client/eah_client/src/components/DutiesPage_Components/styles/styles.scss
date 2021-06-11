@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@mixin flexRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@mixin Shadow {
+    box-shadow: 0px 2px 5px 2px rgba(148, 148, 148, 0.16);
+}
+@mixin flexColumn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.DutiesPage{
+    width: 100%;
+    height: 100vh;
+    // background: green;
+    @include flexColumn();
+    .SearchBarWrap{
+        margin-top: 5%;
+        width: 80%;
+        height: 15%;
+        @include flexRow();
+        .Searchbar{
+            width: 80%;
+            height: 40%;
+            border: 1px solid #353535;
+            outline: none;
+            font-size: 16px;
+            padding-left: 5px;
+        }
+        .SearchButton{
+            width: 5%;
+            height: 35%;
+            cursor: pointer;
+            transition: 0.2s;
+            &:hover{
+                transform: scale(1.1);
+            }
+
+        }
+    }
+    .SearchResult{
+        width: 80%;
+        @include Shadow();
+        min-height: 60%;
+        max-height: 60%;
+        @include flexColumn();
+        justify-content: flex-start;
+        overflow-y: scroll;
+        padding-top: 2%;
+        gap: 5px;
+        
+        .Profile
+                 {  width: 90%;
+                    min-height: 50px;
+                    @include flexRow();
+                    justify-content: space-around;
+                    border: 1px solid #68686841;
+                    .Text{
+                        width: 70%;
+                        height: 70%;
+                        @include flexRow();
+                        justify-content: space-around;
+                        color: #777777;
+                        justify-content: flex-start;
+                        cursor: pointer;
+                        text-decoration: none;
+                        text-align: left;
+                        
+                    }
+                    .DP{
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+                 }
+    }
+}

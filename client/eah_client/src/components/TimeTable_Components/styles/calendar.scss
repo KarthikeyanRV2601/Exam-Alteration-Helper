@@ -1,0 +1,553 @@
+
+/* ---------- FONTAWESOME ---------- */
+/* ---------- https://fortawesome.github.com/Font-Awesome/ ---------- */
+/* ---------- http://weloveiconfonts.com/ ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+@mixin flexRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@mixin Shadow {
+    box-shadow: 0 0 5px rgba(56, 56, 56, 0.2);
+}
+@mixin flexColumn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+*{
+    margin: 0%;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+
+}
+@import url(https://weloveiconfonts.com/api/?family=fontawesome);
+
+*[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+/* ---------- GENERAL ---------- */
+#root{
+    
+    width: 100%;
+    height: 100%;
+    
+.CalendarPage {
+    width: 100%;
+    height: 93vh;
+    overflow-y: hidden;
+    @include flexRow();
+    justify-content: space-around;
+    background: #f9f9f9;
+    color: #0e171c;
+    font: 300 100%/1.5em 'Lato', sans-serif;
+    margin: 0;
+
+.ActualCalendarcontainer{
+    width: 500px;
+    height: 600px;
+    @include flexColumn();
+    justify-content: space-between;
+    .DownloadButton{
+    width: 150px;
+    min-height: 50px;
+    background:#2F89FC;
+    color: white;
+    border: none;
+    outline: none;
+    left: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+    @include flexColumn();
+    
+    &:hover{
+      border: 1px solid #2F89FC;
+      color: #2F89FC;
+      background: white;
+
+    }
+    }
+a {
+	text-decoration: none;
+}
+
+h2 {
+	font-size: 2em;
+	line-height: 1.25em;
+	margin: .25em 0;
+}
+
+h3 {
+	font-size: 1.5em;
+	line-height: 1em;
+	margin: .33em 0;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.container {
+	width: 510px;
+}
+/* ---------- CALENDAR ---------- */
+
+
+}
+
+.calendar {
+	text-align: center;
+}
+
+.calendar header {
+	position: relative;
+}
+
+.calendar h2 {
+	text-transform: uppercase;
+}
+
+.calendar thead {
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.calendar tbody {
+	color: #7c8a95;
+}
+
+.calendar tbody td:hover {
+	border: 2px solid #00addf;
+}
+
+.calendar td {
+	border: 2px solid transparent;
+	border-radius: 50%;
+	display: inline-block;
+	height: 4em;
+	line-height: 4em;
+	text-align: center;
+	width: 4em;
+}
+
+.calendar .prev-month,
+.calendar .next-month {
+	color: #cbd1d2;
+}
+
+.calendar .prev-month:hover,
+.calendar .next-month:hover {
+	border: 2px solid #cbd1d2;
+}
+
+.current-day {
+	background: #00addf;
+	color: #f9f9f9;
+}
+
+.event {
+	cursor: pointer;
+	position: relative;
+}
+
+.event:after {
+	background: #00addf;
+	border-radius: 50%;
+	bottom: .5em;
+	display: block;
+	content: '';
+	height: .5em;
+	left: 50%;
+	margin: -.25em 0 0 -.25em;
+	position: absolute;
+	width: .5em;
+}
+
+.event.current-day:after {
+	background: #f9f9f9;
+}
+
+.btn-prev,
+.btn-next {
+	border: 2px solid #cbd1d2;
+	border-radius: 50%;
+	color: #cbd1d2;
+	height: 2em;
+	font-size: .75em;
+	line-height: 2em;
+	margin: -1em;
+	position: absolute;
+	top: 50%;
+	width: 2em;
+}
+
+.btn-prev:hover,
+.btn-next:hover {
+	background: #cbd1d2;
+	color: #f9f9f9;
+}
+
+.btn-prev {
+	left: 6em;
+}
+
+.btn-next {
+	right: 6em;
+}
+
+.InformationContainer{
+    width: 500px;
+    height: 500px;
+    // display: none;
+    @include flexColumn();
+    justify-content: space-around;
+    background: white;
+    @include Shadow();
+    .Wrapper{
+        width:100%;
+        height: 50%;
+        @include flexRow();
+        justify-content: space-around;
+        display: none;
+        .Thumbail{
+            width: 90%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .SwitchLeft,.SwitchRight{
+            width: 20px;
+            height: 20px;
+            object-fit: contain; 
+            cursor: pointer;
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+        .SwitchRight{
+            transform: rotate(180deg);
+            &:hover{
+                transform: scale(1.1) rotate(180deg);
+            }
+        }
+    }
+    .ExamList{
+        width: 100%;
+        height: 400px;
+        max-height: 400px;
+        overflow-y:scroll;
+
+        
+    .Exam{
+        width: 80%;
+        height: 50px;
+        @include flexRow();
+        justify-content: space-around;
+        background: #2F89FC;
+        border-radius: 10px;
+        transition: 0.3s;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        margin-top: 10px;
+        .Description{
+            width: 60%;
+            height: 40%;
+            @include flexColumn();
+            text-align: center;
+            color: white;
+    
+        }
+        h2{
+            color: white;
+        }
+        &:hover{
+            cursor: pointer;
+            background: white;
+            h2,.Description{
+                color: #2F89FC;
+            }
+            border: 1px solid #2F89FC;
+        }
+    }
+}
+    
+
+}
+}
+}
+
+
+
+
+
+
+
+.react-calendar {
+    width: 600px;
+    padding: 20px;
+    max-width: 100%;
+    background: white;
+    /* border: 1px solid #a0a096; */
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.125em;
+    border-radius: 10px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.2);
+  }
+  .react-calendar--doubleView {
+    width: 700px;
+  }
+  .react-calendar--doubleView .react-calendar__viewContainer {
+    display: flex;
+    margin: -0.5em;
+  }
+  .react-calendar--doubleView .react-calendar__viewContainer > * {
+    width: 50%;
+    margin: 0.5em;
+  }
+  .react-calendar,
+  .react-calendar *,
+  .react-calendar *:before,
+  .react-calendar *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .react-calendar button {
+    margin: 0;
+    border: 0;
+    height:65px;
+    width:40px;
+    outline: none;
+    border-radius: 50%;
+    margin-bottom: 2px;
+    
+  }
+  .react-calendar button:enabled:hover {
+    cursor: pointer;
+  }
+  .react-calendar__navigation {
+    height: 44px;
+    margin-bottom: 1em;
+  }
+  .react-calendar__navigation button {
+    min-width: 44px;
+    background: none;
+  }
+  .react-calendar__navigation button:enabled:hover,
+  .react-calendar__navigation button:enabled:focus {
+    background-color: #e6e6e6;
+  }
+  .react-calendar__navigation button[disabled] {
+    background-color: #f0f0f0;
+  }
+  .react-calendar__month-view__weekdays {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.75em;
+  }
+  .react-calendar__month-view__weekdays__weekday {
+    padding: 0.5em;
+    margin-bottom: 5px;
+  }
+  .react-calendar__month-view__weekNumbers {
+    font-weight: bold;
+  }
+  .react-calendar__month-view__weekNumbers .react-calendar__tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75em;
+    padding: calc(0.75em / 0.75) calc(0.5em / 0.75);
+  }
+  .react-calendar__month-view__days__day--weekend {
+    color: #d10000;
+  }
+  .react-calendar__month-view__days__day--neighboringMonth {
+    color: #757575;
+  }
+  .react-calendar__year-view .react-calendar__tile,
+  .react-calendar__decade-view .react-calendar__tile,
+  .react-calendar__century-view .react-calendar__tile {
+    padding: 2em 0.5em;
+  }
+  .react-calendar__tile {
+    max-width: 100%;
+    text-align: center;
+    padding: 0.75em 0.5em;
+    background: none;
+  }
+  .react-calendar__tile:disabled {
+    background-color: #f0f0f0;
+  }
+  .react-calendar__tile:enabled:hover,
+  .react-calendar__tile:enabled:focus {
+    background-color: #e6e6e6;
+  }
+  .react-calendar__tile--now {
+    background: #ffff76;
+  }
+  .react-calendar__tile--now:enabled:hover,
+  .react-calendar__tile--now:enabled:focus {
+    background: #ffffa9;
+  }
+  .react-calendar__tile--hasActive {
+    background: #76baff;
+  }
+  .react-calendar__tile--hasActive:enabled:hover,
+  .react-calendar__tile--hasActive:enabled:focus {
+    background: #a9d4ff;
+  }
+  .react-calendar__tile--active {
+    background: #006edc;
+    color: white;
+  }
+  .react-calendar__tile--active:enabled:hover,
+  .react-calendar__tile--active:enabled:focus {
+    background: #1087ff;
+  }
+  .react-calendar--selectRange .react-calendar__tile--hover {
+    background-color: #e6e6e6;
+  }
+  
+.ExamInfo{
+    width: 400px;
+    height: 400px;
+    @include flexColumn();
+    @include Shadow();
+    background: white;
+    justify-content: space-around;
+    .ExamName{
+        width: 300px;
+        @include flexRow();
+        justify-content: space-between;
+    }
+  .Information{
+      width: 300px;
+      height: 200px;
+      @include flexColumn();
+      align-items: flex-start;
+      .Info{
+          width: 90%;
+          height: 30px;
+          @include flexRow();
+          justify-content: space-between;
+      }
+  }
+  .exchangeRequest
+  {
+    width: 150px;
+    height: 50px;
+    background:#2F89FC;
+    color: white;
+    border: none;
+    outline: none;
+    left: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+    &:hover{
+      border: 1px solid #2F89FC;
+      color: #2F89FC;
+      background: white;
+
+    }
+
+  }
+  .pendingStatus{
+    width: 150px;
+    height: 50px;
+    border: none;
+    outline: none;
+    left: 50%;
+    background: rgb(233, 233, 0);
+    color: #353535;
+    pointer-events: none;
+  }
+  .approvedStatus{
+    width: 150px;
+    height: 50px;
+    border: none;
+    outline: none;
+    left: 50%;
+    background: green;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+    &:hover{
+      border: 1px solid green;
+      color: green;
+      background: white;
+
+    }
+
+  }
+  
+}
+.ExchangeConfirmation
+{
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background: rgba(29, 29, 29, 0.445);
+  z-index: 10;
+  @include flexColumn();
+  backdrop-filter: blur(5px);
+  
+  .container{
+  width: 400px;
+  height: 400px;
+  background: white;
+  border-radius: 10px;
+  @include flexColumn();
+  justify-content: space-evenly;
+  h2{
+    font-size: 14px;
+    font-weight: lighter;
+
+  }
+  .Buttons{
+    width: 200px;
+    height: 120px;
+    @include flexColumn();
+    justify-content: space-around;
+    button{
+      width: 150px;
+    height: 50px;
+    background:#2F89FC;
+    color: white;
+    border: none;
+    outline: none;
+    left: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+    &:hover{
+      border: 1px solid #2F89FC;
+      color: #2F89FC;
+      background: white;
+
+    }
+    }
+  }
+  }
+}
+  
+
+
+
+
+.StartDate{
+  background: green;
+  color: white;
+}

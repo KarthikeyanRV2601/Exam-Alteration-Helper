@@ -1,0 +1,157 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@mixin flexRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@mixin Shadow {
+    box-shadow: 0px 2px 5px 2px rgba(148, 148, 148, 0.16);
+}
+@mixin flexColumn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+.RegisterUser{
+    width: 100%;
+    height: 100vh;
+    @include flexColumn();
+    
+    .Form{
+        width: 70%;
+        height: 80%;
+        @include Shadow();
+        @include flexRow();
+        background: white;
+        border-radius: 10px;
+        .ActualForm{
+            width: 50%;
+            height: 80%;
+            @include flexColumn();
+            justify-content: space-around;
+            h2{
+            font-size: 20px;
+            color: rgba(14, 190, 181, 0.671);
+            }
+            .NewUser{
+                width: 100%;
+                height: 30px;
+                @include flexRow();
+                gap: 2%;
+                p{
+                  font-size: 16px;
+                  color: rgb(129, 129, 129);
+                }
+                a{
+                  text-decoration: none;
+                  font-size: 16px;
+                  font-weight: bold;
+                  color: rgb(14, 190, 182);
+                }
+              
+              }
+            .InputsWrap{
+                width: 90%;
+                height: 70%;
+                @include flexColumn();
+                justify-content: space-around;
+                .input-field{
+                    width: 80%;
+                    height: 50px;
+                    input{
+                        width: 80%;
+                        height: 90%;
+                        padding-left: 2%;
+                        outline: none;
+                        transition: 0.2s;
+                        &:focus
+                        {
+                            border: 2px solid rgb(14, 190, 182);
+                            box-shadow: 2px 2px 0 rgba(46, 196, 188, 0.658);
+                            padding-left: 5%;
+                        }
+                        &:hover{
+                            padding-left: 5%;
+                        }
+                        
+                    }
+                   
+                }
+            }
+            button{
+                width: 200px;
+                height: 50px;
+                background:rgb(14, 190, 182);
+                color: white;
+                border: none;
+                outline: none;
+                font-size: 16px;
+                &:hover{
+                    border: 1px solid rgb(14, 190, 182);
+                    background: white;
+                    color:rgb(14, 190, 182);
+                    cursor: pointer;
+                }
+            }
+            
+        }
+        
+        .Illustration
+        {
+            width: 50%;
+            height: 100%;
+            background: white;
+            background: #d2ceff;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            img{
+                width: 70%;
+                height: 100%;
+                object-fit: contain;
+                
+            }
+        }
+        &::before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgb(14, 190, 182);
+            top: 0;
+            left: 0;
+            z-index: -1;
+            clip-path: circle(20.4% at 9% 9%);
+            animation: animateClip 0.5s ease-in-out forwards;
+
+            @keyframes animateClip {
+                0%{
+                    clip-path: circle(20.4% at 9% 9%);
+                }
+                100%{
+                    clip-path: circle(60% at 9% 9%);
+                }
+                
+            }
+        }
+        
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+

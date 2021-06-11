@@ -1,0 +1,602 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+@mixin flexRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+@mixin ButtonStyle {
+  width: 200px;
+  height:60px;
+  background: #ff9000;
+  border: 1px solid white;
+  color: white;
+  @include flexRow();
+  cursor: pointer;
+  transition: 0.2s;
+  text-decoration: none;
+  border-radius: 30px;
+  &:hover{
+      background: white;
+      border: 1px solid #ff9000;
+      color: #ff9000;
+  }
+      z-index: 5;
+  
+}
+@mixin Shadow {
+    box-shadow: 0px 2px 5px 2px rgba(148, 148, 148, 0.16);
+}
+@mixin flexColumn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+*{
+    margin: 0%;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+
+}
+#root {
+  width: 100%;
+  height: 100vh;
+  @include flexColumn();
+  
+    .SupervisorDashboard{
+        width: 100%;
+        height: 100vh;
+        @include flexRow();
+        justify-content: space-around;
+        position: relative;
+        background: #F5F5F5;
+        user-select: none;
+        overflow: hidden;
+        .BlueBanner{
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #ff9000;
+            width: 100%;
+            height: 19vh;
+            z-index: 1;
+        }
+
+        .LeftContainer{
+            z-index: 10;
+            width: 30%;
+            height: 90%;
+            @include flexColumn();
+            justify-content: space-between;
+            .UserDetail{
+                width: 100%;
+                height: 30%;
+                border-radius: 10px;
+                background: white;
+                @include flexRow();
+                justify-content: space-around;
+                @include Shadow();
+                .ProfileDp{
+                    width: 120px;
+                    height:120px;
+                    background: #f5f5f5;
+                    border-radius: 50%;
+                    
+                }
+                .Details{
+                    width: 50%;
+                    height: 40%;
+                    @include flexColumn();
+                    align-items: flex-start;
+                    justify-content: space-around;
+                    position: relative;
+                    h2{
+                        font-size: 18px;
+                    }
+                    .Label{
+                        width: 70px;
+                        height: 20px;
+                        background: #eeeeee;
+                        color: #ff9000;
+                        border-radius: 6px;
+                    }
+                    p{
+                        font-size: 12px;
+                        color: #8B8B8B;
+                    }
+                    
+
+                }
+                #SettingsIcon{
+                    width: 24px;
+                    height: 24px;
+                    position: absolute;
+                    right: 2%;
+                    top: 2%;
+                    cursor: pointer;
+                    transition: 0.2s;
+                    &:hover{
+                        transform: rotate(30deg);
+                    }
+                }
+                .Menu{
+                    width: 200px;
+                    height: 150px;
+                    position: absolute;
+                    background: #ff9000;
+                    @include flexColumn();
+                    top: 30px;
+                    border-radius: 20px;
+                    .Option{
+                        width: 90%;
+                        height: 30px;
+                        @include flexColumn();
+                        color: white;
+                        border-bottom: 1px solid #e6e6e6b2;
+                        cursor: pointer;
+                        text-decoration: none;
+                        &:hover{
+                            background: white;
+                            color: #ff9000;
+                            
+                        }
+                    }
+                    display: none;
+                }
+                .AnimateMenu{
+                    animation: 0.2s animate ease-in-out forwards;
+                    display: inherit;
+                    @keyframes animate {
+                        0%{
+                            right: 0%;
+                            opacity: 0;
+                        }
+                        100%{
+                            right: 2%;
+                            opacity: 1;
+                        }
+                        
+                    }
+                }
+               transition: transform 0.6s easeOutBack;
+               animation: animateUser 0.6s forwards;
+               @keyframes animateUser {
+                   0%{
+                       transform: translateX(-10%)
+                   }
+                   100%{
+                        transform: translateX(0)
+ 
+                   }
+               }
+            }
+            
+            .NotificationContainer{
+                width: 100%;
+                height:65%;
+                border-radius: 10px;
+                @include flexColumn();
+                justify-content: space-around;
+                @include Shadow();
+                background: white;
+                transform: translateX(-50%);
+                opacity: 0;
+                .Title{
+                    width: 100%;
+                    height: 10%;
+                    @include flexRow();
+                    padding-left: 10%;
+                    justify-content: flex-start;
+                    h1{
+                    width:80%;
+                    height: 100%;
+                    @include flexColumn();
+                    font-size: 24px;
+                    align-items: flex-start;
+                    color: #808080;
+                    // border-bottom: 2px solid #808080;
+                    }
+                    #NotificationCount{
+                        width: 20px;
+                        height: 20px;
+                        background: #37DA0E;
+                        color: white;
+                        border-radius: 50%;
+                        font-size: 10px;
+                        @include flexColumn();
+                    }
+                }
+                
+             .NotificationSection{
+                 width: 100%;
+                 min-height: 70%;
+                 max-height: 70%;
+                 @include flexColumn();
+                 justify-content: flex-start;
+                 overflow-y: scroll;
+                 .Notification
+                 {  width: 90%;
+                    min-height: 50px;
+                    @include flexColumn();
+                    justify-content: space-around;
+                    
+                    .Text{
+                        width: 100%;
+                        height: 70%;
+                        @include flexRow();
+                        
+                        justify-content: space-around;
+                        .bullet{
+                            width: 14px;
+                            height: 14px;
+                        }
+                        a{
+                            width: 80%;
+                            @include flexRow();
+                            height: 100%;
+                            color: #777777;
+                            justify-content: flex-start;
+                            cursor: pointer;
+                            text-decoration: none;
+                            text-align: left;
+                        }
+                    }
+                    .Emergency{
+                        width: 100%;
+                        height: 70%;
+                        @include flexRow();
+                        justify-content: space-around;
+                        .bullet{
+                            width: 14px;
+                            height: 14px;
+                        }
+                        a{
+                            width: 80%;
+                            @include flexRow();
+                            height: 100%;
+                            color: rgba(252, 52, 52, 0.836);;
+                            justify-content: flex-start;
+                            cursor: pointer;
+                            text-decoration: none;
+                            text-align: left;
+                        }
+                    }
+                    .Line{
+                        width: 100%;
+                        border-top: 1px solid rgba(165, 165, 165, 0.57);
+                    }
+                 }
+                
+                 
+             }
+              transition: transform 0.6s easeOutBack;
+               animation: animateNotification 0.6s forwards;
+               animation-delay: 0.3s;
+               @keyframes animateNotification {
+                   0%{
+                       transform: translateX(-10%)
+                   }
+                   100%{
+                        opacity: 1;
+                        transform: translateX(0)
+ 
+                   }
+               }
+            }
+
+        }
+        .RightContainer{
+            z-index: 10;
+            width: 60%;
+            height: 90%;
+            @include flexColumn();
+            justify-content: space-between;
+            .TopBanner{
+                width: 100%;
+                height: 40%;
+                border-radius: 10px;
+                @include Shadow();
+                background: white;
+                @include flexColumn();
+                justify-content: space-around;
+                opacity: 0;
+
+                h1{
+                    margin-top: 2%;
+                    width: 18%;
+                    height: 30px;
+                    font-size: 24px;
+                    color: #808080;
+                    @include flexRow();
+                    justify-content: flex-start;
+                    // border-bottom: 2px solid #808080;
+                }
+                .Details{
+                    width: 80%;
+                    height: 95%;
+                    @include flexRow();
+                    justify-content: space-around;
+                    .Detail{
+                        width: 30%;
+                        height: 50%;
+                        @include flexColumn();
+                        justify-content: space-around;
+                        .Value{
+                            color: #ff9000;
+                            font-size: 40px;
+                            height: 50px;
+                            width: 100px;
+                            @include flexColumn();
+                        }
+                        .Label{
+                            color:#3D3D3D;
+                            font-size: 14px;
+                        }
+                        .MidDetail{
+                            width: 100px;
+                            height: 50px;
+                            font-size: 40px;
+                            color: white;
+                            background: #ff9000;
+                            border-radius: 10px;
+                        }
+                    }
+                }
+                transition: transform 0.6s easeOutBack;
+               animation: animateTop 0.6s forwards;
+               @keyframes animateTop {
+                   0%{
+                       transform: translateX(10%)
+                   }
+                   100%{
+                        opacity: 1;
+                        transform: translateX(0)
+ 
+                   }
+               }
+               
+            }
+            .MainBanner{
+                width: 100%;
+                height: 55%;
+                border-radius: 10px;
+                @include Shadow();
+                background: white;
+                @include flexRow();
+                justify-content: space-around;
+                transition: transform 0.6s easeOutBack;
+                animation: animateMain 0.6s forwards;
+                animation-delay: 0.3s;
+                opacity: 0;
+                @keyframes animateMain {
+                    0%{
+                        transform: translateX(10%)
+                    }
+                    100%{
+                         opacity: 1;
+                         transform: translateX(0)
+  
+                    }
+                }
+                .Details{
+                    width: 100%;
+                    height: 100%;
+                    @include flexColumn();
+
+                    h1{
+                        margin-left: 10%;
+                        width: 18%;
+                        height: 30px;
+                        font-size: 24px;
+                        color: #808080;
+                        @include flexRow();
+                        justify-content: flex-start;
+                        // border-bottom: 2px solid #808080;
+                    }
+                    .ButtonSection{
+                        width: 90%;
+                        height: 80%;
+                        @include flexRow();
+                        justify-content: space-around;
+                        // align-items: flex-start;
+                        .ButtonElement{
+                            width: 25%;
+                            height: 180px;
+                            @include flexColumn();
+                            justify-content: space-around;
+                            background: #ff9000;
+                            border-radius: 10px;
+                            img{
+                                width: 50px;
+                                height: 50px;
+                                object-fit: contain;
+                            }
+                            color: white;
+                            text-decoration: none;
+                            outline: none;
+                            font-size: 18px;
+                            transition: 0.2s;
+                            &:hover{
+                                background: white;
+                                color: #ff9000;
+                                border: 1px solid #ff9000;
+                            }
+                        }
+                       
+                    }
+                }
+                .QuickLinks{
+                    width: 50%;
+                    height: 100%;
+                    @include flexColumn();
+                    align-items: flex-start;
+                    h1{
+                        width: 32%;
+                        font-size: 24px;
+                        color: #808080;
+                        // margin-left: 5%;
+                        @include flexRow();
+                        justify-content: flex-start;
+                        // border-bottom: 2px solid #808080;
+                    }
+                    .Sections{
+                    width: 100%;
+                    height: 80%;
+                    @include flexColumn();
+                    justify-content: flex-end;
+                    padding-left: 10%;
+                        .Section
+                        {
+                            width: 100%;
+                            height: 80%;
+                            @include flexColumn();
+                            justify-content: space-around;
+                            
+                            h2{
+                                width: 100%;
+                                height: 10%;
+                                @include flexRow();
+                                padding-left: 2%;
+                                justify-content: flex-start;  
+                            }
+                            
+                            
+                        }
+                        .QuickButtons{
+                            width: 100%;
+                            height:100%;
+                            @include flexColumn();
+                            justify-content: space-around;
+                            .ButtonElement{
+                                width: 100%;
+                                height: 150px;
+                                @include flexRow();
+                                justify-content: space-around;
+                                
+                                a{
+                                    @include ButtonStyle();
+                                    height: 120px;
+                                    width: 80%;
+                                    outline: none;
+                                }
+                            }
+                        }
+                       
+                    }
+                transition: transform 0.6s easeOutBack;
+                animation: animateLinks 0.6s forwards;
+                animation-delay: 0.6s;
+                opacity: 0;
+                @keyframes animateLinks {
+                    0%{
+                        transform: translateX(10%)
+                    }
+                    100%{
+                         opacity: 1;
+                         transform: translateX(0)
+  
+                    }
+                }
+                }
+                
+
+            }
+        }
+        .PopupInformation{
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            position: absolute;
+            background: transparent;
+            z-index: 10;
+            @include flexColumn();
+            backdrop-filter: blur(5px);
+            
+            .InfoContainer{
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.945);
+            backdrop-filter: blur(5px);
+            border-radius: 4px;
+            @include flexColumn();
+            justify-content: space-evenly;
+            position: relative;
+            @include Shadow();
+            .dp{
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                align-self: flex-start;
+                margin-left: 10%;
+            }
+            .closeButton{
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                width: 24px;
+                height: 24px;
+                object-fit: contain;
+                cursor: pointer;
+            }
+            h2{
+              font-size: 16px;
+          
+            }
+            .Element{
+                width: 100%;
+                height: 40px;
+                @include flexRow();
+                label{
+                    width: 30%;
+                }
+                p{
+                    width: 60%;
+                }
+            }
+            .buttons{
+                width: 100%;
+                height: 50px;
+                @include flexRow();
+                gap: 5%;
+                button{
+                    width: 120px;
+                    height: 40px;
+                    cursor: pointer;
+                }
+                .Accept{
+                    background: #44bd32;
+                    color: white;
+                    outline: none;
+                    border: none;
+                    &:hover{
+                        background: white;
+                        border: 1px solid #44bd32;
+                        color: #44bd32;
+                    }
+                }
+                .Deny{
+                    background: #ff4d4d;
+                    color: white;
+                    outline: none;
+                    border: none;
+                    &:hover{
+                        background: white;
+                        color: #ff4d4d;
+                        border: 1px solid #ff4d4d;
+                    }
+                }
+            }
+            }
+        }
+    }
+}
+
+

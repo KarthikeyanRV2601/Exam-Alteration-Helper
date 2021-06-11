@@ -1,0 +1,356 @@
+.ProfileSettings {
+  width: 100%;
+  height: 93vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  position: relative;
+}
+
+.ProfileSettings .Introtext {
+  width: 100%;
+  height: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.ProfileSettings .Introtext h2 {
+  font-size: 36px;
+  color: #2F89FC;
+}
+
+.ProfileSettings .Introtext h2 span {
+  font-size: 28px;
+  color: #5f5f5f;
+}
+
+.ProfileSettings .Introtext p {
+  font-size: 16px;
+  color: #353535;
+}
+
+.ProfileSettings .FormWrap {
+  width: 600px;
+  height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.ProfileSettings .FormWrap .ProfileForm {
+  width: 600px;
+  height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-shadow: 0 0 4px rgba(70, 70, 70, 0.274);
+          box-shadow: 0 0 4px rgba(70, 70, 70, 0.274);
+  padding-left: 20%;
+}
+
+.ProfileSettings .FormWrap .ButtonSection {
+  width: 300px;
+  height: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.ProfileSettings .input-field {
+  position: relative;
+  width: 250px;
+  height: 44px;
+  line-height: 44px;
+}
+
+.ProfileSettings label {
+  position: absolute;
+  top: 0;
+  left: -70%;
+  color: #666666;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+  cursor: text;
+}
+
+.ProfileSettings input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid #d3d3d3;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #111;
+}
+
+.ProfileSettings input:invalid {
+  outline: 0;
+}
+
+.ProfileSettings input:focus,
+.ProfileSettings input:valid {
+  border-color: #00dd22;
+}
+
+.ProfileSettings input:focus ~ label,
+.ProfileSettings input:valid ~ label {
+  font-size: 14px;
+  left: -60%;
+  color: #00dd22;
+}
+
+.ProfileSettings .closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  cursor: pointer;
+}
+
+.ProfileSettings button {
+  width: 200px;
+  height: 40px;
+  background: #2F89FC;
+  border: 1px solid white;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  text-decoration: none;
+  z-index: 5;
+}
+
+.ProfileSettings button:hover {
+  background: white;
+  border: 1px solid #2F89FC;
+  color: #2F89FC;
+}
+
+.ProfileSettings .ConfirmationOverlay {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background: rgba(29, 29, 29, 0.445);
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+.ProfileSettings .ConfirmationOverlay .container {
+  width: 400px;
+  height: 400px;
+  background: white;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  position: relative;
+}
+
+.ProfileSettings .ConfirmationOverlay .container h2 {
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+.ProfileSettings .ConfirmationOverlay .container .input-field {
+  position: relative;
+  width: 250px;
+  height: 44px;
+  line-height: 44px;
+}
+
+.ProfileSettings .ConfirmationOverlay .container label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #666666;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+  cursor: text;
+}
+
+.ProfileSettings .ConfirmationOverlay .container input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid #d3d3d3;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #111;
+}
+
+.ProfileSettings .ConfirmationOverlay .container input:invalid {
+  outline: 0;
+}
+
+.ProfileSettings .ConfirmationOverlay .container input:focus,
+.ProfileSettings .ConfirmationOverlay .container input:valid {
+  border-color: #00dd22;
+}
+
+.ProfileSettings .ConfirmationOverlay .container input:focus ~ label,
+.ProfileSettings .ConfirmationOverlay .container input:valid ~ label {
+  font-size: 14px;
+  top: -24px;
+  color: #00dd22;
+}
+
+.ProfileSettings .ConfirmationOverlay .container .closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  cursor: pointer;
+}
+
+.ProfileSettings .ConfirmationOverlay .container button {
+  width: 200px;
+  height: 40px;
+  background: #2F89FC;
+  border: 1px solid white;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  text-decoration: none;
+  z-index: 5;
+}
+
+.ProfileSettings .ConfirmationOverlay .container button:hover {
+  background: white;
+  border: 1px solid #2F89FC;
+  color: #2F89FC;
+}
+
+.ProfileSettings .IllustrationContainer {
+  width: 400px;
+  height: 400px;
+}
+
+.ProfileSettings .IllustrationContainer img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+/*# sourceMappingURL=profileSettings.css.map */
