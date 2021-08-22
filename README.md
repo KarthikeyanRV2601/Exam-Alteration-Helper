@@ -17,7 +17,10 @@ smooth and problem free method to schedule exams.
 <p>
   <img src="https://www.linkpicture.com/q/eahstack.jpg" style="object-fit:contain;"/>
 </p>
-
+<h2>USERS</h2>
+<p>
+  <img src="https://www.linkpicture.com/q/yeah-usertypes.png" style="object-fit:contain;"/>
+</p>
 <h2>Screenshots</h2>
 <p>
   Signin page
