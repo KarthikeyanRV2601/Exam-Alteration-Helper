@@ -55,7 +55,3 @@ smooth and problem free method to schedule exams.
   Faculties search page
   <img src="https://github.com/KarthikeyanRV2601/Exam-Alteration-Helper/raw/master/eah ss/dutiesPage.jpg" style="object-fit:contain;"/>
 </p>
-<p>
-  Faculties search page
-  <img src="https://github.com/KarthikeyanRV2601/Exam-Alteration-Helper/raw/master/eah ss/dutiesPage.jpg" style="object-fit:contain;"/>
-</p>
