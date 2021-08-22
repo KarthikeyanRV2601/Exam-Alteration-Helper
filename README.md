@@ -15,7 +15,7 @@ smooth and problem free method to schedule exams.
 
 <h2>USERS</h2>
 <p>
-  <img width=400 height=242 src="https://www.linkpicture.com/q/yeah-usertypes.png" style="object-fit:contain;"/>
+  <img width=500 height=300 src="https://www.linkpicture.com/q/yeah-usertypes.png" style="object-fit:contain;"/>
 </p>
 
 <h2>TECH STACK</h2>
