@@ -21,5 +21,41 @@ smooth and problem free method to schedule exams.
 <h2>Screenshots</h2>
 <p>
   Signin page
-  <img src="https://github.com/KarthikeyanRV2601/Exam-Alteration-Helper/raw/master/eah ss/signin.jpg" style="object-fit:contain;"/>
+  <img src="https://github.com/KarthikeyanRV2601/Exam-Alteration-Helper/raw/master/eah ss/yeah signin.jpg" style="object-fit:contain;"/>
+</p>
+<p>
+  Signup page
+  <img src="https://github.com/KarthikeyanRV2601/Exam-Alteration-Helper/raw/master/eah ss/signup.jpg" style="object-fit:contain;"/>
+</p>
+<p>
+   Faculty Dashboard
+  <img src="https://github.com/KarthikeyanRV2601/Exam-Alteration-Helper/raw/master/eah ss/faculty-dashboard.jpg" style="object-fit:contain;"/>
+</p>
+<p>
+  Calendar page
+  <img src="https://github.com/KarthikeyanRV2601/Exam-Alteration-Helper/raw/master/eah ss/calendar.jpg" style="object-fit:contain;"/>
+</p>
+<p>
+  Supervisor dashboard
+  <img src="https://github.com/KarthikeyanRV2601/Exam-Alteration-Helper/raw/master/eah ss/supervisor dashboard.jpg" style="object-fit:contain;"/>
+</p>
+<p>
+  User registrations approval page
+  <img src="https://github.com/KarthikeyanRV2601/Exam-Alteration-Helper/raw/master/eah ss/user-registrations-approval-page.jpg" style="object-fit:contain;"/>
+</p>
+<p>
+  Profile editing page
+  <img src="https://github.com/KarthikeyanRV2601/Exam-Alteration-Helper/raw/master/eah ss/profile-editing.jpg" style="object-fit:contain;"/>
+</p>
+<p>
+  Invigilations scheduling page
+  <img src="https://github.com/KarthikeyanRV2601/Exam-Alteration-Helper/raw/master/eah ss/invigilations-scheduling-page.jpg" style="object-fit:contain;"/>
+</p>
+<p>
+  Faculties search page
+  <img src="https://github.com/KarthikeyanRV2601/Exam-Alteration-Helper/raw/master/eah ss/dutiesPage.jpg" style="object-fit:contain;"/>
+</p>
+<p>
+  Faculties search page
+  <img src="https://github.com/KarthikeyanRV2601/Exam-Alteration-Helper/raw/master/eah ss/dutiesPage.jpg" style="object-fit:contain;"/>
 </p>
