@@ -13,14 +13,16 @@ faculty.
 All in all, YEAH offers a complete and robust solution for exam alteration and provides a
 smooth and problem free method to schedule exams.
 
+<h2>USERS</h2>
+<p>
+  <img width=300 height=180 src="https://www.linkpicture.com/q/yeah-usertypes.png" style="object-fit:contain;"/>
+</p>
+
 <h2>TECH STACK</h2>
 <p>
   <img src="https://www.linkpicture.com/q/eahstack.jpg" style="object-fit:contain;"/>
 </p>
-<h2>USERS</h2>
-<p>
-  <img src="https://www.linkpicture.com/q/yeah-usertypes.png" style="object-fit:contain;"/>
-</p>
+
 <h2>Screenshots</h2>
 <p>
   Signin page
