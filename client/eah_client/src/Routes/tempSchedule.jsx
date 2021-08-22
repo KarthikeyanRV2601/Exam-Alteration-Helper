@@ -54,7 +54,7 @@ const ExcelRenderer = ({user}) =>{
             }
             let res=await axios.post('/schedule/list',data);
             // console.log(data);
-
+            setFinalData([]);
             return data
             //api post data 
         }

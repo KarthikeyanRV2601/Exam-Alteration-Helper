@@ -75,9 +75,9 @@
     width: 200px;
     height: 150px;
     position: absolute;
-    background: #ff9000;;
+    background: #ff9000;
     @include flexColumn();
-    top: 8%;
+    top: 120%;
     border-radius: 20px;
     .Option{
         width: 90%;
@@ -87,6 +87,7 @@
         border-bottom: 1px solid #e6e6e6b2;
         cursor: pointer;
         text-decoration: none;
+        
         &:hover{
             background: white;
             color: #ff9000;;
@@ -104,7 +105,7 @@
             opacity: 0;
         }
         100%{
-            right: 2%;
+            right: 1%;
             opacity: 1;
         }
         
