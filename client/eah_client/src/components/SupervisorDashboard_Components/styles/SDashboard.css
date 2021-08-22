@@ -772,7 +772,7 @@
 }
 
 #root .SupervisorDashboard .RightContainer .MainBanner .Details {
-  width: 50%;
+  width: 100%;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -788,9 +788,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
 }
 
 #root .SupervisorDashboard .RightContainer .MainBanner .Details h1 {
@@ -815,7 +812,7 @@
 }
 
 #root .SupervisorDashboard .RightContainer .MainBanner .Details .ButtonSection {
-  width: 100%;
+  width: 90%;
   height: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -827,17 +824,13 @@
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
 }
 
 #root .SupervisorDashboard .RightContainer .MainBanner .Details .ButtonSection .ButtonElement {
-  width: 60%;
-  height: 60px;
+  width: 25%;
+  height: 180px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -848,254 +841,33 @@
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  background: #ff9000;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  outline: none;
+  font-size: 19px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 #root .SupervisorDashboard .RightContainer .MainBanner .Details .ButtonSection .ButtonElement img {
-  width: 35px;
-  height: 35px;
+  width: 50px;
+  height: 50px;
   -o-object-fit: contain;
      object-fit: contain;
 }
 
-#root .SupervisorDashboard .RightContainer .MainBanner .Details .ButtonSection .ButtonElement a {
-  width: 200px;
-  height: 60px;
-  background: #ff9000;
-  border: 1px solid white;
-  color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
-  cursor: pointer;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  text-decoration: none;
-  border-radius: 30px;
-  z-index: 5;
-  outline: none;
-}
-
-#root .SupervisorDashboard .RightContainer .MainBanner .Details .ButtonSection .ButtonElement a:hover {
+#root .SupervisorDashboard .RightContainer .MainBanner .Details .ButtonSection .ButtonElement:hover {
   background: white;
-  border: 1px solid #ff9000;
   color: #ff9000;
-}
-
-#root .SupervisorDashboard .RightContainer .MainBanner .QuickLinks {
-  width: 50%;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-transition: -webkit-transform 0.6s easeOutBack;
-  transition: -webkit-transform 0.6s easeOutBack;
-  transition: transform 0.6s easeOutBack;
-  transition: transform 0.6s easeOutBack, -webkit-transform 0.6s easeOutBack;
-  -webkit-animation: animateLinks 0.6s forwards;
-          animation: animateLinks 0.6s forwards;
-  -webkit-animation-delay: 0.6s;
-          animation-delay: 0.6s;
-  opacity: 0;
-}
-
-#root .SupervisorDashboard .RightContainer .MainBanner .QuickLinks h1 {
-  width: 32%;
-  font-size: 24px;
-  color: #808080;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-}
-
-#root .SupervisorDashboard .RightContainer .MainBanner .QuickLinks .Sections {
-  width: 100%;
-  height: 80%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  padding-left: 10%;
-}
-
-#root .SupervisorDashboard .RightContainer .MainBanner .QuickLinks .Sections .Section {
-  width: 100%;
-  height: 80%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-#root .SupervisorDashboard .RightContainer .MainBanner .QuickLinks .Sections .Section h2 {
-  width: 100%;
-  height: 10%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
-  padding-left: 2%;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-}
-
-#root .SupervisorDashboard .RightContainer .MainBanner .QuickLinks .Sections .QuickButtons {
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-#root .SupervisorDashboard .RightContainer .MainBanner .QuickLinks .Sections .QuickButtons .ButtonElement {
-  width: 100%;
-  height: 150px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-#root .SupervisorDashboard .RightContainer .MainBanner .QuickLinks .Sections .QuickButtons .ButtonElement a {
-  width: 200px;
-  height: 60px;
-  background: #ff9000;
-  border: 1px solid white;
-  color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
-  cursor: pointer;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  text-decoration: none;
-  border-radius: 30px;
-  z-index: 5;
-  height: 120px;
-  width: 80%;
-  outline: none;
-}
-
-#root .SupervisorDashboard .RightContainer .MainBanner .QuickLinks .Sections .QuickButtons .ButtonElement a:hover {
-  background: white;
   border: 1px solid #ff9000;
-  color: #ff9000;
-}
-
-@-webkit-keyframes animateLinks {
-  0% {
-    -webkit-transform: translateX(10%);
-            transform: translateX(10%);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-}
-
-@keyframes animateLinks {
-  0% {
-    -webkit-transform: translateX(10%);
-            transform: translateX(10%);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
 }
 
 #root .SupervisorDashboard .PopupInformation {
@@ -1151,6 +923,15 @@
   position: relative;
   -webkit-box-shadow: 0px 2px 5px 2px rgba(148, 148, 148, 0.16);
           box-shadow: 0px 2px 5px 2px rgba(148, 148, 148, 0.16);
+}
+
+#root .SupervisorDashboard .PopupInformation .InfoContainer .dp {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin-left: 10%;
 }
 
 #root .SupervisorDashboard .PopupInformation .InfoContainer .closeButton {

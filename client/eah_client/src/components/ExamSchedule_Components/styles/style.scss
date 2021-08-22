@@ -42,26 +42,49 @@
 }
 .Examschedule_Page{
     width: 100%;
-    min-height: 150vh;
+    max-height: 100vh;
     @include flexColumn();
-    padding-top: 10vh;
+    gap: 10px;
     .Title{
         width: 100%;
         font-size: 24px;
-        color: #353535;
+        color: #494949;
+        min-height: 10vh;
+        margin-top: 6vh;
     }
     .csv-reader-input{
-        width: 80%;
-        min-height: 300px;
-        border-radius: 10px;
+        width:200px;
+        min-height: 50px;
         @include flexColumn();
-        @include Shadow();  
-        color: white;
-        // background: #ff9000;
-        #ObiWan{
-            width: 92px;
-            height: 50px;
+        position: relative;
+        background: #ff9000;
+        transition: 0.2s;
+        &:hover{
+            background: white;
+            border: 1px solid #ff9000;
+            
+            &::before{
+                color: #ff9000;
+            }
+            
+        }
+        &::before
+        {
+            content: "Upload CSV";
+            font-size: 18px;
             color: white;
+        }
+        
+        .csv-label{
+            display: none;
+           
+        }
+        input{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
         }
     }
     .updateButton{
@@ -70,8 +93,6 @@
         background: #ff9000;
         color: white;
         border: 1px solid white;
-        margin-top: 5%;
-        margin-bottom: 5%;
         &:hover{
             cursor: pointer;
             background: white;
@@ -82,10 +103,11 @@
     .SpreadSheetWrap{
         width: 100%;
         margin-top: 5%;
-        max-height: 300px;
+        max-height: 400px;
         .Spreadsheet{
-            max-height: 300px;
-            overflow-y: scroll;
+            max-width: 80%;
+            max-height: 400px;
+            overflow: scroll;
         }
     }
 }

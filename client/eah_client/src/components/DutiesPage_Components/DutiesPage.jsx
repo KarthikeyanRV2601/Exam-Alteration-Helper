@@ -60,7 +60,7 @@ const DutiesPage=({user})=>{
                                     <div className="Text">
                                         {userdata.user_name}
                                     </div>
-                                    <img src={`https://randomuser.me/api/portraits/men/${Math.floor((Math.random() * 50) + 1)}.jpg`} alt="" className="DP"/>
+                                    <img src={`https://randomuser.me/api/portraits/men/${userdata.user_name.length+ userdata.user_name.charCodeAt(0) - 65}.jpg`} alt="" className="DP"/>
                                 </div>
                             )
 

@@ -13,34 +13,25 @@ export const MainBanner=()=>{
             <div className="Details">
                 <h1>Details</h1>
                 <div className="ButtonSection">
-                <div className="ButtonElement">
+                <a className="ButtonElement" href="/duties-page">
                     <img src={RequestIcon} />
-                    <a href="/duties-page" id="dutiespageBtn">
-                        Faculty schedules
-                    </a>
-                </div>
-                <div className="ButtonElement">
+                    Faculty schedules
+                    
+                </a>
+                <a className="ButtonElement" href="/exam-schedule">
                     <img src={CalendarIcon} />
-                    <a href="/exam-schedule" id="timetableBtn">
-                        Schedule invigilations
-                    </a>
-                </div>
-                <div className="ButtonElement">
+                    Schedule invigilations
+                    
+                </a>
+                <a className="ButtonElement" href="/user-registrations">
                     <img src={ExchangeIcon}  id="availablerequestsBtn"/>
-                    <a href="/user-registrations">
-                        User registrations
-                    </a>
-                </div>
+                    
+                    User registrations
+                    
+                </a>
                 </div>  
             </div>
-            <div className="QuickLinks">
-                    <h1>Quick links</h1>
-                    <div className="Sections">
-                       <div className="QuickButtons">
-                            
-                        </div>
-                    </div>
-            </div>
+            
         </div>
     )
 }

@@ -7,7 +7,7 @@ const auth = require('../middleware/auth');
 const firebase = require('firebase');
 // const { check, validationResult } = require('express-validator');
 
-router.post('/', async (req, res) => {
+router.post('/get', async (req, res) => {
     try {
         const scheduleRef = db.collection('schedule');
         // console.log(req.user)
@@ -179,7 +179,7 @@ router.post('/list', async (req, res) => {
                 date: new Date(item.date).toUTCString(),
                 duration: item.duration,
                 exam_name: item.exam_name,
-                reqest_status: "none",
+                request_status: "none",
                 userID: item.userID,
             });
         });

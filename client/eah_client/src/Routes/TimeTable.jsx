@@ -41,7 +41,7 @@ const TimeTable=({user})=>{
         {
             try {
                 let body = { "uid": user.userID}
-                const data = await axios.post('/schedule',body)
+                const data = await axios.post('/schedule/get',body)
                 setscheduleData(data.data.data.filter((item)=>{
                     let date=new Date(item.date);
                     return (!dateInPast(date))

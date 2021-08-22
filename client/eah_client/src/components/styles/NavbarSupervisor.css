@@ -130,7 +130,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  top: 8%;
+  top: 120%;
   border-radius: 20px;
   display: none;
 }
@@ -175,7 +175,7 @@
     opacity: 0;
   }
   100% {
-    right: 2%;
+    right: 1%;
     opacity: 1;
   }
 }
@@ -186,7 +186,7 @@
     opacity: 0;
   }
   100% {
-    right: 2%;
+    right: 1%;
     opacity: 1;
   }
 }

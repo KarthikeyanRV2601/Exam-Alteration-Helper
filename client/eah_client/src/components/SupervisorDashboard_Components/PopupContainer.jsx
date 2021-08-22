@@ -13,6 +13,7 @@ export const PopupContainer=({userdata,setpopup})=>{
                 
                     <div className="InfoContainer">
                     <img className='closeButton' src={cancelIcon} onClick={e=>setpopup(false)}/>
+                        <img src={`https://randomuser.me/api/portraits/men/${userdata.user_name.length+userdata.user_name.charCodeAt(0) - 65}.jpg`} alt="" className="dp" />
                         <div className="Element">
                             <label>User name:</label>
                             <p>{userdata.user_name}</p>
@@ -28,6 +29,7 @@ export const PopupContainer=({userdata,setpopup})=>{
                         
                         
                     </div>
+                    
             </div>
             </>
     )

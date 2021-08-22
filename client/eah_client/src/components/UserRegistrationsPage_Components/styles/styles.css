@@ -283,6 +283,7 @@
   -o-object-fit: cover;
      object-fit: cover;
   margin-bottom: 50px;
+  border-radius: 50%;
 }
 
 .Overlay .Content .field {

@@ -14,7 +14,7 @@ import { connect } from 'react-redux';
 const SupervisorDashboard=({ isAuth, user })=>{
     
     const [ Notificationdata, setNotifData] = useState([])
-
+    
         useEffect(() => {
             (async () => 
             {
@@ -62,7 +62,7 @@ const SupervisorDashboard=({ isAuth, user })=>{
                 <NotificationComponent NotificationList={Notificationdata} returnDate={returnDate}/>
             </div>
             <div className="RightContainer">
-                <TopBanner invigilationsScheduled={2} Dutyhours="7/10" exchanges="10" />
+                <TopBanner invigilationsScheduled={Notificationdata.length} PendingInvigilations="4/10" exchanges="10" />
                 <MainBanner />
             </div>
         </div>
