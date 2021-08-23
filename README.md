@@ -23,7 +23,7 @@ smooth and problem free method to schedule exams.
   <img src="https://www.linkpicture.com/q/eahstack.jpg" style="object-fit:contain;"/>
 </p>
 
-<h2>Screenshots</h2>
+<h2>📸 Screenshots</h2>
 <p>
   Signin page
   <img src="https://github.com/KarthikeyanRV2601/Exam-Alteration-Helper/raw/master/eah ss/yeah signin.jpg" style="object-fit:contain;"/>
