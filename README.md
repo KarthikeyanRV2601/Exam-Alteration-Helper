@@ -1,8 +1,8 @@
 # Exam-Alteration-Helper
-<h2>PROJECT AIM</h2>
+<h2>📌 PROJECT AIM</h2>
 To build a Web application that makes the exam invigilation exchange process simple, flexible
 and efficient.
-<h2>ABSTRACT</h2>
+<h2>:page_with_curl: ABSTRACT</h2>
 Because of several inexplicable reasons, teachers might find themselves unable to invigilate
 examinations that they have been assigned. Finding a replacement can be a tiresome and
 messy process. YEAH attempts to solve this problem by providing an easy to use web
@@ -13,12 +13,12 @@ faculty.
 All in all, YEAH offers a complete and robust solution for exam alteration and provides a
 smooth and problem free method to schedule exams.
 
-<h2>USERS</h2>
+<h2>🧒 USERS</h2>
 <p>
   <img width=500 height=300 src="https://www.linkpicture.com/q/yeah-usertypes.png" style="object-fit:contain;"/>
 </p>
 
-<h2>TECH STACK</h2>
+<h2>💻 TECH STACK</h2>
 <p>
   <img src="https://www.linkpicture.com/q/eahstack.jpg" style="object-fit:contain;"/>
 </p>
